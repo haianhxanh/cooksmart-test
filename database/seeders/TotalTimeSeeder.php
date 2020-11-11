@@ -1,7 +1,7 @@
 <?php
 
 namespace Database\Seeders;
-
+use App\Models\TotalTime;
 use Illuminate\Database\Seeder;
 
 class TotalTimeSeeder extends Seeder
@@ -13,6 +13,7 @@ class TotalTimeSeeder extends Seeder
      */
     public function run()
     {
+
         $t = new TotalTime;
         $t->time = '30 minutes';
         $t->save();

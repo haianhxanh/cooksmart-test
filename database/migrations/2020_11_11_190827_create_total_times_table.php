@@ -16,6 +16,7 @@ class CreateTotalTimesTable extends Migration
         Schema::create('total_times', function (Blueprint $table) {
             $table->id();
             $table->string('time');
+            $table->timestamps();
         });
     }
 
