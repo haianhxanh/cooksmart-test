@@ -15,7 +15,7 @@ class CreateQuantitiesTable extends Migration
     {
         Schema::create('quantities', function (Blueprint $table) {
             $table->id();
-            $table->float('amount');
+            $table->float('amount')->nullable();
             $table->unsignedBigInteger('measurement_id')->nullable();
             $table->timestamps();
         });
