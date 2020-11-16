@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"/css/app.css","sourceRoot":""}
+{"version":3,"sources":["webpack:///./resources/scss/app.scss"],"names":[],"mappings":"AAAA;EACI","file":"/css/app.css","sourcesContent":["body {\n    background-color: orange;\n}\n"],"sourceRoot":""}
