@@ -1,3 +1,7 @@
+* {
+  font-family: "Quicksand", sans-serif;
+}
+
 body {
   background-image: url("../img/banner-large.jpg");
   background-size: cover;
@@ -6,10 +10,17 @@ body {
 
 .logo {
   height: 200px;
-  background-image: url("../img/logo/logo-large.svg");
-  background-repeat: no-repeat;
-  background-size: 200px 200px;
-  background-position: center;
+}
+
+.logo img {
+  width: 200px;
+  margin: 0 auto;
+  display: block;
+}
+
+.logo img:hover {
+  color: #fff;
+  transform: translateY(-7px);
 }
 
 .slogan {
@@ -18,26 +29,31 @@ body {
 }
 
 .btn button {
+  margin: 0 auto;
   width: 140px;
   height: 45px;
-  font-family: "Roboto", sans-serif;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 2.5px;
   font-weight: 500;
   color: #000;
   background-color: #fff;
-  border: none;
+  border: 2px solid black;
   border-radius: 45px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
+  display: block;
+}
+
+.btn a {
+  text-decoration: none;
 }
 
 .btn button:hover {
-  background-color: #2ee59d;
-  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  background-color: #CAE265;
+  box-shadow: 0px 15px 20px rgba(202, 226, 101, 0.4);
   color: #fff;
   transform: translateY(-7px);
 }
