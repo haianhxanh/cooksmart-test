@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
 // require('dotenv').config();
 /*
  |--------------------------------------------------------------------------
@@ -17,20 +17,18 @@ mix.options({
 
 if (!mix.inProduction()) {
     mix.webpackConfig({
-        devtool: 'source-map'
-    })
-    .sourceMaps()
+        devtool: "source-map"
+    }).sourceMaps();
 }
 
 /**
  * specify what MIX should compile here:
  */
-mix
-    .sass('resources/scss/app.scss', 'public/css')
-    .react('resources/js/app/index.jsx', 'public/js/app.js')
+mix.sass("resources/scss/app.scss", "public/css")
+    .react("resources/js/app/index.jsx", "public/js/app.js")
 
     .browserSync({
-        host: 'localhost',
+        host: "localhost",
         port: 3000,
         proxy: {
             target: process.env.APP_URL
