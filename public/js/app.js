@@ -30175,8 +30175,8 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/haianhxanh/web/cbp/cooksmart-test/resources/js/app/index.jsx */"./resources/js/app/index.jsx");
-module.exports = __webpack_require__(/*! /Users/haianhxanh/web/cbp/cooksmart-test/resources/scss/app.scss */"./resources/scss/app.scss");
+__webpack_require__(/*! /Users/melissagenger/web/projects/cooksmart-test/resources/js/app/index.jsx */"./resources/js/app/index.jsx");
+module.exports = __webpack_require__(/*! /Users/melissagenger/web/projects/cooksmart-test/resources/scss/app.scss */"./resources/scss/app.scss");
 
 
 /***/ })

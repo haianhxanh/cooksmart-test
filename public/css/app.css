@@ -52,7 +52,7 @@ body {
 }
 
 .btn button:hover {
-  background-color: #CAE265;
+  background-color: #cae265;
   box-shadow: 0px 15px 20px rgba(202, 226, 101, 0.4);
   color: #fff;
   transform: translateY(-7px);
