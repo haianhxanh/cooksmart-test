@@ -3,7 +3,13 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
+
+use App\Models\Group;
 use App\Models\Ingredient;
+use App\Models\Measurement;
+use App\Models\Preparation;
+use App\Models\Quantity;
 
 class IngredientSeeder extends Seeder
 {
@@ -14,69 +20,154 @@ class IngredientSeeder extends Seeder
      */
     public function run()
     {
-        $i = new Ingredient;
-        $i->name = 'onion';
-        $i->group_id = 2;
-        $i->save();
+        $this->seedIngredients();
 
-        $i = new Ingredient;
-        $i->name = 'paprika';
-        $i->group_id = 2;
-        $i->save();
+        $this->seedPreparations();
 
-        $i = new Ingredient;
-        $i->name = 'allspice';
-        $i->group_id = 4;
-        $i->save();
+        $this->seedQuantities();
 
-        $i = new Ingredient;
-        $i->name = 'basil';
-        $i->group_id = 4;
-        $i->save();
+        $this->seedMeasurements();
+    }
 
-        $i = new Ingredient;
-        $i->name = 'chilli powder';
-        $i->group_id = 4;
-        $i->save();
+    public function seedIngredients()
+    {
+        $groups = $this->seedGroups();
 
-        $i = new Ingredient;
-        $i->name = 'curry powder';
-        $i->group_id = 4;
-        $i->save();
+        $group_csv_files = [
+            "condiments"    => 'condiments.csv',
+            "dairy"         => 'dairy.csv',
+            "fish"          => 'fish.csv',
+            "grains"        => 'grains.csv',
+            "meats"         => 'meats.csv',
+            "other-ingredients" => 'other.csv',
+            "spices"        => 'spices.csv',
+            "vegetables"    => 'veggies.csv'
+        ];
 
-        $i = new Ingredient;
-        $i->name = 'ginger';
-        $i->group_id = 4;
-        $i->save();
+        $current_ingredients = Ingredient::with('group')->get();
+        $current_ingredients_by_slug = [];
+        foreach ($current_ingredients as $ingredient) {
+            $ingredient_slug = Str::slug($ingredient->name);
+            $group_slug = Str::slug($ingredient->group->name);
+            if (isset($current_ingredients_by_slug[$group_slug][$ingredient_slug])) {
+                $this->command->error('Duplicite ingredient in group ' . $ingredient->group->name . ': ' . $ingredient->name);
+            }
+            $current_ingredients_by_slug[$group_slug][$ingredient_slug] = $ingredient;
+        }
 
-        $i = new Ingredient;
-        $i->name = 'garlic';
-        $i->group_id = 4;
-        $i->save();
+        foreach ($groups as $group_slug => $group_id) {
+            if (isset($group_csv_files[$group_slug])) {
+                $ingredients = $this->getValuesFromCsv(storage_path('csv/'.$group_csv_files[$group_slug]));
 
-        $i = new Ingredient;
-        $i->name = 'oregano';
-        $i->group_id = 4;
-        $i->save();
+                foreach ($ingredients as $ingredient_name) {
+                    $ingredient_slug = Str::slug($ingredient_name);
 
-        $i = new Ingredient;
-        $i->name = 'beef';
-        $i->group_id = 1 ;
-        $i->save();
+                    if (isset($current_ingredients_by_slug[$group_slug][$ingredient_slug])) {
+                        $ingredient = $current_ingredients_by_slug[$group_slug][$ingredient_slug];
+                    } else {
+                        $ingredient = new Ingredient;
+                        $ingredient->name = $ingredient_name;
+                    }
 
-        $i = new Ingredient;
-        $i->name = 'chicken';
-        $i->group_id = 1;
-        $i->save();
+                    $ingredient->group_id = $group_id;
+                    $ingredient->save();
+                }
+            }
+        }
+    }
 
-        $i = new Ingredient;
-        $i->name = 'milk';
-        $i->group_id = 5;
-        $i->save();
+    public function seedGroups()
+    {
+        return $this->seedUpdateFromCSV(
+            storage_path('csv/ingredient-groups.csv'),
+            Group::class
+        );
 
-        $i = new Ingredient;
-        $i->name = 'butter';
-        $i->group_id = 5;
-        $i->save();
+        // $current_groups = Group::all()->pluck('name', 'id');
+        // $current_groups_by_slug = [];
+        // foreach ($current_groups as $id => $name) {
+        //     $current_groups_by_slug[Str::slug($name)] = $id;
+        // }
+
+        // $csv_groups = $this->getValuesFromCsv(storage_path('csv/ingredient-groups.csv'));
+
+        // foreach ($csv_groups as $name) {
+        //     $slug_name = Str::slug($name);
+
+        //     if (!isset($current_groups_by_slug[$slug_name])) {
+        //         $new_group = new Group;
+        //         $new_group->name = $name;
+        //         $new_group->save();
+
+        //         $current_groups_by_slug[$slug_name] = $new_group->id;
+        //     }
+        // }
+
+        // return $current_groups_by_slug;
+    }
+
+    public function seedPreparations()
+    {
+        return $this->seedUpdateFromCSV(
+            storage_path('csv/preparations.csv'),
+            Preparation::class
+        );
+    }
+
+    public function seedMeasurements()
+    {
+        return $this->seedUpdateFromCSV(
+            storage_path('csv/measurements.csv'),
+            Measurement::class
+        );
+    }
+
+    public function seedQuantities()
+    {
+        return $this->seedUpdateFromCSV(
+            storage_path('csv/quantities.csv'),
+            Quantity::class,
+            'amount'
+        );
+    }
+
+    public function seedUpdateFromCSV($csv_file, $model_class, $name_column = 'name', $id_column = 'id')
+    {
+        $current_items = call_user_func([$model_class, 'all'])->pluck($name_column, $id_column);
+        $current_items_by_slug = [];
+        foreach ($current_items as $id => $name) {
+            $current_items_by_slug[Str::slug($name)] = $id;
+        }
+
+        $csv_items = $this->getValuesFromCsv($csv_file);
+
+        foreach ($csv_items as $name) {
+            $slug_name = Str::slug($name);
+
+            if (!isset($current_items_by_slug[$slug_name])) {
+                $new_item = new $model_class;
+                $new_item->{$name_column} = $name;
+                $new_item->save();
+
+                $current_items_by_slug[$slug_name] = $new_item->{$id_column};
+            }
+        }
+
+        return $current_items_by_slug;
+    }
+
+    public function getValuesFromCsv($csv_file)
+    {
+        $fh = fopen($csv_file, 'r');
+
+        $values = [];
+
+        while ($row = fgetcsv($fh, 0, ';', '"')) {
+            if (trim($row[0]) !== '') { // if the first value after trimming is not empty string
+                $values[] = $row[0];
+            }
+        }
+
+        return $values;
     }
 }

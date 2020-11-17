@@ -16,10 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call(CuisineSeeder::class);
-        $this->call(GroupSeeder::class);
         $this->call(IngredientSeeder::class);
-        $this->call(MeasurementSeeder::class);
-        $this->call(QuantitySeeder::class);
         $this->call(RecipeSeeder::class);
         $this->call(TotalTimeSeeder::class);
         $this->call(StepSeeder::class);
