@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use App\Models\Group;
 use App\Models\Ingredient;
 use App\Models\Measurement;
+use App\Models\Preparation;
 use App\Models\Quantity;
 
 class IngredientsSeeder extends Seeder
@@ -20,6 +21,12 @@ class IngredientsSeeder extends Seeder
     public function run()
     {
         $this->seedIngredients();
+
+        $this->seedPreparations();
+
+        $this->seedQuantities();
+
+        $this->seedMeasurements();
     }
 
     public function seedIngredients()
@@ -71,27 +78,82 @@ class IngredientsSeeder extends Seeder
 
     public function seedGroups()
     {
-        $current_groups = Group::all()->pluck('name', 'id');
-        $current_groups_by_slug = [];
-        foreach ($current_groups as $id => $name) {
-            $current_groups_by_slug[Str::slug($name)] = $id;
+        return $this->seedUpdateFromCSV(
+            storage_path('csv/ingredient-groups.csv'),
+            Group::class
+        );
+
+        // $current_groups = Group::all()->pluck('name', 'id');
+        // $current_groups_by_slug = [];
+        // foreach ($current_groups as $id => $name) {
+        //     $current_groups_by_slug[Str::slug($name)] = $id;
+        // }
+
+        // $csv_groups = $this->getValuesFromCsv(storage_path('csv/ingredient-groups.csv'));
+
+        // foreach ($csv_groups as $name) {
+        //     $slug_name = Str::slug($name);
+
+        //     if (!isset($current_groups_by_slug[$slug_name])) {
+        //         $new_group = new Group;
+        //         $new_group->name = $name;
+        //         $new_group->save();
+
+        //         $current_groups_by_slug[$slug_name] = $new_group->id;
+        //     }
+        // }
+
+        // return $current_groups_by_slug;
+    }
+
+    public function seedPreparations()
+    {
+        return $this->seedUpdateFromCSV(
+            storage_path('csv/preparations.csv'),
+            Preparation::class
+        );
+    }
+
+    public function seedMeasurements()
+    {
+        return $this->seedUpdateFromCSV(
+            storage_path('csv/measurements.csv'),
+            Measurement::class
+        );
+    }
+
+    public function seedQuantities()
+    {
+        return $this->seedUpdateFromCSV(
+            storage_path('csv/quantities.csv'),
+            Quantity::class,
+            'amount'
+        );
+    }
+
+    public function seedUpdateFromCSV($csv_file, $model_class, $name_column = 'name', $id_column = 'id')
+    {
+        $current_items = call_user_func([$model_class, 'all'])->pluck($name_column, $id_column);
+        $current_items_by_slug = [];
+        foreach ($current_items as $id => $name) {
+            $current_items_by_slug[Str::slug($name)] = $id;
         }
 
-        $csv_groups = $this->getValuesFromCsv(storage_path('csv/ingredient-groups.csv'));
+        $csv_items = $this->getValuesFromCsv($csv_file);
 
-        foreach ($csv_groups as $name) {
+        foreach ($csv_items as $name) {
             $slug_name = Str::slug($name);
 
-            if (!isset($current_groups_by_slug[$slug_name])) {
-                $new_group = new Group;
-                $new_group->name = $name;
-                $new_group->save();
+            if (!isset($current_items_by_slug[$slug_name])) {
+                $new_item = new $model_class;
+                $new_item->{$name_column} = $name;
+                $new_item->save();
 
-                $current_groups_by_slug[$slug_name] = $new_group->id;
+                $current_items_by_slug[$slug_name] = $new_item->{$id_column};
             }
         }
 
-        return $current_groups_by_slug;
+        return $current_items_by_slug;
     }
 
     public function getValuesFromCsv($csv_file)
