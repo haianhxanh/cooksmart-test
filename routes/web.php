@@ -29,3 +29,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('/recipes/create', 'RecipeController@create');
 Route::post('/recipes', 'RecipeController@store');
 Route::get('/recipes', 'RecipeController@index');
+
+// json
+Route::get('api/recipes', 'ApiController@recipes');
+
+Route::view('/search', 'recipes/search');

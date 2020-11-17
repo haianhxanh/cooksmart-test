@@ -14,14 +14,29 @@
 
 </select>
 
+<label for="total_time_id">Total time</label>
+<select name="total_time_id" id="">
+    @foreach ($times as $t)
+        <option value="{{ $t->id }}">{{ $t->time }}</option>
+    @endforeach
+
+</select>
+
+
 <label for="description">Description</label>
-<textarea name="description">Text area</textarea>
+<textarea name="description"></textarea>
 
 <button type="submit">Add your recipe!!</button>
 
 <p>
-        <label for="photo">Photo:</label>
-        <input id="photo" type="text" name="photo" value="https://www.codingbootcamp.cz/img/cbp_logo-dark.png"/>
-    </p>
+    <label for="image">Photo:</label>
+    <input id="image" type="text" name="image" value="https://www.codingbootcamp.cz/img/cbp_logo-dark.png"/>
+</p>
+
+
+<p>
+    <label for="video">Video:</label>
+    <input id="video" type="text" name="video" value=""/>
+</p>
 
 </form>

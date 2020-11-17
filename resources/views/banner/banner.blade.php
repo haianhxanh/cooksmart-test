@@ -2,7 +2,7 @@
 @section('content')
 
 
-<div id="app" >
+<div id="banner-app" class="landing-page" >
     <div class="logo">
         <a href="{{action('RecipeController@create')}}"><img src="https://www.dropbox.com/s/1znnm2hkyaw6w7d/logo-large.png?raw=1" alt=""></a>
     </div>

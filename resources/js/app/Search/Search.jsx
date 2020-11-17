@@ -6,12 +6,19 @@ function Search() {
     // const [diet, setDiet] = useState('');
     const [recipes, setRecipes] = useState([]);
 
-    const url = ''
+    const url = 'http://www.cooksmart.test/api/recipes';
 
-    const searchRecipes = async (e) => {
-        e.preventDefault();
+    const searchRecipes = async () => {
+
+        let url_with_params = url + '?';
+        if (cuisine) {
+            url_with_params += '&cuisine=' + encodeURIComponent(cuisine);
+        }
+        if (time) {
+            url_with_params += '&time=' + encodeURIComponent(time);
+        }
         try {
-            const response = await fetch(url);
+            const response = await fetch(url_with_params);
             const data = await response.json();
             console.log(data);
             setRecipes(data);

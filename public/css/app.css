@@ -2,7 +2,8 @@
   font-family: "Quicksand", sans-serif;
 }
 
-body {
+.landing-page {
+  height: 100vh;
   background-image: url("../img/banner-large.jpg");
   background-size: cover;
   background-repeat: no-repeat;
