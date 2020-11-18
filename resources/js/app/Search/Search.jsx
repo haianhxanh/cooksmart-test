@@ -1,21 +1,23 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from "react";
 
 function Search() {
-    const [cuisine, setCuisine] = useState('');
-    const [time, setTime] = useState('');
-    // const [diet, setDiet] = useState('');
+    const [cuisine, setCuisine] = useState("");
+    const [time, setTime] = useState("");
+    const [diet, setDiet] = useState("");
     const [recipes, setRecipes] = useState([]);
 
-    const url = 'http://www.cooksmart.test/api/recipes';
+    const url = "http://www.cooksmart.test/api/recipes";
 
     const searchRecipes = async () => {
-
-        let url_with_params = url + '?';
+        let url_with_params = url + "?";
         if (cuisine) {
-            url_with_params += '&cuisine=' + encodeURIComponent(cuisine);
+            url_with_params += "&cuisine=" + encodeURIComponent(cuisine);
         }
         if (time) {
-            url_with_params += '&time=' + encodeURIComponent(time);
+            url_with_params += "&time=" + encodeURIComponent(time);
+        }
+        if (diet) {
+            url_with_params += "&diet=" + encodeURIComponent(diet);
         }
         try {
             const response = await fetch(url_with_params);
@@ -23,30 +25,32 @@ function Search() {
             console.log(data);
             setRecipes(data);
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
-    }
+    };
 
     useEffect(() => {
-        searchRecipes()
-    }, [cuisine, time])
+        searchRecipes();
+    }, [cuisine, time, diet]);
 
-    const selectCuisine = (e) => {
-        setCuisine(e.target.value)
-    }
+    const selectCuisine = e => {
+        setCuisine(e.target.value);
+    };
 
-    const selectTime = (e) => {
-        setTime(e.target.value)
-    }
+    const selectTime = e => {
+        setTime(e.target.value);
+    };
 
-    // const selectDiet = (e) => {
-    //     setDiet(e.target.value)
-    // }
+    const selectDiet = e => {
+        setDiet(e.target.value);
+    };
 
     return (
         <div className="search-bar">
             <form className="form-group" onSubmit={searchRecipes}>
-                <label className="label" htmlFor="time">Time</label>
+                <label className="label" htmlFor="time">
+                    Time
+                </label>
                 <select className="drop-down" name="time" onChange={selectTime}>
                     <option>I have nothing but time!</option>
                     <option value="30 min">30 minutes</option>
@@ -54,8 +58,14 @@ function Search() {
                     <option value="90 min">90 minutes</option>
                 </select>
 
-                <label className="label" htmlFor="cuisine">Cuisine</label>
-                <select className="drop-down" name="cuisine" onChange={selectCuisine}>
+                <label className="label" htmlFor="cuisine">
+                    Cuisine
+                </label>
+                <select
+                    className="drop-down"
+                    name="cuisine"
+                    onChange={selectCuisine}
+                >
                     <option>Pick the most delicious one!</option>
                     <option value="Western">Western</option>
                     <option value="Asian">Asian</option>
@@ -65,10 +75,23 @@ function Search() {
                     <option value="Latin American">Latin American</option>
                 </select>
 
+                <label className="label" htmlFor="diet">
+                    Diet
+                </label>
+                <select className="drop-down" name="diet" onChange={selectDiet}>
+                    <option>Suprise me!</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Pescatarian">Pescatarian</option>
+                    <option value="Dairy-free">Dairy-free</option>
+                </select>
+
+                <button type="submit">Take me to the delicious recipes</button>
             </form>
+            <div className="results">
+                <h2>{recipes.name}</h2>
+            </div>
         </div>
-    )
+    );
 }
 
-export default Search
-
+export default Search;

@@ -15,15 +15,15 @@ class TotalTimeSeeder extends Seeder
     {
 
         $t = new TotalTime;
-        $t->time = '30 minutes';
+        $t->time = '30';
         $t->save();
 
         $t = new TotalTime;
-        $t->time = '60 minutes';
+        $t->time = '60';
         $t->save();
 
         $t = new TotalTime;
-        $t->time = '90 minutes';
+        $t->time = '90';
         $t->save();
     }
 }
