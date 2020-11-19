@@ -39,4 +39,24 @@
     <input id="video" type="text" name="video" value=""/>
 </p>
 
+<label for="step">Steps</label>
+<div class="steps">
+    <textarea name="step[]" id="" cols="30" rows="10"></textarea>
+</div>
+
+    <button type="button" id="step-btn">Add new step</button>
+<script>
+const stepBtn = document.getElementById('step-btn');
+stepBtn.addEventListener('click', () => {
+    const steps = document.querySelector('.steps');
+    const input = document.createElement('textarea');
+    input.name = 'step[]';
+    input.rows = '10';
+    input.cols = '30';
+    steps.appendChild(input);
+})
+
+
+
+</script>
 </form>

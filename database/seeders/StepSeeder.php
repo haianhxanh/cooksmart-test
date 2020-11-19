@@ -14,6 +14,7 @@ class StepSeeder extends Seeder
      */
     public function run()
     {
+        // Steps for Pad Thai with tofu
         $s = new Step;
         $s->step = 'Soak the rice noodles in room-temperature water for 30 minutes prior to cooking.';
         $s->number = 1;
@@ -67,5 +68,97 @@ class StepSeeder extends Seeder
         $s->number = 9;
         $s->recipe_id = 1;
         $s->save();
+
+        ////////////////////////////////////////////////////////////////////////////////////////
+        // Steps for Pan-fried duck breast with spring veg
+        $s = new Step;
+        $s->step = 'Cook the potatoes, halving any larger ones, in a pan of boiling salted water for 20 minutes, or until tender.';
+        $s->number = 1;
+        $s->recipe_id = 2;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Meanwhile, score the skin of the duck breast at 2cm intervals, then season with sea salt and black pepper.';
+        $s->number = 2;
+        $s->recipe_id = 2;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Place the duck skin-side down in a cold non-stick frying pan, then turn the heat on to medium-high. Cook for 8 minutes without moving it, or until the fat is well rendered and the skin is golden and crispy.';
+        $s->number = 3;
+        $s->recipe_id = 2;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Turn the duck over and cook for 4 minutes on the other side, then remove to a plate to rest, leaving the pan of duck fat on the heat.';
+        $s->number = 4;
+        $s->recipe_id = 2;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Snap the woody ends off the asparagus and add the spears to the potato pan for the last 5 minutes, adding the peas for the last 2 minutes, then drain it all and leave to stream dry.';
+        $s->number = 5;
+        $s->recipe_id = 2;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Finely chop the chilli and mint leaves (reserving a few pretty baby leaves), and place in a large bowl. Finely grate in the lemon zest and squeeze in half the juice, add 1 tablespoon of extra virgin olive oil, mix together and season to perfection.';
+        $s->number = 6;
+        $s->recipe_id = 2;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Halve the asparagus spears, then tip all the warm vegetables into the dressing and mix well. Divide between your plates, then slice the duck and arrange over the top. Scatter over the reserved baby mint leaves to finish.';
+        $s->number = 7;
+        $s->recipe_id = 2;
+        $s->save();
+
+
+
+        ////////////////////////////////////////////////////////////////////////////////////////
+        // Steps for Shakshuka
+        $s = new Step;
+        $s->step = 'Heat a deep, large skillet or sauté pan on medium. Slowly warm olive oil in the pan. Add chopped onion, sauté for a few minutes until the onion begins to soften. Add garlic and continue to sauté till mixture is fragrant.';
+        $s->number = 1;
+        $s->recipe_id = 3;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Add the diced bell pepper, sauté for 5-7 minutes over medium until softened.';
+        $s->number = 2;
+        $s->recipe_id = 3;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Add tomatoes and tomato paste to pan, stir until blended. Add spices and sugar, stir, and allow mixture to simmer over medium heat for 5-7 minutes until it starts to reduce. ';
+        $s->number = 3;
+        $s->recipe_id = 3;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'At this point, you can taste the mixture and spice it according to your preferences. Add salt and pepper to taste, more sugar for a sweeter sauce, or more cayenne pepper for a spicier shakshuka (be careful with the cayenne... it is extremely spicy!).';
+        $s->number = 4;
+        $s->recipe_id = 3;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Crack the eggs, one at a time, directly over the tomato mixture, making sure to space them evenly over the sauce. I usually place 5 eggs around the outer edge and 1 in the center. The eggs will cook "over easy" style on top of the tomato sauce.';
+        $s->number = 5;
+        $s->recipe_id = 3;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Cover the pan. Allow mixture to simmer for 10-15 minutes, or until the eggs are cooked and the sauce has slightly reduced. Keep an eye on the skillet to make sure that the sauce doesn\'t reduce too much, which can lead to burning.';
+        $s->number = 6;
+        $s->recipe_id = 3;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Some people prefer their shakshuka eggs more runny. If this is your preference, let the sauce reduce for a few minutes before cracking the eggs on top-- then, cover the pan and cook the eggs to taste. Garnish with the chopped parsley, if desired.';
+        $s->number = 7;
+        $s->recipe_id = 3;
+        $s->save();
+        
     }
+
 }

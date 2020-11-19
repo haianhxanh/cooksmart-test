@@ -1,7 +1,6 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\Book;
 
 use Illuminate\Database\Seeder;
 
@@ -20,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RecipeSeeder::class);
         $this->call(TotalTimeSeeder::class);
         $this->call(StepSeeder::class);
+        $this->call(DietSeeder::class);
     }
 }

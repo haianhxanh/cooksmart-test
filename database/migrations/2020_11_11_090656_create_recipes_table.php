@@ -18,9 +18,11 @@ class CreateRecipesTable extends Migration
             $table->string('name');
             $table->string('description')->nullable();
             $table->unsignedBigInteger('cuisine_id')->nullable();
+            $table->unsignedBigInteger('diet_id')->nullable();
             $table->string('image_url')->nullable();
             $table->string('video_url')->nullable();
             $table->unsignedBigInteger('total_time_id')->nullable();
+            $table->string('source_url')->nullable();
             $table->timestamps();
         });
     }
