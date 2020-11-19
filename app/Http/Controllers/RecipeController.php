@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Recipe;
 use App\Models\Cuisine;
 use App\Models\TotalTime;
+use App\Models\Step;
 
 use Illuminate\Http\Request;
 
@@ -52,6 +53,14 @@ class RecipeController extends Controller
         $recipe->cuisine_id = $cuisine_id;
         $recipe->total_time_id = $time_id;
         $recipe->save();
+
+        foreach($request->input('step') as $i => $step){
+        $s = new Step;
+        $s->recipe_id = $recipe->id;
+        $s->step = $step;
+        $s->number = $i + 1;
+        $s->save();
+        }
         return view('recipes/create', compact('recipe','cuisines', 'times'));
     }
 

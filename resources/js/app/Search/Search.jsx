@@ -52,10 +52,10 @@ function Search() {
                     Time
                 </label>
                 <select className="drop-down" name="time" onChange={selectTime}>
-                    <option>I have nothing but time!</option>
-                    <option value="30 min">30 minutes</option>
-                    <option value="60 min">60 minutes</option>
-                    <option value="90 min">90 minutes</option>
+                    <option value="">I have nothing but time!</option>
+                    <option value="30">30 minutes</option>
+                    <option value="60">60 minutes</option>
+                    <option value="90">90 minutes</option>
                 </select>
 
                 <label className="label" htmlFor="cuisine">
@@ -66,7 +66,7 @@ function Search() {
                     name="cuisine"
                     onChange={selectCuisine}
                 >
-                    <option>Pick the most delicious one!</option>
+                    <option value="">Pick the most delicious one!</option>
                     <option value="Western">Western</option>
                     <option value="Asian">Asian</option>
                     <option value="Fusion">Fusion</option>
@@ -79,7 +79,7 @@ function Search() {
                     Diet
                 </label>
                 <select className="drop-down" name="diet" onChange={selectDiet}>
-                    <option>Suprise me!</option>
+                    <option value="">Suprise me!</option>
                     <option value="Vegetarian">Vegetarian</option>
                     <option value="Pescatarian">Pescatarian</option>
                     <option value="Dairy-free">Dairy-free</option>
