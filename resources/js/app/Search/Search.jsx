@@ -92,6 +92,9 @@ function Search() {
                     recipes.map((recipe) => (
                         <div key={recipe.id}>
                             <h2>{recipe.name}</h2>
+                            <div>
+                                <img style={{ width: '200px' }} src={recipe.image_url} alt={recipe.name}/>
+                            </div>
                         </div>
                     ))
                 }

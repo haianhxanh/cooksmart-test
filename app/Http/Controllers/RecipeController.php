@@ -7,6 +7,7 @@ use App\Models\Recipe;
 use App\Models\Cuisine;
 use App\Models\TotalTime;
 use App\Models\Step;
+use App\Models\Ingredient;
 
 use Illuminate\Http\Request;
 
@@ -27,17 +28,20 @@ class RecipeController extends Controller
     {
         $cuisines = Cuisine::get();
         $times = TotalTime::get();
-        return view('recipes/create', compact('cuisines', 'times'));
+        $ingredients = Ingredient::get();
+        return view('recipes/create', compact('cuisines', 'times', 'ingredients'));
     }
     public function store(Request $request)
     {
         $cuisines = Cuisine::get();
         $times = TotalTime::get();
+        $ingredients = Ingredient::get();
 
         $name = $request->input('name');
         $description = $request->input('description');
         $image = $request->input('image');
         $video = $request->input('video');
+        $source_url = $request->input('source_url');
 
         $input_cuisine_id = $request->input('cuisine_id');
         $cuisine_id = Cuisine::where('id',[$input_cuisine_id])->value('id');
@@ -52,6 +56,7 @@ class RecipeController extends Controller
         $recipe->video_url = $video;
         $recipe->cuisine_id = $cuisine_id;
         $recipe->total_time_id = $time_id;
+        $recipe->source_url = $source_url;
         $recipe->save();
 
         foreach($request->input('step') as $i => $step){
@@ -61,7 +66,7 @@ class RecipeController extends Controller
         $s->number = $i + 1;
         $s->save();
         }
-        return view('recipes/create', compact('recipe','cuisines', 'times'));
+        return view('recipes/create', compact('recipe','cuisines', 'times', 'ingredients'));
     }
 
 
