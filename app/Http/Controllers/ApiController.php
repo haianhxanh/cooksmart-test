@@ -24,6 +24,5 @@ class ApiController extends Controller
         $recipes = Recipe::where('cuisine_id', $cuisine_id)->where('total_time_id', $time_id)->where('diet_id', $diet_id)->get();
 
         return compact('recipes');
-        
     }
 }
