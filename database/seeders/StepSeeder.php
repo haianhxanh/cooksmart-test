@@ -384,7 +384,174 @@ class StepSeeder extends Seeder
         $s->number = 9;
         $s->recipe_id = 8;
         $s->save();
-        
+
+         ////////////////////////////////////////////////////////////////////////////////////////
+        // Steps for Sesame Chicken
+        $s = new Step;
+        $s->step = 'To prepare the chicken breast, first, trim off any excess of fat. Then slice the chicken into 2 cm cubes.';
+        $s->number = 1;
+        $s->recipe_id = 9;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'To marinate the chicken, in a big bowl, add all the marinades, mix well. Then transfer in the chicken pieces. Thoroughly combine. Let it sit for 30 minutes.';
+        $s->number = 2;
+        $s->recipe_id = 9;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'To make the sauce, in a bowl, mix in all the ingredients. Put aside.';
+        $s->number = 3;
+        $s->recipe_id = 9;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'To make the batter, in a large bowl, mix in all the ingredients for the batter. (The purpose of cornstarch is to make it crispy. You could also replace it with potato starch or sweet potato starch.) （The purpose of the baking soda is for the chicken to become airy and puffy.)';
+        $s->number = 4;
+        $s->recipe_id = 9;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Then add the chicken pieces in the batter and mix well.';
+        $s->number = 5;
+        $s->recipe_id = 9;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'To fry the chicken, in a pot, add 4 cups of vegetable oil, or about 7 cm  deep. Heat it up to 177°C. (You can test the oil with your chopsticks. When you put the chopsticks in the pot, and if you see lots of bubbles around it, then the oil is ready.) Transfer in the chicken. Fry over high heat for about 5 minutes until they are golden brown. Take out the chicken and put aside. Skim off any crumbs. Then heat to oil to 191°C. Return the chicken and deep fry for 1 minute until crispy. (Double frying makes the chicken crispier.) Take out the chicken and drain on a paper towel.';
+        $s->number = 6;
+        $s->recipe_id = 9;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'To put everything together, in a pan, pour in the sauce. Heat it up over medium-high heat for 1 minute. Then pour in cornstarch slurry to thicken the sauce. Transfer in the chicken. Stir and coat the chicken with the sauce. Add the scallions.';
+        $s->number = 7;
+        $s->recipe_id = 9;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Enjoy';
+        $s->number = 8;
+        $s->recipe_id = 9;
+        $s->save();
+
+         ////////////////////////////////////////////////////////////////////////////////////////
+        // Steps for Portobello Fajita Bowl
+        $s = new Step;
+        $s->step = 'Slice the stem off of the peppers so that they will stand steadily when flipped upside down. Slice the peppers into quarters from the bottom to the top around the core and seeds. Slice each quarter into 1-inch (2 ½ cm) thick slices. Transfer to a large bowl.';
+        $s->number = 1;
+        $s->recipe_id = 10;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Add ½ teaspoon salt, ¼ teaspoon cumin, ½ teaspoon smoked paprika, 1 teaspoon chili powder, and ½ teaspoon red pepper flakes. Toss to coat the peppers evenly in the spices and set aside.';
+        $s->number = 2;
+        $s->recipe_id = 10;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Remove the stems from the portobello mushrooms and slice into 1-inch-wide (2 cm) pieces, then transfer a large bowl.';
+        $s->number = 3;
+        $s->recipe_id = 10;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Add the remaining 1/2 teaspoon salt, 1/2 teaspoon chili powder, 1/2 teaspoon smoked paprika, 1/4 teaspoon cumin, and 1/2 teaspoon red pepper flakes.  Toss to coat the mushrooms evenly in the spices and set aside.';
+        $s->number = 4;
+        $s->recipe_id = 10;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Thinly slice the onion.';
+        $s->number = 5;
+        $s->recipe_id = 10;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Heat oil in a large cast-iron pan over medium-high heat. Add the onion and cook, stirring occasionally, until translucent, about 3 minutes. Add the garlic and bell peppers, and cook for about 5 more minutes, stirring constantly until peppers are tender. Remove the pepper and onion mixture from the pan and set aside.';
+        $s->number = 6;
+        $s->recipe_id = 10;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Add the mushrooms to the skillet and cook until the mushrooms are tender, stirring constantly, about 5 minutes';
+        $s->number = 7;
+        $s->recipe_id = 10;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Divide the brown rice between 4 food storage containers. Top each container with pico de gallo, black beans, corn, cheddar cheese, the cooked bell peppers and onions, and the sliced portobello. Garnish with an avocado slice, a lime wedge, and cilantro.';
+        $s->number = 8;
+        $s->recipe_id = 10;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Store in the fridge for up to 4 days.  Enjoy!';
+        $s->number = 9;
+        $s->recipe_id = 10;
+        $s->save();
+
+         ////////////////////////////////////////////////////////////////////////////////////////
+        // Steps for Gluten Free Chinese Chicken
+        $s = new Step;
+        $s->step = 'In a small bowl, whisk the honey, gluten free soy sauce, apple cider vinegar, sesame oil and red pepper flakes together, set the bowl aside.';
+        $s->number = 1;
+        $s->recipe_id = 11;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Combine the cornstarch and brown sugar in a shallow bowl or on a rimmed plate.';
+        $s->number = 2;
+        $s->recipe_id = 11;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Place the whisked egg in a separate shallow bowl.';
+        $s->number = 3;
+        $s->recipe_id = 11;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Add the chicken to the egg, then coat it in the cornstarch mixture.';
+        $s->number = 4;
+        $s->recipe_id = 11;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Add the olive oil to a large skillet over medium-high heat.';
+        $s->number = 5;
+        $s->recipe_id = 11;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Add the chili pepper, garlic and coated chicken.';
+        $s->number = 6;
+        $s->recipe_id = 11;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Cook the chicken until slightly brown on all sides.';
+        $s->number = 7;
+        $s->recipe_id = 11;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Pour the honey sauce over the chicken, sauté 2-3 minutes.';
+        $s->number = 8;
+        $s->recipe_id = 11;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Reduce the heat to low, cover the skillet and simmer for 6-8 minutes.';
+        $s->number = 9;
+        $s->recipe_id = 11;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Top with the diced green onions and serve.';
+        $s->number = 10;
+        $s->recipe_id = 11;
+        $s->save();
     }
 
 }
