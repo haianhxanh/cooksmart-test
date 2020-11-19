@@ -8,6 +8,8 @@ use App\Models\Cuisine;
 use App\Models\TotalTime;
 use App\Models\Step;
 use App\Models\Ingredient;
+use App\Models\Quantity;
+use App\Models\Measurement;
 
 use Illuminate\Http\Request;
 
@@ -29,13 +31,17 @@ class RecipeController extends Controller
         $cuisines = Cuisine::get();
         $times = TotalTime::get();
         $ingredients = Ingredient::get();
-        return view('recipes/create', compact('cuisines', 'times', 'ingredients'));
+        $quantities = Quantity::get();
+        $measurements = Measurement::get();
+        return view('recipes/create', compact('cuisines', 'times', 'ingredients', 'quantities', 'measurements'));
     }
     public function store(Request $request)
     {
         $cuisines = Cuisine::get();
         $times = TotalTime::get();
         $ingredients = Ingredient::get();
+        $quantities = Quantity::get();
+        $measurements = Measurement::get();
 
         $name = $request->input('name');
         $description = $request->input('description');
@@ -66,6 +72,11 @@ class RecipeController extends Controller
         $s->number = $i + 1;
         $s->save();
         }
+
+        // intermediate table
+        
+
+
         return view('recipes/create', compact('recipe','cuisines', 'times', 'ingredients'));
     }
 
