@@ -20,6 +20,7 @@ Route::get('/', function () {
     return view('banner/banner');
 });
 
+
 Route::get('/test', 'TestController@test');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -37,3 +38,5 @@ Route::view('/search', 'recipes/search');
 
 // recipe details
 Route::get('/recipes/{id}', 'RecipeController@show');
+
+// Route::view('/{path?}', 'app/App')->where('path', '.*');

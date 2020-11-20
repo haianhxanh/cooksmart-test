@@ -98,53 +98,68 @@ class RecipeController extends Controller
         }
 
         $ingredient_input = $request->input('ingredients'); 
-        for ($a = 0; $a < count($ingredient_input); $a++) {
-            if( is_numeric($ingredient_input) == false ) {
-                $new_ingredient = new Ingredient;
-                $new_ingredient->name = $ingredient_input[$a];
-                $new_ingredient->save();
-            }
-        }
-
         $quantity_input = $request->input('quantities'); 
-        for ($b = 0; $b < count($quantity_input); $b++) {
-            if( is_numeric($quantity_input) == false ) {
-                $new_quantity = new Quantity;
-                $new_quantity->amount = $quantity_input[$b];
-                $new_quantity->save();
-            }
-        }
-
         $measurement_input = $request->input('measurements'); 
-        for ($c = 0; $c < count($measurement_input); $c++) {
-            if( is_numeric($measurement_input) == false ) {
-                $new_measurement = new Measurement;
-                $new_measurement->name = $measurement_input[$c];
-                $new_measurement->save();
-            }
-        }
-  
         $preparation_input = $request->input('preparations');
-        for ($d = 0; $d < count($preparation_input); $d++) {
-            if( is_numeric($preparation_input) == false ) {
-                $new_preparation = new Preparation;
-                $new_preparation->name = $preparation_input[$d];
-                $new_preparation->save();
-            }
+ 
+
+        if(count($ingredient_input) !== count($quantity_input)
+        || count($ingredient_input) !== count($measurement_input) 
+        || count($ingredient_input) !== count($preparation_input)
+        ){
+            return 'ooops we have a problem - we have `not matching` count of inputs!';
         }
 
         // save ingredients-quantities-measurements into intermediate table
         for ($i = 0; $i < count($ingredient_input); $i++) {
+            if(is_numeric($preparation_input[$i])) {
+                $preparation = $preparation_input[$i];
+            } else {
+                $new_preparation = new Preparation;
+                $new_preparation->name = $preparation_input[$i];
+                $new_preparation->save();
+                $preparation = $new_preparation->id;
+            }
+
+            if(is_numeric($ingredient_input[$i])) {
+                $ingredient = $ingredient_input[$i];
+            } else {
+                $new_ingredient = new Ingredient;
+                $new_ingredient->name = $ingredient_input[$i];
+                $new_ingredient->save();
+                $ingredient = $new_ingredient->id;
+            }
+
+            if(Quantity::where('amount', $quantity_input[$i])->count()) {
+                $quantity = $quantity_input[$i];
+            } else {
+                $new_quantity = new Quantity;
+                $new_quantity->amount = $quantity_input[$i];
+                $new_quantity->save();
+                $quantity = $new_quantity->id;
+            }
+
+            if(is_numeric($measurement_input[$i])) {
+                $measurement = $measurement_input[$i];
+            } else {
+                $new_measurement = new Measurement;
+                $new_measurement->name = $measurement_input[$i];
+                $new_measurement->save();
+                $measurement = $new_measurement->id;
+            }
+
+        
+            // same thing as with preparation needs to be done with ingredient, quantity and measurement
             $combo = new IngredientMeasurementPreparationQuantityRecipe;
             $combo->recipe_id = $recipe->id;
-            $combo->ingredient_id = $ingredient_input[$i];
-            $combo->quantity_id = $quantity_input[$i];
-            $combo->measurement_id = $measurement_input[$i];
-            $combo->preparation_id = $preparation_input[$i];
+            $combo->ingredient_id = $ingredient;
+            $combo->quantity_id = $quantity;
+            $combo->measurement_id = $measurement;
+            $combo->preparation_id = $preparation;
             $combo->save();
         }
 
-        return view('recipes/create', compact('recipe','cuisines', 'diets', 'times', 'ingredients', 'quantities', 'measurements', 'preparations'));
+        return redirect(action('RecipeController@create'));
     }
 
 }
