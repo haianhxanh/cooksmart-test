@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import SearchResults from './SearchResults.jsx';
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 function Search() {
     const [cuisine, setCuisine] = useState("");
@@ -29,9 +31,9 @@ function Search() {
         }
     };
 
-    useEffect(() => {
-        searchRecipes();
-    }, [cuisine, time, diet]);
+    // useEffect(() => {
+    //     searchRecipes();
+    // }, [cuisine, time, diet]);
 
     const selectCuisine = e => {
         setCuisine(e.target.value);
@@ -47,7 +49,11 @@ function Search() {
 
     return (
         <div className="search-bar">
-            <form className="form-group" onSubmit={searchRecipes}>
+            <form className="form-group" 
+                onSubmit={(e) => { 
+                    e.preventDefault();
+                    searchRecipes()
+                }}>
                 <label className="label" htmlFor="time">
                     Time
                 </label>
@@ -87,19 +93,9 @@ function Search() {
 
                 <button type="submit">Take me to the delicious recipes</button>
             </form>
-            <div className="results">
-                {
-                    recipes.map((recipe) => (
-                        <div key={recipe.id}>
-                            <h2>{recipe.name}</h2>
-                            <div>
-                                <img style={{ width: '200px' }} src={recipe.image_url} alt={recipe.name}/>
-                                <button><a href="">View details</a></button>
-                            </div>
-                        </div>
-                    ))
-                }
-            </div>
+
+                <SearchResults recipes={recipes}/>
+
         </div>
     );
 }
