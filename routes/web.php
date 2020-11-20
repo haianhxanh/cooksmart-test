@@ -34,3 +34,6 @@ Route::get('/recipes', 'RecipeController@index');
 Route::get('api/recipes', 'ApiController@recipes');
 
 Route::view('/search', 'recipes/search');
+
+// recipe details
+Route::get('/recipes/{id}', 'RecipeController@show');
