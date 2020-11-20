@@ -13,7 +13,7 @@ use App\Models\Group;
 use App\Models\Quantity;
 use App\Models\Measurement;
 use App\Models\Preparation;
-use App\Models\IngredientPreparationQuantityRecipe;
+use App\Models\IngredientMeasurementPreparationQuantityRecipe;
 
 use Illuminate\Http\Request;
 
@@ -23,11 +23,15 @@ class RecipeController extends Controller
     {
         $recipes = Recipe::get();
         $cuisine_id = Recipe::where('cuisine_id')->get();
-
-        dd($cuisine_id);
         $cuisine_name = Cuisine::where($cuisine_id, 'id');
         
         return view('recipes/index', compact('recipes'));
+    }
+
+    public function show($id)
+    {
+        $recipe = Recipe::findOrFail($id);
+        return view('recipes/details', compact('recipe'));
     }
 
     public function create()
@@ -131,10 +135,11 @@ class RecipeController extends Controller
 
         // save ingredients-quantities-measurements into intermediate table
         for ($i = 0; $i < count($ingredient_input); $i++) {
-            $combo = new IngredientPreparationQuantityRecipe;
+            $combo = new IngredientMeasurementPreparationQuantityRecipe;
             $combo->recipe_id = $recipe->id;
             $combo->ingredient_id = $ingredient_input[$i];
             $combo->quantity_id = $quantity_input[$i];
+            $combo->measurement_id = $measurement_input[$i];
             $combo->preparation_id = $preparation_input[$i];
             $combo->save();
         }

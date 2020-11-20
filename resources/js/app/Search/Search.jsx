@@ -94,6 +94,7 @@ function Search() {
                             <h2>{recipe.name}</h2>
                             <div>
                                 <img style={{ width: '200px' }} src={recipe.image_url} alt={recipe.name}/>
+                                <button><a href="">View details</a></button>
                             </div>
                         </div>
                     ))

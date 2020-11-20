@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateIngredientPreparationQuantityRecipesTable extends Migration
+class CreateIngredientMeasurementPreparationQuantityRecipesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateIngredientPreparationQuantityRecipesTable extends Migration
      */
     public function up()
     {
-        Schema::create('ingredient_preparation_quantity_recipes', function (Blueprint $table) {
+        Schema::create('ingredient_measurement_preparation_quantity_recipes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('recipe_id');
             $table->unsignedBigInteger('ingredient_id');
             $table->unsignedBigInteger('quantity_id')->nullable();
+            $table->unsignedBigInteger('measurement_id')->nullable();
             $table->unsignedBigInteger('preparation_id')->nullable();
             $table->timestamps();
         });
@@ -30,6 +31,6 @@ class CreateIngredientPreparationQuantityRecipesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ingredient_preparation_quantity_recipes');
+        Schema::dropIfExists('ingredient_measurement_preparation_quantity_recipes');
     }
 }
