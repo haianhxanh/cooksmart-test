@@ -34,21 +34,22 @@ class ApiController extends Controller
         $recipes = Recipe::query();
 
         if($cuisine_input !== null){
-        	$cuisine_id = Cuisine::where('name', $cuisine_input)->value('id'); // 1
+            $cuisine_id = Cuisine::where('name', $cuisine_input)->value('id'); // 1
+            // dd($cuisine_id);
         	$recipes->where('cuisine_id', $cuisine_id);
         }
 
         if($time_input !== null){
-        	$time_id = Cuisine::where('name', $time_input)->value('id'); // 1
+        	$time_id = TotalTime::where('time', $time_input)->value('id'); // 1
         	$recipes->where('total_time_id', $time_id);
         }
 
         if($diet_input !== null){
-        	$diet_id = Cuisine::where('name', $diet_input)->value('id'); // 1
+        	$diet_id = Diet::where('name', $diet_input)->value('id'); // 1
         	$recipes->where('diet_id', $diet_id);
         }
 
         $recipes = $recipes->get();
-        return $request->all();
+        return compact('recipes');
     }
 }
