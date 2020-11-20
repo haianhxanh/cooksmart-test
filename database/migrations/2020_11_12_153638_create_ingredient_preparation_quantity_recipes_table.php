@@ -17,8 +17,8 @@ class CreateIngredientPreparationQuantityRecipesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('recipe_id');
             $table->unsignedBigInteger('ingredient_id');
-            $table->unsignedBigInteger('quantity_id');
-            $table->unsignedBigInteger('preparation_id');
+            $table->unsignedBigInteger('quantity_id')->nullable();
+            $table->unsignedBigInteger('preparation_id')->nullable();
             $table->timestamps();
         });
     }

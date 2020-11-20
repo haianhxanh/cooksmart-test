@@ -1,6 +1,5 @@
 @extends('layouts.main')
 
-
 @section('content')
 <form method="post" class="form-group" action="{{action('RecipeController@store')}}">
     @csrf
@@ -22,6 +21,16 @@
         </label>
     </div>
 
+    <div class="form-group__item">
+        <label for="diet_id" class="form-group__label">Diet
+            <select name="diet_id" id="" class="form-group__select">
+                <option value="{{ null }}" class="form-group__option">No specific diet</option>
+                @foreach ($diets as $d)
+                    <option value="{{ $d->id }}" class="form-group__option">{{ $d->name }}</option>
+                @endforeach
+            </select>   
+        </label>
+    </div>
 
     <div class="form-group__item"> 
         <label for="total_time_id" class="form-group__label">Total time
@@ -65,15 +74,16 @@
 
        <div class="ingredient-list">
             <div>
-                <label for="ingredients" class="form-group__label">Pick Ingredients
+                <label for="ingredients" class="form-group__label">Ingredient
                     <select class="js-example-basic-multiple" name="ingredients[]">
                         @foreach ($ingredients as $i)        
                             <option value="{{ $i->id }}">{{ $i->name }}</option>
                         @endforeach
                      </select>
                 </label>
+
         
-                <label for="ingredients" class="form-group__label">Pick Quantity
+                <label for="ingredients" class="form-group__label">Quantity
                     <select class="js-example-basic-multiple" name="quantities[]">
                         @foreach ($quantities as $q)        
                             <option value="{{ $q->id }}">{{ $q->amount }}</option>
@@ -81,13 +91,24 @@
                      </select>
                 </label>
         
-                <label for="ingredients" class="form-group__label">Pick measurements
+                <label for="ingredients" class="form-group__label">Measurement
                     <select class="js-example-basic-multiple" name="measurements[]">
+                        <option value="{{ null }}" class="form-group__option">no measurement</option>
                         @foreach ($measurements as $m)        
                             <option value="{{ $m->id }}">{{ $m->name }}</option>
                         @endforeach
                      </select>
                 </label>
+
+                <label for="preparations" class="form-group__label">Preparation
+                    <select class="js-example-basic-multiple" name="preparations[]">
+                        <option value="{{ null }}" class="form-group__option">no specific preparation</option>
+                        @foreach ($preparations as $p)        
+                            <option value="{{ $p->id }}">{{ $p->name }}</option>
+                        @endforeach
+                     </select>
+                </label>
+
             </div>
 
        </div>
@@ -134,28 +155,40 @@
         const ingredient = document.querySelector('.ingredient-list');
         const input = document.createElement('div');
         input.innerHTML = `
-        <label for="ingredients" class="form-group__label">Pick Ingredients
+        <label for="ingredients" class="form-group__label">Ingredient
             <select class="js-example-basic-multiple" name="ingredients[]">
                 @foreach ($ingredients as $i)        
                     <option value="{{ $i->id }}">{{ $i->name }}</option>
                 @endforeach
             </select>
         </label>
+
         
-        <label for="ingredients" class="form-group__label">Pick Quantity
+        <label for="ingredients" class="form-group__label">Quantity
             <select class="js-example-basic-multiple" name="quantities[]">
                 @foreach ($quantities as $q)        
                     <option value="{{ $q->id }}">{{ $q->amount }}</option>
                 @endforeach
-                </select>
+            </select>
         </label>
         
-        <label for="ingredients" class="form-group__label">Pick measurements
+        <label for="ingredients" class="form-group__label">Measurement
             <select class="js-example-basic-multiple" name="measurements[]">
+                <option value="" class="form-group__option">no measurement</option>
                 @foreach ($measurements as $m)        
                     <option value="{{ $m->id }}">{{ $m->name }}</option>
                 @endforeach
-                </select>
+            </select>
+        </label>
+
+
+        <label for="preparations" class="form-group__label">Preparation
+            <select class="js-example-basic-multiple" name="preparations[]">
+                    <option value="" class="form-group__option">no specific preparation</option>
+                @foreach ($preparations as $p)        
+                    <option value="{{ $p->id }}">{{ $p->name }}</option>
+                @endforeach
+            </select>
         </label>
         
         `
