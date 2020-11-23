@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from '../Banner/Banner.jsx';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 import Search from '../Search/Search.jsx';
 
 
