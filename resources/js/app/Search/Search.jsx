@@ -63,7 +63,7 @@ function Search() {
         <div className="container">
             <div className="search-bar">
                 <h1 className="title">Find a Recipe</h1>
-                <form className="form-group" 
+                <form className="search-form" 
                     onSubmit={(e) => { 
                         e.preventDefault();
                         setRecipes([]);

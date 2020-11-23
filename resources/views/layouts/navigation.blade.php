@@ -1,8 +1,10 @@
-@extends('layouts.main')
+<head>
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+</head>
 
-@section('nav')
-    <div className="nav">
+    <div class="nav">
         <img src="https://www.dropbox.com/s/1znnm2hkyaw6w7d/logo-large.png?raw=1" height="30px" />
-    </div>
+        <a href="/" >Home </a>
+        <a href="/search">Search </a>
 
-@endsection
+    </div>
