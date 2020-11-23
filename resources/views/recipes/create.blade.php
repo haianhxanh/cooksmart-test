@@ -3,10 +3,10 @@
 @section('content')
 <form method="post" class="form-group" action="{{action('RecipeController@store')}}">
     @csrf
-
+    <h1 class="form-heading">Create your recipe</h1>
     <div class="form-group__item">
         <label for="name" class="form-group__label">Recipe name
-            <input type="text" name="name">
+            <input type="text" name="name" class="form-input">
         </label>
     </div>
 
@@ -52,20 +52,20 @@
 
     <div class="form-group__item">
         <label for="image" class="form-group__label">Photo:
-            <input id="image" type="text" name="image" value="Insert link to image"/>
+            <input id="image" type="text" name="image" value="Insert link to image" class="form-input"/>
         </label>
     </div>
 
 
     <div class="form-group__item">
         <label for="video" class="form-group__label">Video:
-            <input id="video" type="text" name="video" value="Insert link to video"/>
+            <input id="video" type="text" name="video" value="Insert link to video" class="form-input"/>
         </label>
     </div>
 
     <div class="form-group__item">
         <label for="source_url" class="form-group__label">Source URL
-            <input type="text" id="source_url" name="source_url" value="Insert source of the recipe"/>
+            <input type="text" id="source_url" name="source_url" value="Insert source of the recipe" class="form-input"/>
         </label>
     </div>
 
@@ -73,11 +73,11 @@
     <div class="form-group__item">
 
        <div class="ingredient-list">
-            <div>
+            <div class="ingredient-list-items">
                 <label for="ingredients" class="form-group__label">Ingredient
                     <select class="js-example-basic-multiple" name="ingredients[]">
                         @foreach ($ingredients as $i)        
-                            <option value="{{ $i->id }}">{{ $i->name }}</option>
+                            <option class="form-group__option" value="{{ $i->id }}">{{ $i->name }}</option>
                         @endforeach
                      </select>
                 </label>
@@ -86,7 +86,7 @@
                 <label for="ingredients" class="form-group__label">Quantity
                     <select class="js-example-basic-multiple" name="quantities[]">
                         @foreach ($quantities as $q)        
-                            <option value="{{ $q->id }}">{{ $q->amount }}</option>
+                            <option class="form-group__option" value="{{ $q->id }}">{{ $q->amount }}</option>
                         @endforeach
                      </select>
                 </label>
@@ -124,12 +124,12 @@
             <div class="steps">
                 <textarea name="step[]" id="" cols="30" rows="5" class="form-group__textarea"></textarea>
             </div>
-            <button type="button" id="step-btn">+</button>
+            <button type="button" id="step-btn" class="ingredient-list-btn">+</button>
         </label>
     </div>
 
 
-    <button type="submit">Add your recipe!!</button>
+    <button type="submit" class="btn-submit">Add your recipe!!</button>
 </form>
 
 
@@ -147,6 +147,7 @@
         input.name = 'step[]';
         input.rows = '5';
         input.cols = '30';
+        input.className = "form-group__textarea";
         steps.appendChild(input);
     })
 
