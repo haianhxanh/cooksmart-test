@@ -31,7 +31,40 @@ class RecipeController extends Controller
     public function show($id)
     {
         $recipe = Recipe::findOrFail($id);
-        return view('recipes/details', compact('recipe'));
+
+        $recipe_id = Recipe::where('id', $id)->value('id');
+        $combo = IngredientMeasurementPreparationQuantityRecipe::where('recipe_id', $id)->get();
+        // dd($combo);
+        $steps = Step::where('recipe_id', $recipe_id)->get('step');
+
+        $time_id = Recipe::where('id', $id)->value('total_time_id');
+        $time = TotalTime::where('id', $time_id)->value('time');
+        $cuisine_id = Recipe::where('id', $id)->value('cuisine_id');
+        $cuisine = Cuisine::where('id', $cuisine_id)->value('name');
+        $diet_id = Recipe::where('id', $id)->value('diet_id');
+        $diet = Diet::where('id', $diet_id)->value('name');
+        
+
+        $ingredient_id = IngredientMeasurementPreparationQuantityRecipe::where('recipe_id', $recipe_id)->pluck('ingredient_id');
+        $quantity_id = IngredientMeasurementPreparationQuantityRecipe::where('recipe_id', $recipe_id)->pluck('quantity_id');
+        $measurement_id = IngredientMeasurementPreparationQuantityRecipe::where('recipe_id', $recipe_id)->pluck('measurement_id');
+        $preparation_id = IngredientMeasurementPreparationQuantityRecipe::where('recipe_id', $recipe_id)->pluck('preparation_id');
+
+
+        for ($i = 0; $i < count($combo); $i++) {
+            $ingredient[$i] = Ingredient::where('id', $ingredient_id[$i])->value('name');
+            $quantity[$i] = Quantity::where('id', $quantity_id[$i])->value('amount');
+            $measurement[$i] = Measurement::where('id', $measurement_id[$i])->value('name');
+            $preparation[$i] = Preparation::where('id', $preparation_id[$i])->value('name');
+        }
+
+        // $ingredients = $ingredient;
+        // $quantities = $quantity;
+        // $measurements = $measurement;
+        // $preparations = $preparation;
+        // dd($ingredients);
+        
+        return view('recipes/details', compact('recipe', 'steps', 'ingredient', 'quantity', 'measurement', 'preparation', 'combo', 'time', 'cuisine', 'diet'));
     }
 
     public function create()
