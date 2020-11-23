@@ -8,5 +8,4 @@
  <script src="{{ mix('js/search.js') }}" >
 </script>
 
-
 @endsection
