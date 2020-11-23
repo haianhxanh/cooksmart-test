@@ -10,8 +10,8 @@ function Search() {
     const [recipes, setRecipes] = useState([]);
 
   
-    const [searchValue, setSearchValue] = useState();
-    const [searchResults, setSearchResults] = useState([]);
+    // const [searchValue, setSearchValue] = useState();
+    // const [searchResults, setSearchResults] = useState([]);
     const [page, setPage] = useState(0);
     const [hasMore, setHasMore] = useState(true);
 
@@ -124,9 +124,8 @@ function Search() {
                     <SearchResults recipes={recipes}/>
                     
                     {
-                        hasMore === true && (
-                            <button style={{marginBottom: 0}} onClick={() => setPage(page + 1)}>Find more</button>
-                        )
+                        hasMore === true ? 
+                        <button style={{marginBottom: 0, display: "block", textAlign: "center"}} onClick={() => setPage(page + 1)}>Find more</button> : ''
                     }
 
             </div>

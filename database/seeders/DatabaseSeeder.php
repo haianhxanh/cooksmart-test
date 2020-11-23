@@ -20,6 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(TotalTimeSeeder::class);
         $this->call(StepSeeder::class);
         $this->call(DietSeeder::class);
-        // $this->call(IngredientMeasurementPreparationQuantityRecipe::class);
+        $this->call(IngredientMeasurementPreparationQuantityRecipeSeeder::class);
     }
 }
