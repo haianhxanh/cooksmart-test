@@ -16,6 +16,7 @@ class ApiController extends Controller
         $cuisine_input = $request->input('cuisine', null); //asian
         $time_input = $request->input('time', null); 
         $diet_input = $request->input('diet', null); 
+        $page = $request->input('page', 0);
 
         $recipes = Recipe::query();
 
@@ -35,7 +36,7 @@ class ApiController extends Controller
         	$recipes->where('diet_id', $diet_id);
         }
 
-        $recipes = $recipes->get();
+        $recipes = $recipes->offset(4 * $page)->limit(4)->orderBy('id', 'desc')->get();
         return compact('recipes');
     }
 }

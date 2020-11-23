@@ -36,7 +36,13 @@ Route::get('api/recipes', 'ApiController@recipes');
 
 Route::view('/search', 'recipes/search');
 
+
 // recipe details
 Route::get('/recipes/{id}', 'RecipeController@show');
 
+// Edit
+Route::get('/recipes/{id}/edit', 'RecipeController@edit');
+Route::put('/recipes/{id}', 'RecipeController@update');
+
 // Route::view('/{path?}', 'app/App')->where('path', '.*');
+

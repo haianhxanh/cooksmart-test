@@ -1,4 +1,10 @@
-<h1>HELLO FROM RECIPE</h1>
+@extends('layouts.main')
+@section('content')
+<h1>List of Recipes</h1>
+
+    @if (Session::has('recipe_success_message'))
+    <div class=“alert alert--success”>{{ Session::get('recipe_success_message') }}</div>
+    @endif
 
     @foreach ($recipes as $r)
     <h1>{{ $r->name }}</h1>
@@ -11,3 +17,4 @@
 
     <img src="{{ $r->image_url }}" alt="">
     @endforeach
+@endsection

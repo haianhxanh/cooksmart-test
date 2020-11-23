@@ -7,9 +7,9 @@ $White: #ffffff;
 $canary: #fffd98ff;
 //FORM
 
-html {
-    background-color: $canary;
-}
+// html {
+//     background-color: $canary;
+// }
 
 .form-heading {
     text-align: center;
@@ -43,7 +43,7 @@ html {
 
 .form-group__select {
     // background: $NaturalYellow;
-    color: $White;
+    // color: $White;
     font-weight: 600;
     line-height: 40px;
     border: 3px solid $NaturalYellow;
@@ -51,7 +51,7 @@ html {
 
 .form-input {
     border: 3px solid $NaturalYellow;
-    color: #fff;
+    // color: #fff;
     font-family: "PT Sans Caption", sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -64,7 +64,7 @@ html {
 
 .form-group__textarea {
     border: 3px solid $NaturalYellow;
-    color: $White;
+    // color: $White;
     font-weight: 600;
 }
 

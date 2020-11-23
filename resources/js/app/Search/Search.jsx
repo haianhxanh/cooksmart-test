@@ -9,6 +9,12 @@ function Search() {
     const [diet, setDiet] = useState("");
     const [recipes, setRecipes] = useState([]);
 
+  
+    // const [searchValue, setSearchValue] = useState();
+    // const [searchResults, setSearchResults] = useState([]);
+    const [page, setPage] = useState(0);
+    const [hasMore, setHasMore] = useState(true);
+
     const url = "http://www.cooksmart.test/api/recipes";
 
     const searchRecipes = async () => {
@@ -22,19 +28,24 @@ function Search() {
         if (diet) {
             url_with_params += "&diet=" + encodeURIComponent(diet);
         }
+        if (page > 0) {
+            url_with_params += "&page=" + encodeURIComponent(page);
+        }
         try {
             const response = await fetch(url_with_params);
             const data = await response.json();
             console.log(data);
-            setRecipes(data.recipes);
+            
+            setHasMore(data.recipes.length === 4);
+            setRecipes(recipes => recipes.concat(data.recipes));
         } catch (error) {
             console.log(error);
         }
     };
 
-    // useEffect(() => {
-    //     searchRecipes();
-    // }, [cuisine, time, diet]);
+    useEffect(() => {
+        searchRecipes();
+    }, [page]);
 
     const selectCuisine = e => {
         setCuisine(e.target.value);
@@ -55,6 +66,8 @@ function Search() {
                 <form className="form-group" 
                     onSubmit={(e) => { 
                         e.preventDefault();
+                        setRecipes([]);
+                        setPage(0);
                         searchRecipes()
                     }}>
                     <span className="category">
@@ -109,6 +122,11 @@ function Search() {
                 </form>
 
                     <SearchResults recipes={recipes}/>
+                    
+                    {
+                        hasMore === true ? 
+                        <button style={{marginBottom: 0, display: "block", textAlign: "center"}} onClick={() => setPage(page + 1)}>Find more</button> : ''
+                    }
 
             </div>
         </div>

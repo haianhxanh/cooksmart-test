@@ -21,7 +21,7 @@ class RecipeController extends Controller
 {
     public function index()
     {
-        $recipes = Recipe::get();
+        $recipes = Recipe::orderBy('id', 'desc')->get();
         $cuisine_id = Recipe::where('cuisine_id')->get();
         $cuisine_name = Cuisine::where($cuisine_id, 'id');
         
@@ -191,8 +191,65 @@ class RecipeController extends Controller
             $combo->preparation_id = $preparation;
             $combo->save();
         }
+        // flash the success message
+        session()->flash('recipe_success_message', 'Your recipe has been successfully added');
+        return redirect(action('RecipeController@index'));
+    }
 
-        return redirect(action('RecipeController@create'));
+    public function edit($id) // 1
+    {
+        $recipe = Recipe::findOrFail($id);
+
+        $cuisines = Cuisine::get();
+        $diets = Diet::get();
+        $times = TotalTime::get();
+        $ingredients = Ingredient::get();
+        $quantities = Quantity::get();
+        $measurements = Measurement::get();
+        $preparations = Preparation::get();
+        $steps = Step::get();
+        
+        $cuisine_id = Recipe::where('id', $id)->value('cuisine_id'); // 2
+        $cuisine_of_selected_recipe = Cuisine::where('id', $cuisine_id)->value('name');
+
+        $diet_id = Recipe::where('id', $id)->value('diet_id');
+        $diet_of_selected_recipe = Diet::where('id', $diet_id)->value('name');
+        // dd($diet_of_selected_recipe);
+
+        $time_id = Recipe::where('id', $id)->value('total_time_id');
+        $time_of_selected_recipe = TotalTime::where('id', $time_id)->value('time');
+
+        // $steps = Step::where('recipe_id', $id)->pluck('step');
+        // // dd($steps);
+
+        // dd($cuisine_of_selected_recipe);
+        return view('recipes/edit', compact('recipe', 'cuisines', 'cuisine_of_selected_recipe', 'diets', 'diet_of_selected_recipe', 'times', 'time_of_selected_recipe', 'quantities', 'measurements', 'preparations', 'ingredients' ));
+    }
+
+    public function update(Request $request, $id) 
+    {   
+        $recipe = Recipe::findOrFail($id);
+        $cuisine_input = $request->input('cuisine_id');
+        $diet_input = $request->input('diet_id');
+        $time_input = $request->input('total_time_id');
+
+        // foreach($request->input('step') as $i => $step){
+        //     $s = new Step;
+        //     $s->recipe_id = $recipe->id;
+        //     $s->step = $step;
+        //     $s->number = $i + 1;
+        //     $s->save();
+        // }
+
+        $recipe->cuisine_id = $cuisine_input;
+        $recipe->diet_id = $diet_input;
+        $recipe->total_time_id = $time_input;
+        $recipe->save();
+
+
+        // flash the success message
+        session()->flash('update_success_message', 'Your recipe has been successfully updated');
+        return redirect(action('RecipeController@show', [$recipe->id]));
     }
 
 }

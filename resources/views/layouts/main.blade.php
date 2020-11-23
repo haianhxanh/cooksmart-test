@@ -16,7 +16,7 @@
     <title>Cook Smart</title>
 </head>
 <body>
-    
+    @yield('navigation')
     @yield('content')
     
 </body>
