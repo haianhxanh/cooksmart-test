@@ -1,3 +1,222 @@
+.single-recipe {
+  padding: 5% 10%;
+}
+.single-recipe h2 {
+  text-align: center;
+}
+
+.single-recipe__intro {
+  margin: 5%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.2rem;
+}
+.single-recipe__intro h3 {
+  text-align: center;
+}
+
+.info__time {
+  height: 50px;
+  background-image: url("https://www.dropbox.com/s/9ik07gru886kb1y/time.svg?raw=1");
+  background-size: 50px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+.info__time p {
+  margin-left: 60px;
+}
+
+.info__cuisine {
+  height: 50px;
+  background-image: url("https://www.dropbox.com/s/ixzcamugskofpzs/cuisine.svg?raw=1");
+  background-size: 50px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+.info__cuisine p {
+  margin-left: 60px;
+}
+
+.info__diet {
+  height: 50px;
+  background-image: url("https://www.dropbox.com/s/f2rdg4lyp8n2wa2/diet.svg?raw=1");
+  background-size: 50px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+.info__diet p {
+  margin-left: 60px;
+}
+
+.single-recipe__description {
+  text-align: center;
+}
+.single-recipe__description q {
+  font-size: 1.2rem;
+}
+
+.single-recipe__image {
+  width: 45%;
+}
+.single-recipe__image img {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+  transition: all 0.45s;
+}
+.single-recipe__image img:hover {
+  transform: scale(2);
+  margin-right: 40%;
+}
+
+.single-recipe-body {
+  display: flex;
+  text-align: justify;
+}
+.single-recipe-body h4 {
+  text-align: center;
+}
+.single-recipe-body .single-recipe__ingredients {
+  width: 40%;
+  padding: 3% 5%;
+  background-image: url("https://www.dropbox.com/s/cdvh00sjvu731rk/note.svg?raw=1");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.single-recipe-body .single-recipe__steps {
+  width: 55%;
+  padding: 3%;
+}
+
+.single-recipe__media {
+  margin-top: 5%;
+}
+
+.single-recipe__video iframe {
+  display: block;
+  margin: 0 auto;
+}
+
+html {
+  background-color: #fffd98ff;
+}
+
+.form-heading {
+  text-align: center;
+  border-bottom: 2px solid #fffd98ff;
+  color: #ffffff;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 80vw;
+  margin: 40px auto;
+  border: 1px solid black;
+  background-color: #164a41;
+}
+
+.form-group__item {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 0 50px 0;
+}
+
+.form-group__label {
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 40px;
+  border-bottom: #164a41 2px solid;
+  font-size: 1rem;
+}
+
+.form-group__select {
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 40px;
+  border: 3px solid #f1b24a;
+}
+
+.form-input {
+  border: 3px solid #f1b24a;
+  color: #fff;
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  height: 40px;
+  margin: 0;
+  padding: 0 10px;
+  width: 240px;
+  vertical-align: middle;
+}
+
+.form-group__textarea {
+  border: 3px solid #f1b24a;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.ingredient-list {
+  margin-left: 1rem;
+}
+
+.select2-selection__rendered {
+  font-weight: 600;
+  line-height: 40px;
+}
+
+.ingredient-list-btn {
+  margin: 0 auto;
+  width: 50px;
+  height: 20px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid black;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.ingredient-list-btn:hover {
+  background-color: #cae265;
+  box-shadow: 0px 15px 20px rgba(202, 226, 101, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.btn-submit {
+  margin-left: 47%;
+  margin-bottom: 20px;
+  width: 100px;
+  height: 50px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid black;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn-submit:hover {
+  background-color: #cae265;
+  box-shadow: 0px 15px 20px rgba(202, 226, 101, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
 * {
   font-family: "Quicksand", sans-serif;
 }
