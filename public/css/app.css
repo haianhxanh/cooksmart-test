@@ -128,7 +128,6 @@
 }
 
 .form-group__select {
-  color: #ffffff;
   font-weight: 600;
   line-height: 40px;
   border: 3px solid #f1b24a;
@@ -136,7 +135,6 @@
 
 .form-input {
   border: 3px solid #f1b24a;
-  color: #fff;
   font-family: "PT Sans Caption", sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -149,7 +147,6 @@
 
 .form-group__textarea {
   border: 3px solid #f1b24a;
-  color: #ffffff;
   font-weight: 600;
 }
 
