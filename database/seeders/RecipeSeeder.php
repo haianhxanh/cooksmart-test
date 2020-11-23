@@ -86,8 +86,8 @@ class RecipeSeeder extends Seeder
         $r->save();
 
         $r = new Recipe;
-        $r->name = 'Made with a flaky, buttery crust and filled with a delicious cheesy filling, these homemade empanadas are incredibly good! Plus, they’re portable and freezer-friendly!';
-        $r->description = 'A great meal that can feed 8 people';
+        $r->name = 'Ham Cheese and Onion Empanadas';
+        $r->description = 'Made with a flaky, buttery crust and filled with a delicious cheesy filling, these homemade empanadas are incredibly good! Plus, they’re portable and freezer-friendly!';
         $r->cuisine_id = 6;
         $r->image_url = 'https://assets.bonappetit.com/photos/5d923d42c5d4ea0008b45ea5/16:9/w_2560%2Cc_limit/1019-Ham-Empenadas-2.jpg';
         $r->video_url ='https://www.youtube.com/embed/fv-mwCCBqAs';

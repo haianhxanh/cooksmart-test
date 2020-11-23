@@ -36,7 +36,7 @@ class ApiController extends Controller
         	$recipes->where('diet_id', $diet_id);
         }
 
-        $recipes = $recipes->offset(4 * $page)->limit(4)->get();
+        $recipes = $recipes->offset(4 * $page)->limit(4)->orderBy('id', 'desc')->get();
         return compact('recipes');
     }
 }
