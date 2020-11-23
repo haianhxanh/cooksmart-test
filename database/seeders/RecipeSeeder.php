@@ -38,7 +38,7 @@ class RecipeSeeder extends Seeder
         $r = new Recipe;
         $r->name = 'Shakshuka';
         $r->description = 'Harissa adds warmth and a ray of much-needed sunshine to my twist on a Middle-Eastern classic. Plus it’s a one-pan wonder, which always makes me happy.';
-        $r->cuisine_id = 6;
+        $r->cuisine_id = 4;
         $r->diet_id = 1;
         $r->image_url = 'https://www.homecookingadventure.com/images/recipes/shakshuka_mainimage.jpg';
         $r->video_url ='https://www.youtube.com/embed/618QsMaVXp8';
@@ -49,7 +49,7 @@ class RecipeSeeder extends Seeder
         $r = new Recipe;
         $r->name = 'Colombian Chicken Stew';
         $r->description = 'People who live or who have lived in Colombia know very well that any type of stew is welcome at any time of day and place. Stews are the type of food that we eat the most in Colombia, especially at lunch time and we always serve them with a side of white rice and avocado. Every now and then we also serve it with a side salad but that’s only to not feel bad for the amount of potatoes and cassava that it has.';
-        $r->cuisine_id = 4;
+        $r->cuisine_id = 6;
         $r->image_url = 'https://3.bp.blogspot.com/-_05ayhZHwvA/UXR-L4wUmHI/AAAAAAAAAtc/PG8o-sWZq10/s1600/SudadoDePolloSyS4.jpg';
         $r->video_url ='https://www.youtube.com/embed/FtSgLr9kXiA&list=PL7tJ8ouvevOFsq2AtU-x_sTBg3TUAuoJ9&index=23';
         $r->total_time_id = 2;
