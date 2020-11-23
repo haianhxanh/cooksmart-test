@@ -1,5 +1,4 @@
 @extends('layouts.main')
-@extends('layouts.navigation')
 
 @section('content')
 
@@ -8,6 +7,5 @@
  
  <script src="{{ mix('js/search.js') }}" >
 </script>
-
 
 @endsection

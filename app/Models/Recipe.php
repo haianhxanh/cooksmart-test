@@ -16,6 +16,11 @@ class Recipe extends Model
         return $this->hasMany(Step::class);
     }
 
+
+    public function ingredientMeasurementPreparationQuantities(){
+        return $this->hasMany(IngredientMeasurementPreparationQuantityRecipe::class);
+    }
+
     public function ingredients() {
         return $this->belongsToMany(Ingredient::class, 'ingredient_preparation_quantity_recipes');
     }

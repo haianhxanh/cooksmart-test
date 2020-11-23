@@ -78,36 +78,44 @@ action="{{action('RecipeController@update', $recipe->id)}}"
     <div class="form-group__item">
 
        <div class="ingredient-list">
+         @foreach($recipe->ingredientMeasurementPreparationQuantities as $combo)
             <div class="ingredient-list-items">
                 <label for="ingredients" class="form-group__label">Ingredient
                     <select class="js-example-basic-multiple" name="ingredients[]">
-               
+                      @foreach($ingredients as $i)
+                      <option value="{{ $i->id }}" {{ $i->id == $combo->ingredient_id ? 'selected' : ''}}>{{ $i->name }}</option>
+                      @endforeach
                      </select>
                 </label>
-
         
                 <label for="ingredients" class="form-group__label">Quantity
                     <select class="js-example-basic-multiple" name="quantities[]">
-                 
+                      @foreach($quantities as $q)
+                        <option value="{{ $q->id }}" {{ $q->id == $combo->quantity_id ? 'selected' : ''}}>{{ $q->amount }}</option>
+                      @endforeach
                      </select>
                 </label>
         
                 <label for="ingredients" class="form-group__label">Measurement
                     <select class="js-example-basic-multiple" name="measurements[]">
                         <option value="" class="form-group__option">no measurement</option>
-                    
+                        @foreach($measurements as $m)
+                        <option value="{{ $m->id }}" {{ $m->id == $combo->measurement_id ? 'selected' : ''}}>{{ $m->name }}</option>
+                        @endforeach
                      </select>
                 </label>
 
                 <label for="preparations" class="form-group__label">Preparation
                     <select class="js-example-basic-multiple" name="preparations[]">
                         <option value="" class="form-group__option">no specific preparation</option>
-                 
+                        @foreach($preparations as $p)
+                        <option value="{{ $p->id }}" {{ $p->id == $combo->preparation_id ? 'selected' : ''}}>{{ $p->name }}</option>
+                        @endforeach
                      </select>
                 </label>
 
             </div>
-
+          @endforeach
        </div>
 
        <button type="button" class="ingredient-list-btn">+</button>
@@ -119,9 +127,7 @@ action="{{action('RecipeController@update', $recipe->id)}}"
     <div class="form-group__item">
         <label for="step" class="form-group__label">Steps
             <div class="steps">
-              @foreach ($steps as $step)
-              <textarea name="step[]" id="" cols="30" rows="5" class="form-group__textarea">{{ $step->step }}</textarea>
-              @endforeach
+           
  
             </div>
             <button type="button" id="step-btn" class="ingredient-list-btn">+</button>

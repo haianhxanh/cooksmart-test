@@ -207,6 +207,7 @@ class RecipeController extends Controller
         $quantities = Quantity::get();
         $measurements = Measurement::get();
         $preparations = Preparation::get();
+        $steps = Step::get();
         
         $cuisine_id = Recipe::where('id', $id)->value('cuisine_id'); // 2
         $cuisine_of_selected_recipe = Cuisine::where('id', $cuisine_id)->value('name');
@@ -218,11 +219,11 @@ class RecipeController extends Controller
         $time_id = Recipe::where('id', $id)->value('total_time_id');
         $time_of_selected_recipe = TotalTime::where('id', $time_id)->value('time');
 
-        $steps = Step::where('recipe_id', $id)->pluck('step');
-        // dd($steps);
+        // $steps = Step::where('recipe_id', $id)->pluck('step');
+        // // dd($steps);
 
         // dd($cuisine_of_selected_recipe);
-        return view('recipes/edit', compact('recipe', 'cuisines', 'cuisine_of_selected_recipe', 'diets', 'diet_of_selected_recipe', 'times', 'time_of_selected_recipe', 'steps' ));
+        return view('recipes/edit', compact('recipe', 'cuisines', 'cuisine_of_selected_recipe', 'diets', 'diet_of_selected_recipe', 'times', 'time_of_selected_recipe', 'quantities', 'measurements', 'preparations', 'ingredients' ));
     }
 
     public function update(Request $request, $id) 
@@ -232,13 +233,13 @@ class RecipeController extends Controller
         $diet_input = $request->input('diet_id');
         $time_input = $request->input('total_time_id');
 
-        foreach($request->input('step') as $i => $step){
-            $s = new Step;
-            $s->recipe_id = $recipe->id;
-            $s->step = $step;
-            $s->number = $i + 1;
-            $s->save();
-        }
+        // foreach($request->input('step') as $i => $step){
+        //     $s = new Step;
+        //     $s->recipe_id = $recipe->id;
+        //     $s->step = $step;
+        //     $s->number = $i + 1;
+        //     $s->save();
+        // }
 
         $recipe->cuisine_id = $cuisine_input;
         $recipe->diet_id = $diet_input;
