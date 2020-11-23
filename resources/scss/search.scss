@@ -1,0 +1,190 @@
+$DarkGreen: #164A41;
+$MediumGreen: #4D774E;
+$LightGreen: #9DC88D;
+$NaturalYellow: #F1B24A;
+$White: #FFFFFF;
+$main_green: #cae265;
+$canary: rgba(255, 253, 152, 1);
+
+// body {
+//     margin: 0;
+//     box-sizing: border-box;
+//     background-image: url("../img/bg.svg");
+//     min-height: 1400px;
+// }
+
+// .container {
+    // height: 100%;
+    // z-index: 0;
+    // position: relative;
+    
+    // &::before {
+    // content: '';
+    // background: url("../img/banner-large.jpg");
+    // // background: url('../img/food.jpg');
+    // // background: url('../img/pasta.jpg');
+    // min-height: 100vh;
+    // opacity: 0.5;
+    // top: 0;
+    // left: 0;
+    // bottom: 0;
+    // right: 0;
+    // position: absolute;
+    // background-size: cover;
+    // // background-size: 100% 100%;
+    // z-index: -1;   
+// }
+// }
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100%;
+    z-index: 0;
+    position: relative;
+
+    &::before {
+    content: '';
+    // background: url("../img/banner-large.jpg");
+    background: url('../img/food.jpg');
+    height: 100vh;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-size: cover;
+    z-index: -1;   
+}
+}
+
+.search-bar {
+    height: 30vh;
+    background-color: $DarkGreen;
+    z-index: 2;
+    -webkit-box-shadow: 0 10px 5px #888888;
+    -moz-box-shadow: 0 10px 5px #888888;
+    box-shadow: 0 10px 5px #888888;
+    color: white;
+
+    .title {
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 10px;
+        color: $White;
+        text-shadow: 2px 2px black;
+    }
+    
+}
+.form-group {
+    display: flex;
+    justify-content: space-around;
+
+    &button {
+        border-radius: 5px;
+    }
+
+    .category-img {
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: -10px;
+    }
+
+    .drop-down {
+        border-radius: 5px;
+        width: 200px;
+    }
+
+    .recipe-btn {
+        border-radius: 5px;
+        margin: 0 auto;
+        width: 140px;
+        height: 45px;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        font-weight: 500;
+        color: #000;
+        background-color: #fff;
+        border: 2px solid black;
+        border-radius: 45px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        outline: none;
+        display: block;
+        padding: 5px;
+
+        &:hover {
+            background-color: $main_green;
+            box-shadow: 0px 15px 20px rgba($main_green, 0.4);
+            color: #fff;
+            transform: translateY(-7px);
+        }  
+    }
+}
+
+.results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 70vh;
+}
+
+.results-card {
+    background-color: whitesmoke;
+    color: $MediumGreen;
+    text-shadow: 1px 1px black;
+    opacity: .8;
+    border-radius: 10px;
+    justify-content: center;
+    height: 300px;
+    width: 250px;
+    border: .05rem solid #979393;
+    box-shadow: .2em .25em .25em rgba(65, 64, 64, .5);
+    margin-top: 150px;
+
+    img {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        max-height: 180px;
+        max-width: 200px;
+        padding-bottom: 30px;
+        height: 60%;
+    }
+
+    .results-name {
+        text-align: center;
+        height: 30px;
+    }
+
+    .results-btn {
+        margin-left: 75px;
+        margin-right: 75px;
+        cursor: pointer;
+        border-radius: 5px;
+        height: 20px;
+        width: 100px;
+        background-color: $MediumGreen;
+        padding-bottom: 5px;
+        
+        &:hover {
+            background-color: $main_green;
+            box-shadow: 0px 15px 20px rgba($main_green, 0.4);
+            color: #fff;
+            transform: translateY(-7px);
+        }
+    }
+
+    & button a{
+        text-decoration: none;
+        color: white;
+    }
+}
+
