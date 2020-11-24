@@ -223,29 +223,40 @@ class RecipeController extends Controller
         // // dd($steps);
 
         // dd($cuisine_of_selected_recipe);
-        return view('recipes/edit', compact('recipe', 'cuisines', 'cuisine_of_selected_recipe', 'diets', 'diet_of_selected_recipe', 'times', 'time_of_selected_recipe', 'quantities', 'measurements', 'preparations', 'ingredients' ));
+        return view('recipes/edit', compact('recipe', 'cuisines', 'cuisine_of_selected_recipe', 'diets', 'diet_of_selected_recipe', 'times', 'time_of_selected_recipe', 'quantities', 'measurements', 'preparations', 'ingredients', 'steps' ));
     }
 
     public function update(Request $request, $id) 
     {   
         $recipe = Recipe::findOrFail($id);
+        $name_input = $request->input('name');
         $cuisine_input = $request->input('cuisine_id');
         $diet_input = $request->input('diet_id');
         $time_input = $request->input('total_time_id');
-
-        // foreach($request->input('step') as $i => $step){
-        //     $s = new Step;
-        //     $s->recipe_id = $recipe->id;
-        //     $s->step = $step;
-        //     $s->number = $i + 1;
-        //     $s->save();
-        // }
+        $description_input = $request->input('description');
+        $image_input = $request->input('image');
+        $video_input = $request->input('video');
+        $source_input = $request->input('source_url');
 
         $recipe->cuisine_id = $cuisine_input;
+        $recipe->name = $name_input;
         $recipe->diet_id = $diet_input;
         $recipe->total_time_id = $time_input;
+        $recipe->description = $description_input;
+        $recipe->image_url = $image_input;
+        $recipe->video_url = $video_input;
+        $recipe->source_url = $source_input;
         $recipe->save();
 
+        $steps = Step::where('recipe_id', $id)->pluck('step');
+        foreach($request->input('step') as $i => $step) {
+            $step->recipe_id = $id;
+            $step->number = $i + 5;
+            $step->step = $step;
+            $step->save();
+        }
+
+   
 
         // flash the success message
         session()->flash('update_success_message', 'Your recipe has been successfully updated');

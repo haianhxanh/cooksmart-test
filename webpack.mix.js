@@ -26,8 +26,7 @@ if (!mix.inProduction()) {
  */
 mix.sass("resources/scss/app.scss", "public/css")
     .react("resources/js/app/index.jsx", "public/js/search.js")
-    .react("resources/js/app/About/About.jsx", "public/js/about.js")
-    .react("resources/js/app/About/About.jsx", "public/js/about.js")
+    // .react("resources/js/app/About/About.jsx", "public/js/about.js")
 
     .browserSync({
         host: "localhost",
