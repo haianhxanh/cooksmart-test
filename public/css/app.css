@@ -279,7 +279,6 @@
   transform: translateY(-7px);
 }
 
-<<<<<<< HEAD
 .edit-form {
   margin: 5% 10%;
 }
@@ -358,7 +357,7 @@
   width: 100%;
   padding: 1rem;
 }
-=======
+
 .nav {
   display: flex;
   flex-direction: row;
@@ -395,7 +394,6 @@
   font-weight: 900;
   color: #f1b24a;
 }
->>>>>>> ec151715fa45bdaaead49bdc25cf49f32de47405
 
 * {
   font-family: "Quicksand", sans-serif;

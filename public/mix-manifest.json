@@ -1,15 +1,6 @@
 {
-<<<<<<< HEAD
-    "/js/about.js": "/js/about.js?id=8dc26a978d69cea6f289",
-    "/js/about.js.map": "/js/about.js.map?id=bba3066a7e5e1c5945ab",
-    "/js/search.js": "/js/search.js?id=4840287f526411b973ab",
-    "/css/app.css": "/css/app.css?id=50156aa5feac3bc820ec",
-    "/js/search.js.map": "/js/search.js.map?id=baf86c1ccade8db0cd70",
-    "/css/app.css.map": "/css/app.css.map?id=d0f411c2f047d0079093"
-=======
-    "/js/search.js": "/js/search.js?id=6b0db4fd5501f46e339e",
-    "/css/app.css": "/css/app.css?id=63d38995b71572892cd2",
-    "/js/search.js.map": "/js/search.js.map?id=60ff36d5b25b249edbb9",
-    "/css/app.css.map": "/css/app.css.map?id=d056e769105a0d1bc2b4"
->>>>>>> 106c60d7085c511dd64fed921558441b0c51fce5
+    "/js/search.js": "/js/search.js?id=b70a14dfd03bf11db704",
+    "/css/app.css": "/css/app.css?id=23935030c97e95cefd2a",
+    "/js/search.js.map": "/js/search.js.map?id=86e0278fc89268557eaf",
+    "/css/app.css.map": "/css/app.css.map?id=c160bbb575eb6a00d4ef"
 }
