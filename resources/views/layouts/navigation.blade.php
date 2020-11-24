@@ -7,8 +7,8 @@
         <ul class="nav__container">
             <li><a href="/" class="nav__link">Home</a></li>
             <li><a href="/search" class="nav__link">Search</a></li>
-            <li><a href="/about" class="nav__link">About us</a></li>
-            <li><a href="/mission" class="nav__link">Our mission</a></li>
-            <li><a href="/contacts" class="nav__link">Contacts</a></li>
+            <li><a href="/about" class="nav__link">About</a></li>
+            <li><a href="/login" class="nav__link">Login</a></li>
+            <li><a href="/register" class="nav__link">Register</a></li>
         </ul>
     </div>
