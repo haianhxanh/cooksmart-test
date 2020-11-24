@@ -279,6 +279,85 @@
   transform: translateY(-7px);
 }
 
+.edit-form {
+  margin: 5% 10%;
+}
+.edit-form h1 {
+  text-align: center;
+}
+.edit-form p {
+  text-align: justify;
+}
+.edit-form img {
+  height: 240px;
+  display: block;
+  margin: 0 auto;
+}
+
+.edit-form-group__item {
+  display: flex;
+  margin: 2% 0;
+  justify-content: space-around;
+}
+
+.edit-form-group__label {
+  width: 45%;
+  padding-right: 3%;
+}
+
+.edit-form-group__input, .edit-form-group__textarea, .edit-form-group__select {
+  width: 45%;
+}
+
+.edit-form-group__media {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+}
+.edit-form-group__media .edit-form-group__input {
+  margin-top: 5%;
+  width: 100%;
+}
+
+.edit-form-group__item .edit-ingredient-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-ingredient-list li {
+  padding: 3% 0;
+  border-bottom: 2px solid #4d774e;
+}
+
+.ingredient-list-btn__container {
+  display: flex;
+}
+.ingredient-list-btn__container button {
+  display: block;
+  margin-right: 0;
+}
+
+.ingredient-list-item {
+  display: flex;
+}
+.ingredient-list-item .edit-form-group__label span {
+  padding-left: 15%;
+}
+.ingredient-list-item .edit-form-group__select {
+  width: 100%;
+}
+
+.edit-form-group__steps {
+  margin: 5% 10%;
+}
+.edit-form-group__steps p {
+  text-align: center;
+}
+.edit-form-group__steps textarea {
+  width: 100%;
+  padding: 1rem;
+}
+
 .nav {
   display: flex;
   flex-direction: row;
