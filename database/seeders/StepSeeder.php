@@ -58,7 +58,7 @@ class StepSeeder extends Seeder
         $s->save();
 
         $s = new Step;
-        $s->step = 'Add the tufu, stir to incorporate, and remove the pan from heat.';
+        $s->step = 'Add the tofu, stir to incorporate, and remove the pan from heat.';
         $s->number = 8;
         $s->recipe_id = 1;
         $s->save();
@@ -552,6 +552,469 @@ class StepSeeder extends Seeder
         $s->number = 10;
         $s->recipe_id = 11;
         $s->save();
+
+          ////////////////////////////////////////////////////////////////////////////////////////
+        // Steps for Jollof Rice
+        $s = new Step;
+        $s->step = 'Blend the pepper mixture which will be used for later on, so add the tomatoes, red bell peppers, scotch bonnet peppers, and 1 of the onions to a blender. Then add a little water to help the blending process. And blend until smooth, set aside for later.';
+        $s->number = 1;
+        $s->recipe_id = 12;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Next dice one red onion into small pieces. TIP – If there’s one thing that makes a difference to jollof rice, it’s using red onions rather than yellow onions.';
+        $s->number = 2;
+        $s->recipe_id = 12;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Add half a cup of oil into the pot and once the oil is hot enough add in the diced onions and fry on a medium heat till they become translucent, this should take about 4 minutes.';
+        $s->number = 3;
+        $s->recipe_id = 12;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Next add in the tomato puree, and fry the onions and tomato puree on medium heat for 5 minutes, stirring frequently, don’t worry if it sticks to the pot a little (it’ll taste even better). TIP – Doing this and starting off your jollof rice this way really makes a difference and adds such a delicious in-depth flavour. Frying it also removes the bitter taste of uncooked purée and gives a smoky, sweet and distinctly rich flavour instead. You will know when it’s ready as the mixture looks grainy or like crumbled sand.';
+        $s->number = 4;
+        $s->recipe_id = 12;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Once the puree has fried, add in the pepper mixture blended earlier and stir in well to incorporate the fried puree properly.';
+        $s->number = 5;
+        $s->recipe_id = 12;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Now it’s time to season, so add: bay leaves, dried thyme, and a mixture of salt, Knorr chicken stock cubes and all-purpose seasoning to taste. Stir this in well and cover and leave to boil on medium heat for 15 minutes.';
+        $s->number = 6;
+        $s->recipe_id = 12;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'While the sauce is cooking, wash the rice repeatedly to remove the starch. You want to do this until the water turns clear. This step is important, do not be lazy about it, this will prevent mushy and unpleasantly sticky jollof rice.';
+        $s->number = 7;
+        $s->recipe_id = 12;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Back to the pot, after about 15 minutes the sauce is ready, you’ll see it would have thickened slightly. This is also the time to taste just in case you need to adjust the seasoning at all before adding in the rice.';
+        $s->number = 8;
+        $s->recipe_id = 12;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Next add in the washed rice and stir well to ensure rice is properly mixed in.';
+        $s->number = 9;
+        $s->recipe_id = 12;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'After this, add in just enough water to cover the rice, so the water should be just above the level of the rice. TIP – This is step is very important as adding excess amount of water will lead to soggy jollof rice which we don’t want. After adding the water stir well.';
+        $s->number = 10;
+        $s->recipe_id = 12;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Now the easy part, cover and leave the Jollof rice to cook on a very low heat. So For example if the highest setting of your cooker is 6 then reduce it to l or 2.';
+        $s->number = 11;
+        $s->recipe_id = 12;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'I stir the jollof rice every 20 minutes until it is cooked. So after the first 20 minutes stir the rice from the bottom up. Do not worry if you feel there is not enough liquid to cook the rice, there is, the steam at this point will do the remainder of the cooking. Cover the pot and continue to leave to cook for a further 20 minutes before checking at stirring again.';
+        $s->number = 12;
+        $s->recipe_id = 12;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'So after 40 minutes check the rice and stir again from bottom up. Cover and continue to leave to steam.';
+        $s->number = 13;
+        $s->recipe_id = 12;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Now after steaming on a low heat for a total of approximately 1 hour 10 minutes, the jollof rice is ready!  TIP – you can also shorten the cooking time by covering the rice the foil before adding the lid of the pot. However if you do so, increase the heat slightly unless it can get too soggy, so I only usually use foil if I’m in a rush.';
+        $s->number = 14;
+        $s->recipe_id = 12;
+        $s->save();
+
+
+          ////////////////////////////////////////////////////////////////////////////////////////
+        // Steps for Ghanian Chicken Stew
+        $s = new Step;
+        $s->step = 'Wash and clean the chicken. Blend the Scotch bonnet together with one onion, garlic ginger and a little of water to help with the blending. ';
+        $s->number = 1;
+        $s->recipe_id = 13;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Add the blended spices to the meat, add magi cubes and or salt to the meat. Cover the pan with its lid and let the chicken cook for about 15 - 20 minutes.  
+        * Instead of using fresh veggies you can use powdered spices to steam the chicken. ';
+        $s->number = 2;
+        $s->recipe_id = 13;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'In another pan heat vegetable oil over medium fire and fry the chicken. Remove the chicken from the pan when you are done.';
+        $s->number = 3;
+        $s->recipe_id = 13;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'When you are done frying the chicken you can use the same pan to fry the onions for about 2-3 minutes. ';
+        $s->number = 4;
+        $s->recipe_id = 13;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Now add the powdered pepper and let it cook for another 1-2 minutes. ';
+        $s->number = 5;
+        $s->recipe_id = 13;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Now add the tomato paste and mix it with the fried onions';
+        $s->number = 6;
+        $s->recipe_id = 13;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'While the onions and tomato paste are cooking, blend the tomatoes and then add it to the stew. Let the stew cook for about 7-10 minutes. ';
+        $s->number = 7;
+        $s->recipe_id = 13;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Add the spices and salt.';
+        $s->number = 8;
+        $s->recipe_id = 13;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Let the stew cook for about 5 - 7 minutes then add the fried chicken';
+        $s->number = 9;
+        $s->recipe_id = 13;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Let it cook some more, until the water in the tomatoes evaporates and the stew gets a brownish color.';
+        $s->number = 10;
+        $s->recipe_id = 13;
+        $s->save();
+
+           ////////////////////////////////////////////////////////////////////////////////////////
+        // Steps for Sushi Burrito
+        $s = new Step;
+        $s->step = 'Wash the rice in water until the water becomes almost clear, then drain the rice and add to a saucepan with the 275ml of water. Heat to a boil then reduce the heat, cover the saucepan and simmer for 15 minutes. Remove from the heat, but leave the lid on to steam for another 5 minutes.';
+        $s->number = 1;
+        $s->recipe_id = 14;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Heat a small saucepan and add the vinegar, sugar and half a teaspoon of salt. Dissolve the sugar, then pour it over the cooked rice with the sesame seeds and stir gently. Lay the rice out on a lined baking tray to cool.';
+        $s->number = 2;
+        $s->recipe_id = 14;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Peel the cucumber and carrot and continue peeling to get strips. Peel, de-stone and thinly slice the avocado. Mix the crab with the mayonnaise and chilli flakes. Slice the salmon fillet into long strips about ½ cm thick.';
+        $s->number = 3;
+        $s->recipe_id = 14;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Cover your sushi mat with a sheet of clingfilm and place down a whole sheet of nori. Cover the nori with a thin layer of sushi rice. Layer the carrot strips over the rice, at 90º to the side you will eventually roll from. Do the same thing with the cucumber strips. Spread the crab meat in a strip right along the width of the nori sheet. Lay the avocado and salmon on top of the crab.';
+        $s->number = 4;
+        $s->recipe_id = 14;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Now slightly dampen a second nori sheet and stick 1/3 of the sheet under the first filled sheet at the end of the strips of carrot and cucumber. Use the mat to roll up the nori around the fillings. Compress the roll with the mat. Chill just to let everything set up slightly, then wrap in baking paper or foil and slice in half on a slant.';
+        $s->number = 5;
+        $s->recipe_id = 14;
+        $s->save();
+
+            ////////////////////////////////////////////////////////////////////////////////////////
+        // Steps for Pan Seared Salmon
+        $s = new Step;
+        $s->step = 'Season salmon on both sides with 1/2 salt and 1/8 tsp black pepper. Grate 1 tsp of lemon zest then squeeze 2 lemons for 4 Tbsp lemon juice. ';
+        $s->number = 1;
+        $s->recipe_id = 15;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Heat a large (10-12") light colored pan over medium heat and right away add 4 Tbsp butter, swirling and stirring frequently to prevent splatter until it starts to turn light brown and the bits of butter solids turn brown (about 3-7 minutes depending on your heat)*';
+        $s->number = 2;
+        $s->recipe_id = 15;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Add seasoned salmon and cook uncovered on the first side 3-4 minutes until golden brown then flip and cook another 2 to 3 minutes or until fully cooked through.';
+        $s->number = 3;
+        $s->recipe_id = 15;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'In the last 2 minutes of cooking, add 1 tsp lemon zest and 4 Tbsp lemon juice to the pan. Spoon the sauce over the salmon as it cooks. Transfer salmon to plates, drizzle with sauce and sprinkle the pan cooked salmon with freshly chopped parsley and black pepper to taste. Serve right away.';
+        $s->number = 4;
+        $s->recipe_id = 15;
+        $s->save();
+
+            ////////////////////////////////////////////////////////////////////////////////////////
+        // Steps for Middle Eastern Spicy Potatoes
+        $s = new Step;
+        $s->step = 'Peel and cube potatoes. Cut about one potato per person';
+        $s->number = 1;
+        $s->recipe_id = 16;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Add vegetable oil to pan (generous amount) and let heat.';
+        $s->number = 2;
+        $s->recipe_id = 16;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Mince or pound garlic with salt and create a paste.';
+        $s->number = 3;
+        $s->recipe_id = 16;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Add the potaoes to the pan and try to spread out the potatoes throughout the pan to cook. Stir and let get brown and crispy';
+        $s->number = 4;
+        $s->recipe_id = 16;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Chop coriander and add this and garlic paste to pan and continue to cook.  You can add lemon and chili for extra flavor.';
+        $s->number = 5;
+        $s->recipe_id = 16;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Take off heat and add to serving dish.  Top with extra coriander or greens if desired. Enjoy!';
+        $s->number = 6;
+        $s->recipe_id = 16;
+        $s->save();
+
+           ////////////////////////////////////////////////////////////////////////////////////////
+        // Steps for Greek Quesadillas
+        $s = new Step;
+        $s->step = 'Make the sauce: In a medium bowl, stir together Greek yogurt, cucumber, dill, and lemon juice. Season to taste with salt, pepper and red pepper flakes.';
+        $s->number = 1;
+        $s->recipe_id = 17;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'In a large skillet over medium heat, heat olive oil. Add one pita half, cut-side up. Top with a handful each of mozzarella and chicken. Sprinkle with feta, red peppers, olives and dill. Top with the matching pita half, cut-side down.';
+        $s->number = 2;
+        $s->recipe_id = 17;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Cook until the cheese is melted and the bottom pita is golden, about 2 minutes. Carefully flip and continue to cook until the second side is golden, about 2 minutes more.';
+        $s->number = 3;
+        $s->recipe_id = 17;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Repeat with remaining ingredients. Cut quesadillas into wedges and serve warm with Tzatziki sauce.';
+        $s->number = 4;
+        $s->recipe_id = 17;
+        $s->save();
+
+         ////////////////////////////////////////////////////////////////////////////////////////
+        // Steps for Baba Ganoush
+        $s = new Step;
+        $s->step = 'Preheat the grill to high heat, 230° to 250°.';
+        $s->number = 1;
+        $s->recipe_id = 18;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Add the eggplants and cook on all sides until softened and roasted, which takes about 25 minutes.';
+        $s->number = 2;
+        $s->recipe_id = 18;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Remove the eggplants and let cool slightly before slicing in half and scraping out the fruit inside.  Discard the peelings.';
+        $s->number = 3;
+        $s->recipe_id = 18;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Add the eggplant to a food processor and process on high speed until smooth.';
+        $s->number = 4;
+        $s->recipe_id = 18;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Next, add in the garlic, tahini, lemon juice, cumin, cayenne, and salt and process on high speed until smooth.';
+        $s->number = 5;
+        $s->recipe_id = 18;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'While processing on high speed slowly drizzle in the olive oil until mixed in.';
+        $s->number = 6;
+        $s->recipe_id = 18;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Serve and optional garnishes of olive oil, cayenne, and chopped parsley.';
+        $s->number = 7;
+        $s->recipe_id = 18;
+        $s->save();
+
+         ////////////////////////////////////////////////////////////////////////////////////////
+        // Steps for Shrimp Ceviche
+        $s = new Step;
+        $s->step = 'Gently (and quickly) poach the shrimp in salted water (if you have very fresh shrimp, this step is not necessary).';
+        $s->number = 1;
+        $s->recipe_id = 19;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Cut the shrimp into 1/2 inch pieces and toss with lime juice, lemon juice, red onion, cucumber, minced chile peppers, and cilantro. Refrigerate for 30 minutes.';
+        $s->number = 2;
+        $s->recipe_id = 19;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Serve with diced avocado stirred into the ceviche.';
+        $s->number = 3;
+        $s->recipe_id = 19;
+        $s->save();
+
+          ////////////////////////////////////////////////////////////////////////////////////////
+        // Steps for Chicken Peanut Soup
+        $s = new Step;
+        $s->step = 'Blend the tomatoes, half onion, and pepper, ginger, and garlic. Set aside.';
+        $s->number = 1;
+        $s->recipe_id = 20;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Season chicken with paprika, salt, and black pepper. Set aside.';
+        $s->number = 2;
+        $s->recipe_id = 20;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Preheat the oil and fry the seasoned chicken about 5 minutes on each side or till the chicken is well browned. Remove from heat and set aside.';
+        $s->number = 3;
+        $s->recipe_id = 20;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Add the diced onions in the oil and fry till translucent.';
+        $s->number = 4;
+        $s->recipe_id = 20;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Add the blended Tomato sauce and cook for about 6 to 10 minutes or until the sauce is well reduced and the raw tomato taste is gone.';
+        $s->number = 5;
+        $s->recipe_id = 20;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Add the peanut paste and chicken stock, and stir well to dissolve.';
+        $s->number = 6;
+        $s->recipe_id = 20;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Season with salt, pepper, seasoning powder, and thyme.';
+        $s->number = 7;
+        $s->recipe_id = 20;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Return the chicken back into the sauce and cook for another 15 to 20 minutes, or until the chicken is well cooked you are satisfied with the thickness of the soup. Enjoy!';
+        $s->number = 8;
+        $s->recipe_id = 20;
+        $s->save();
+
+         ////////////////////////////////////////////////////////////////////////////////////////
+        // Steps for Korean Beef Tacos
+        $s = new Step;
+        $s->step = 'Place the soy sauce, mirin, sugar, sesame seeds, sesame oil, garlic and ginger in a large bowl. Add the beef and turn to coat. Marinate for at least 10 minutes or up to 2 hours.';
+        $s->number = 1;
+        $s->recipe_id = 21;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'For the mayo, combine all the ingredients in a bowl. Set aside for later.';
+        $s->number = 2;
+        $s->recipe_id = 21;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Heat a char grill, barbecue plate or frying pan over high heat. Drain the beef from the marinade and cook for a minute each side to develop a nice deep colour. Then turn the heat to low and cook the steaks, turning often, for 3-4 minutes (medium-rare) or until cooked to your liking. You can also baste with leftover marinade as the steaks cook. Transfer beef to a plate and set aside for 5 minutes to rest. Thinly slice.';
+        $s->number = 3;
+        $s->recipe_id = 21;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Cook the tortillas in a pan or on the chargrill for 1 minute each side to until softened. Wrap them in a clean tea towel to keep warm.';
+        $s->number = 4;
+        $s->recipe_id = 21;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'To assemble, spread a generous slick of gochujang mayo on each tortilla. Top with the cabbage, beef and kimchi. Sprinkle with spring onion and sesame seeds.';
+        $s->number = 5;
+        $s->recipe_id = 21;
+        $s->save();
+
+        ////////////////////////////////////////////////////////////////////////////////////////
+        // Steps for Soy & Ginger Fish
+        $s = new Step;
+        $s->step = 'Slice the spring onion lengthways into long, thin strips. Place the spring onion in a bowl of cold water and soak until ready to serve (slices will curl).';
+        $s->number = 1;
+        $s->recipe_id = 22;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'To set up a makeshift steamer, choose a large, wide and deep pan with a tight-fitting lid. Fold and scrunch a piece of foil into a long snake shape. Then coil the shape to form a trivet. Place in the bottom of the pan.';
+        $s->number = 2;
+        $s->recipe_id = 22;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Place fish fillets onto a plate that is smaller than your pan and top with ginger.';
+        $s->number = 3;
+        $s->recipe_id = 22;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Combine soy sauce and lime juice, then pour the mixture over the fish.';
+        $s->number = 4;
+        $s->recipe_id = 22;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Place the plate of fish on top of the foil trivet in your pan. Pour water into the pan (being careful not to pour any on the plate) until it comes to just below the bottom of the plate. Turn the heat on high. Once the water starts to steam, place the lid on. Cook for about 12 minutes (or a bit longer for salmon) or until the fish fillets are cooked (they will easily flake when poked with a fork).';
+        $s->number = 5;
+        $s->recipe_id = 22;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Just before the fish is ready, place the vegetable oil and the sesame oil in a small saucepan. Heat until a wooden spoon causes bubbles to form when placed into the oil. Turn the heat off but keep the oil warm on the stovetop.';
+        $s->number = 6;
+        $s->recipe_id = 22;
+        $s->save();
+
+        $s = new Step;
+        $s->step = 'Use a tea towel to protect your hands as you carefully remove the hot plate of fish from the pan. Top with spring onion. Pour the hot oil over the spring onion to sizzle and cook the onion a little. Top with chilli slices and serve with steamed rice.';
+        $s->number = 7;
+        $s->recipe_id = 22;
+        $s->save();
+
     }
 
 }
