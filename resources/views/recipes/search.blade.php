@@ -1,5 +1,5 @@
 @extends('layouts.main')
-
+@include('layouts.navigation')
 @section('content')
 
 {{-- <h1>SEARCH</h1> --}}
