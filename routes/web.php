@@ -25,7 +25,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/recipes/create', 'RecipeController@create');
+Route::get('/recipes/create', 'RecipeController@create')->middleware('auth');
 Route::post('/recipes', 'RecipeController@store');
 Route::get('/recipes', 'RecipeController@index');
 
