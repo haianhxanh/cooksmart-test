@@ -122,7 +122,7 @@
           <ol class="edit-ingredient-list">
              @foreach($recipe->ingredientMeasurementPreparationQuantities as $combo)
            
-              <li>
+              <li class="combo-list-item">
                   <div class="ingredient-list-item">
                       <label for="ingredients" class="edit-form-group__label">
                         <span>Ingredient</span>
@@ -178,6 +178,8 @@
                           </select>
                     
                       </div>
+
+                      <button type="button" class="remove-combo">Remove</button>
               </li>
   
               @endforeach
@@ -228,7 +230,12 @@
         <textarea name="step[]" class="edit-form-group__textarea step-item"></textarea>
         <button type="button" class="remove-step">Remove</button>
       `;
+
       steps.appendChild(input);
+
+      input.querySelector('.remove-step').addEventListener('click', () => {
+      input.remove();
+      })
   })
 
   const removeStepBtn = document.querySelectorAll('.remove-step');
@@ -239,11 +246,20 @@
     })
   }
 
+  const removeComboBtn = document.querySelectorAll('.remove-combo');
+  for (i = 0; i < removeComboBtn.length; i++) {
+    const comboArea = document.querySelectorAll('.combo-list-item')[i];
+    removeComboBtn[i].addEventListener('click', () => {
+      comboArea.remove();
+    })
+  }
+
   const ingredientListBtn = document.querySelector('.ingredient-list-btn');
   ingredientListBtn.addEventListener('click', () => {
       const ingredient = document.querySelector('.edit-ingredient-list');
       const input = document.createElement('li');
-      input.innerHTML = `
+      input.className = 'combo-list-item';
+      input.innerHTML += `
 
        <div class="ingredient-list-item">
           <label for="ingredients" class="edit-form-group__label">
@@ -291,8 +307,14 @@
                   @endforeach
               </select>  
        </div>  
+       <button type="button" class="remove-combo">Remove</button>
+
       `
       ingredient.appendChild(input);
+
+      input.querySelector('.remove-combo').addEventListener('click', () => {
+        input.remove();
+      })
 
       $(document).ready(function() {
           $(input).find('.js-example-basic-multiple').select2({tags: true});
