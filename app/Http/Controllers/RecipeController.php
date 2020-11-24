@@ -233,8 +233,6 @@ class RecipeController extends Controller
         $diet_input = $request->input('diet_id');
         $time_input = $request->input('total_time_id');
 
-<<<<<<< HEAD
-=======
         // foreach($request->input('step') as $i => $step){
         //     $s = new Step;
         //     $s->recipe_id = $recipe->id;
@@ -242,7 +240,6 @@ class RecipeController extends Controller
         //     $s->number = $i + 1;
         //     $s->save();
         // }
->>>>>>> master
 
         $recipe->cuisine_id = $cuisine_input;
         $recipe->diet_id = $diet_input;
@@ -275,8 +272,6 @@ class RecipeController extends Controller
         $measurementsFromRequest = $request->input('measurements', []);
         $preparationsFromRequest = $request->input('preparations', []);
 
-<<<<<<< HEAD
-=======
         // foreach($combo as $i => $c) {
         //     if(isset($ingredientsFromRequest[$i])){
         //         $c->ingredient_id = $ingredientsFromRequest[$i];
@@ -288,7 +283,6 @@ class RecipeController extends Controller
         //         $c->delete();
         //     }
         // }
->>>>>>> master
 
         foreach($combo as $i => $c) {
             if(isset($ingredientsFromRequest[$i])){
@@ -335,19 +329,6 @@ class RecipeController extends Controller
                 $c->delete();
             }
         }
-<<<<<<< HEAD
-
-        for($i = $combo->count(); $i < count($ingredientsFromRequest); $i++) {
-            $combo = new IngredientMeasurementPreparationQuantityRecipe;
-            $combo->recipe_id = $recipe->id;
-            $combo->ingredient_id = $ingredientsFromRequest[$i];
-            $combo->quantity_id = $quantitiesFromRequest[$i];
-            $combo->measurement_id = $measurementsFromRequest[$i];
-            $combo->preparation_id = $preparationsFromRequest[$i];
-            $combo->save();
-        }
-=======
->>>>>>> master
 
 
         for($i = $combo->count(); $i < count($ingredientsFromRequest); $i++) {
