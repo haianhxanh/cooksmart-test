@@ -50,7 +50,6 @@ class RecipeController extends Controller
         $measurement_id = IngredientMeasurementPreparationQuantityRecipe::where('recipe_id', $recipe_id)->pluck('measurement_id');
         $preparation_id = IngredientMeasurementPreparationQuantityRecipe::where('recipe_id', $recipe_id)->pluck('preparation_id');
 
-
         for ($i = 0; $i < count($combo); $i++) {
             $ingredient[$i] = Ingredient::where('id', $ingredient_id[$i])->value('name');
             $quantity[$i] = Quantity::where('id', $quantity_id[$i])->value('amount');
@@ -69,6 +68,7 @@ class RecipeController extends Controller
 
     public function create()
     {
+        $user = \Auth::user();
         $cuisines = Cuisine::get();
         $diets = Diet::get();
         $times = TotalTime::get();
@@ -77,7 +77,7 @@ class RecipeController extends Controller
         $quantities = Quantity::get();
         $measurements = Measurement::get();
         $preparations = Preparation::get();
-        return view('recipes/create', compact('cuisines', 'diets', 'times', 'ingredients', 'groups', 'quantities', 'measurements', 'preparations'));
+        return view('recipes/create', compact('cuisines', 'diets', 'times', 'ingredients', 'groups', 'quantities', 'measurements', 'preparations', 'user'));
     }
     public function store(Request $request)
     {
@@ -223,40 +223,104 @@ class RecipeController extends Controller
         // // dd($steps);
 
         // dd($cuisine_of_selected_recipe);
-        return view('recipes/edit', compact('recipe', 'cuisines', 'cuisine_of_selected_recipe', 'diets', 'diet_of_selected_recipe', 'times', 'time_of_selected_recipe', 'quantities', 'measurements', 'preparations', 'ingredients', 'steps' ));
+        return view('recipes/edit', compact('recipe', 'cuisines', 'cuisine_of_selected_recipe', 'diets', 'diet_of_selected_recipe', 'times', 'time_of_selected_recipe', 'quantities', 'measurements', 'preparations', 'ingredients' ));
     }
 
     public function update(Request $request, $id) 
     {   
         $recipe = Recipe::findOrFail($id);
-        $name_input = $request->input('name');
         $cuisine_input = $request->input('cuisine_id');
         $diet_input = $request->input('diet_id');
         $time_input = $request->input('total_time_id');
-        $description_input = $request->input('description');
-        $image_input = $request->input('image');
-        $video_input = $request->input('video');
-        $source_input = $request->input('source_url');
+
 
         $recipe->cuisine_id = $cuisine_input;
-        $recipe->name = $name_input;
         $recipe->diet_id = $diet_input;
         $recipe->total_time_id = $time_input;
-        $recipe->description = $description_input;
-        $recipe->image_url = $image_input;
-        $recipe->video_url = $video_input;
-        $recipe->source_url = $source_input;
         $recipe->save();
 
-        $steps = Step::where('recipe_id', $id)->pluck('step');
-        foreach($request->input('step') as $i => $step) {
-            $step->recipe_id = $id;
-            $step->number = $i + 5;
-            $step->step = $step;
+        $steps = Step::where('recipe_id', $id)->get();
+        $stepsFromRequest = $request->input('step', []);
+
+        foreach($steps as $i => $step){
+            if(isset($stepsFromRequest[$i])){
+            $step->step = $stepsFromRequest[$i];
+            $step->save();}
+            else{
+                $step->delete();
+            }
+        }
+
+        for($i = $steps->count(); $i < count($stepsFromRequest); $i++){
+            $step = new Step;
+            $step->recipe_id = $recipe->id;
+            $step->step = $stepsFromRequest[$i];
+            $step->number = $i + 1;
             $step->save();
         }
 
-   
+        $combo = IngredientMeasurementPreparationQuantityRecipe::where('recipe_id', $id)->get();
+        $ingredientsFromRequest = $request->input('ingredients', []);
+        $quantitiesFromRequest = $request->input('quantities', []);
+        $measurementsFromRequest = $request->input('measurements', []);
+        $preparationsFromRequest = $request->input('preparations', []);
+
+
+        foreach($combo as $i => $c) {
+            if(isset($ingredientsFromRequest[$i])){
+                $ing = null;
+                $quan = null;
+                $mea = null;
+                $prep = null;
+
+                if(is_numeric($ingredientsFromRequest[$i])){
+                    $ing = $ingredientsFromRequest[$i];
+                    $quan = $quantitiesFromRequest[$i];
+                    $mea = $measurementsFromRequest[$i];
+                    $prep = $preparationsFromRequest[$i];
+
+                }else{
+                    $new_ing = new Ingredient;
+                    $new_ing->name = $ingredientsFromRequest[$i];
+                    $new_ing->save();
+                    $ing = $new_ing->id;
+
+                    $new_quan = new Quantity;
+                    $new_quan->amount = $quantitiesFromRequest[$i];
+                    $new_quan->save();
+                    $quan = $new_quan->id;
+
+                    $new_mea = new Measurement;
+                    $new_mea->name = $measurementsFromRequest[$i];
+                    $new_mea->save();
+                    $mea = $new_mea->id;
+
+                    $new_prep = new Preparation;
+                    $new_prep->name = $preparationsFromRequest[$i];
+                    $new_prep->save();
+                    $prep = $new_prep->id;
+                }
+
+                $c->ingredient_id = $ing;
+                $c->quantity_id = $quan;
+                $c->measurement_id = $mea;
+                $c->preparation_id = $prep;
+                $c->save();
+
+            } else {
+                $c->delete();
+            }
+        }
+
+        for($i = $combo->count(); $i < count($ingredientsFromRequest); $i++) {
+            $combo = new IngredientMeasurementPreparationQuantityRecipe;
+            $combo->recipe_id = $recipe->id;
+            $combo->ingredient_id = $ingredientsFromRequest[$i];
+            $combo->quantity_id = $quantitiesFromRequest[$i];
+            $combo->measurement_id = $measurementsFromRequest[$i];
+            $combo->preparation_id = $preparationsFromRequest[$i];
+            $combo->save();
+        }
 
         // flash the success message
         session()->flash('update_success_message', 'Your recipe has been successfully updated');
@@ -264,3 +328,5 @@ class RecipeController extends Controller
     }
 
 }
+
+

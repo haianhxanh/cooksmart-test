@@ -33,10 +33,8 @@
         <h4>Ingredients you need</h4>
         <ul>
            @for($i = 0; $i < count($combo); $i++)
-             <li><p>{{ $quantity[$i] }} {{ $measurement[$i] }} {{ $ingredient[$i] }} 
-               
-            @if (isset($preparation[$i])) 
-              , {{ $preparation[$i] }} 
+             <li><p>{{ $quantity[$i] }} {{ $measurement[$i] }} {{ $ingredient[$i] }}
+            @if (isset($preparation[$i])), {{ $preparation[$i] }} 
              
             @endif
             </p></li>
