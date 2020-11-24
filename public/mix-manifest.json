@@ -1,5 +1,6 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "/js/search.js": "/js/search.js?id=b70a14dfd03bf11db704",
     "/css/app.css": "/css/app.css?id=23935030c97e95cefd2a",
     "/js/search.js.map": "/js/search.js.map?id=86e0278fc89268557eaf",
@@ -8,8 +9,13 @@
 <<<<<<< HEAD
     "/js/search.js": "/js/search.js?id=c0b800fa04f405e8c6dc",
     "/js/search.js.map": "/js/search.js.map?id=26f4b19b037b5b6970c9",
+=======
+    "/js/search.js": "/js/search.js?id=ea4fb9a81b14e3f3328d",
+>>>>>>> 698f81771d73eb971b4e43508f5b5e1f05269376
     "/css/app.css": "/css/app.css?id=23935030c97e95cefd2a",
+    "/js/search.js.map": "/js/search.js.map?id=620825dfb9537110b2c4",
     "/css/app.css.map": "/css/app.css.map?id=c160bbb575eb6a00d4ef"
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
     "/js/about.js": "/js/about.js?id=8dc26a978d69cea6f289",
@@ -26,4 +32,6 @@
 >>>>>>> 106c60d7085c511dd64fed921558441b0c51fce5
 >>>>>>> 056148b0846818b98609730d611ed01332facef6
 >>>>>>> d9555656c5f91133d060597435dd8b8619198a6d
+=======
+>>>>>>> 698f81771d73eb971b4e43508f5b5e1f05269376
 }
