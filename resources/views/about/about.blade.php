@@ -2,38 +2,33 @@
 @include('layouts.navigation')
 @section('content')
 
-<div id="about-us">
-    <h1>SEARCH</h1>
- </div>
- 
- <script src="{{ mix('js/about.js') }}" >
-</script>
+
+<div class="about-us">
+    <h1>About us</h1>
+
+    <div class="person">
+        <img src="" />
+        <p>Hai Anh Nguyen</p>
+        <p>Favorite Food: </p>
+
+    </div>
+
+    <div class="person">
+        <img src="" />
+        <p>Melissa Anne Genger</p>
+        <p>Favorite Food: </p>
+    </div>
+   
+    <div class="person">
+        <img src="" />
+        <p>Jordan Domovčijski</p>
+        <p>Favorite Food: </p>
+    </div>
+
+       
+   
+</div>
+
 
 @endsection
 
-{{-- $info = [
-    {   
-        'id': 1,
-        'img': '',
-        'name': 'Hai Anh Nguyen',
-        'favoriteFood': ''
-    },
-    {   
-        'id': 2,
-        'img': '',
-        'name': 'Melissa Anne Genger',
-        'favoriteFood': ''
-    },
-    {   
-        'id': 1,
-        'img': '',
-        'name': 'Jordan Domovčijski',
-        'favoriteFood': ''
-    },
-]
-@foreach($info as $i) {
-    <img src={{$i->img}} alt={{$i->name}} />
-    <h3>{{$i->name}}</h3>
-
-}
-@endforeach --}}

@@ -26,6 +26,10 @@ if (!mix.inProduction()) {
  */
 mix.sass("resources/scss/app.scss", "public/css")
     .react("resources/js/app/index.jsx", "public/js/search.js")
+<<<<<<< HEAD
+    // .react("resources/js/app/About/About.jsx", "public/js/about.js")
+=======
+>>>>>>> 698f81771d73eb971b4e43508f5b5e1f05269376
 
     .browserSync({
         host: "localhost",

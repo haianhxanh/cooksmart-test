@@ -7,6 +7,7 @@ $main_green: #cae265;
 
 * {
     font-family: "Quicksand", sans-serif;
+    margin: 0;
 }
 
 .landing-page {
@@ -68,4 +69,27 @@ $main_green: #cae265;
     box-shadow: 0px 15px 20px rgba($main_green, 0.4);
     color: #fff;
     transform: translateY(-7px);
+}
+
+// About us page
+.about-us {
+    background-color: lightblue;
+    display: flex;
+    // justify-content: space-between;
+
+    .person {
+        
+        justify-content: space-around;
+        margin: 20px;
+        width: 7em;
+        height: 10em;
+        border: 0.05rem solid #979393;
+        box-shadow: 0.2em 0.25em 0.25em rgba(65, 64, 64, 0.5);
+        background-color: whitesmoke;
+        color: $MediumGreen;
+        text-shadow: 1px 1px black;
+        opacity: 0.8;
+        border-radius: 1em;
+        justify-content: center;
+    }
 }
