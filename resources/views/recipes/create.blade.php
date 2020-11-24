@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+@if(Auth::check())
 <form method="post" class="form-group" action="{{action('RecipeController@store')}}">
     @csrf
     <h1 class="form-heading"><span class="hover">Create your recipe</span></h1>
@@ -194,5 +195,5 @@
 
 </script>
 
-
+@endif
 @endsection
