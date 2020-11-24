@@ -5,11 +5,12 @@ $LightGreen: #9dc88d;
 $NaturalYellow: #f1b24a;
 $White: #ffffff;
 $canary: #fffd98ff;
-//FORM
 
-// html {
-//     background-color: $canary;
-// }
+.form__container {
+    display: flex;
+    flex-direction: column;
+    // font-family: "PT Sans Caption", sans-serif;
+}
 
 .form-heading {
     text-align: center;
@@ -18,9 +19,6 @@ $canary: #fffd98ff;
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     width: 80vw;
     margin: 40px auto;
     border: 1px solid black;
@@ -28,9 +26,7 @@ $canary: #fffd98ff;
 }
 
 .form-group__item {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 0 0 50px 0;
+    padding-left: 3rem;
 }
 
 .form-group__label {
@@ -41,31 +37,74 @@ $canary: #fffd98ff;
     font-size: 1rem;
 }
 
+.hover:hover {
+    color: $NaturalYellow;
+    border-bottom: 2px $NaturalYellow solid;
+}
+.hover1:hover {
+    color: $NaturalYellow;
+}
+
 .form-group__select {
-    // background: $NaturalYellow;
-    // color: $White;
-    font-weight: 600;
-    line-height: 40px;
     border: 3px solid $NaturalYellow;
+    height: 25px;
+    width: 212px;
+    margin-left: 5.8rem;
+
+    &-diet {
+        border: 3px solid $NaturalYellow;
+        height: 25px;
+        width: 212px;
+        margin-left: 7.2rem;
+    }
+
+    &-time {
+        border: 3px solid $NaturalYellow;
+        height: 25px;
+        width: 212px;
+        margin-left: 4.38rem;
+    }
 }
 
 .form-input {
     border: 3px solid $NaturalYellow;
-    // color: #fff;
-    font-family: "PT Sans Caption", sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    height: 40px;
-    margin: 0;
-    padding: 0 10px;
-    width: 240px;
-    vertical-align: middle;
+    height: 20px;
+    width: 203px;
+    margin-left: 2.95rem;
+
+    &-photo {
+        border: 3px solid $NaturalYellow;
+        height: 20px;
+        width: 200px;
+        margin-left: 6.05rem;
+    }
+
+    &-video {
+        border: 3px solid $NaturalYellow;
+        height: 20px;
+        width: 200px;
+        margin-left: 6.15rem;
+    }
+
+    &-url {
+        border: 3px solid $NaturalYellow;
+        height: 20px;
+        width: 200px;
+        margin-left: 3.59rem;
+    }
+}
+
+.form-group__item-container {
+    padding-top: 1rem;
+    margin-left: 2rem;
 }
 
 .form-group__textarea {
     border: 3px solid $NaturalYellow;
-    // color: $White;
-    font-weight: 600;
+    width: 201px;
+    margin-left: 3.75rem;
+    margin-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .ingredient-list {
@@ -77,15 +116,34 @@ $canary: #fffd98ff;
     line-height: 40px;
 }
 
+.desctiption {
+    padding-bottom: 2rem;
+}
+
 // BUTTONS
 
 .ingredient-list-btn {
-    margin: 0 auto;
+    margin-left: 0.9rem;
+    margin-top: 0.5rem;
     width: 50px;
     height: 20px;
     font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: 2px solid black;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.ingredient-list-btn-textarea {
+    margin-top: 0.5rem;
+    width: 50px;
+    height: 20px;
+    font-size: 11px;
     font-weight: 500;
     color: #000;
     background-color: #fff;
@@ -98,6 +156,13 @@ $canary: #fffd98ff;
 }
 
 .ingredient-list-btn:hover {
+    background-color: $main_green;
+    box-shadow: 0px 15px 20px rgba($main_green, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+.ingredient-list-btn-textarea:hover {
     background-color: $main_green;
     box-shadow: 0px 15px 20px rgba($main_green, 0.4);
     color: #fff;

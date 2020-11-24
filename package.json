@@ -12,6 +12,7 @@
     "devDependencies": {
         "@babel/preset-react": "^7.12.5",
         "@tailwindcss/ui": "^0.6.0",
+        "alpinejs": "^2.7.3",
         "axios": "^0.19",
         "browser-sync": "^2.26.13",
         "browser-sync-webpack-plugin": "^2.0.1",
