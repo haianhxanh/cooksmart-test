@@ -69,6 +69,7 @@ class RecipeController extends Controller
 
     public function create()
     {
+        $user = \Auth::user();
         $cuisines = Cuisine::get();
         $diets = Diet::get();
         $times = TotalTime::get();
@@ -77,7 +78,7 @@ class RecipeController extends Controller
         $quantities = Quantity::get();
         $measurements = Measurement::get();
         $preparations = Preparation::get();
-        return view('recipes/create', compact('cuisines', 'diets', 'times', 'ingredients', 'groups', 'quantities', 'measurements', 'preparations'));
+        return view('recipes/create', compact('cuisines', 'diets', 'times', 'ingredients', 'groups', 'quantities', 'measurements', 'preparations', 'user'));
     }
     public function store(Request $request)
     {
@@ -223,29 +224,27 @@ class RecipeController extends Controller
         // // dd($steps);
 
         // dd($cuisine_of_selected_recipe);
-        return view('recipes/edit', compact('recipe', 'cuisines', 'cuisine_of_selected_recipe', 'diets', 'diet_of_selected_recipe', 'times', 'time_of_selected_recipe', 'quantities', 'measurements', 'preparations', 'ingredients', 'steps' ));
+        return view('recipes/edit', compact('recipe', 'cuisines', 'cuisine_of_selected_recipe', 'diets', 'diet_of_selected_recipe', 'times', 'time_of_selected_recipe', 'quantities', 'measurements', 'preparations', 'ingredients' ));
     }
 
     public function update(Request $request, $id) 
     {   
         $recipe = Recipe::findOrFail($id);
-        $name_input = $request->input('name');
         $cuisine_input = $request->input('cuisine_id');
         $diet_input = $request->input('diet_id');
         $time_input = $request->input('total_time_id');
-        $description_input = $request->input('description');
-        $image_input = $request->input('image');
-        $video_input = $request->input('video');
-        $source_input = $request->input('source_url');
+
+        // foreach($request->input('step') as $i => $step){
+        //     $s = new Step;
+        //     $s->recipe_id = $recipe->id;
+        //     $s->step = $step;
+        //     $s->number = $i + 1;
+        //     $s->save();
+        // }
 
         $recipe->cuisine_id = $cuisine_input;
-        $recipe->name = $name_input;
         $recipe->diet_id = $diet_input;
         $recipe->total_time_id = $time_input;
-        $recipe->description = $description_input;
-        $recipe->image_url = $image_input;
-        $recipe->video_url = $video_input;
-        $recipe->source_url = $source_input;
         $recipe->save();
 
         $steps = Step::where('recipe_id', $id)->get();
