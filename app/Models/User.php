@@ -10,6 +10,8 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
+use App\Models\Recipe;
+
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -17,6 +19,10 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
+
+    public function recipes() {
+        return $this->belongsToMany(Recipe::class);
+    }
 
     /**
      * The attributes that are mass assignable.

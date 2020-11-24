@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 use App\Models\Step;
 use App\Models\Ingredient;
+use App\Models\User;
 
 class Recipe extends Model
 {
@@ -23,5 +24,9 @@ class Recipe extends Model
 
     public function ingredients() {
         return $this->belongsToMany(Ingredient::class, 'ingredient_preparation_quantity_recipes');
+    }
+
+    public function users() {
+        return $this->belongsToMany(User::class);
     }
 }
