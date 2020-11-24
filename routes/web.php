@@ -12,15 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 Route::get('/', function () {
     return view('banner/banner');
 });
 
-
+Route::get('/about', function () {
+    return view('about/about');
+});
 Route::get('/test', 'TestController@test');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -35,8 +33,8 @@ Route::get('/recipes', 'RecipeController@index');
 Route::get('api/recipes', 'ApiController@recipes');
 
 Route::view('/search', 'recipes/search');
-Route::view('/about', 'about/about');
 // Route::view('/about', 'about/about');
+
 
 // recipe details
 Route::get('/recipes/{id}', 'RecipeController@show');
