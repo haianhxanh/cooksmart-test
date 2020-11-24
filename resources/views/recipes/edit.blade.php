@@ -230,7 +230,12 @@
         <textarea name="step[]" class="edit-form-group__textarea step-item"></textarea>
         <button type="button" class="remove-step">Remove</button>
       `;
+
       steps.appendChild(input);
+
+      input.querySelector('.remove-step').addEventListener('click', () => {
+      input.remove();
+      })
   })
 
   const removeStepBtn = document.querySelectorAll('.remove-step');
@@ -306,6 +311,10 @@
 
       `
       ingredient.appendChild(input);
+
+      input.querySelector('.remove-combo').addEventListener('click', () => {
+        input.remove();
+      })
 
       $(document).ready(function() {
           $(input).find('.js-example-basic-multiple').select2({tags: true});

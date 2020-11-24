@@ -274,35 +274,63 @@ class RecipeController extends Controller
         $measurementsFromRequest = $request->input('measurements', []);
         $preparationsFromRequest = $request->input('preparations', []);
 
-        foreach($combo as $i => $c) {
-            if(isset($ingredientsFromRequest[$i])){
-                $c->ingredient_id = $ingredientsFromRequest[$i];
-                $c->quantity_id = $quantitiesFromRequest[$i];
-                $c->measurement_id = $measurementsFromRequest[$i];
-                $c->preparation_id = $preparationsFromRequest[$i];
-                $c->save();
-            } else {
-                $c->delete();
-            }
-        }
-
         // foreach($combo as $i => $c) {
-        //     if(is_numeric($ingredientsFromRequest[$i])){
+        //     if(isset($ingredientsFromRequest[$i])){
         //         $c->ingredient_id = $ingredientsFromRequest[$i];
         //         $c->quantity_id = $quantitiesFromRequest[$i];
         //         $c->measurement_id = $measurementsFromRequest[$i];
         //         $c->preparation_id = $preparationsFromRequest[$i];
         //         $c->save();
-        //     } elseif (!is_numeric($preparationsFromRequest[$i])) {
-        //         $new_preparation = new Preparation;
-        //         $new_preparation->name = $preparationsFromRequest[$i];
-        //         $new_preparation->save();
-
-        //     }
-        //        else {
+        //     } else {
         //         $c->delete();
         //     }
         // }
+
+        foreach($combo as $i => $c) {
+            if(isset($ingredientsFromRequest[$i])){
+                $ing = null;
+                $quan = null;
+                $mea = null;
+                $prep = null;
+
+                if(is_numeric($ingredientsFromRequest[$i])){
+                    $ing = $ingredientsFromRequest[$i];
+                    $quan = $quantitiesFromRequest[$i];
+                    $mea = $measurementsFromRequest[$i];
+                    $prep = $preparationsFromRequest[$i];
+
+                }else{
+                    $new_ing = new Ingredient;
+                    $new_ing->name = $ingredientsFromRequest[$i];
+                    $new_ing->save();
+                    $ing = $new_ing->id;
+
+                    $new_quan = new Quantity;
+                    $new_quan->amount = $quantitiesFromRequest[$i];
+                    $new_quan->save();
+                    $quan = $new_quan->id;
+
+                    $new_mea = new Measurement;
+                    $new_mea->name = $measurementsFromRequest[$i];
+                    $new_mea->save();
+                    $mea = $new_mea->id;
+
+                    $new_prep = new Preparation;
+                    $new_prep->name = $preparationsFromRequest[$i];
+                    $new_prep->save();
+                    $prep = $new_prep->id;
+                }
+
+                $c->ingredient_id = $ing;
+                $c->quantity_id = $quan;
+                $c->measurement_id = $mea;
+                $c->preparation_id = $prep;
+                $c->save();
+
+            } else {
+                $c->delete();
+            }
+        }
 
 
         for($i = $combo->count(); $i < count($ingredientsFromRequest); $i++) {
