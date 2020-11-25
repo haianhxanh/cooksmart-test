@@ -1,0 +1,100 @@
+// Jordan's color scheme
+$DarkGreen: #164A41;
+$MediumGreen: #4D774E;
+$LightGreen: #9DC88D;
+$NaturalYellow: #F1B24A;
+$White: #FFFFFF;
+
+
+
+#success-message {
+    background-color: rgb(102, 224, 102);
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    width: 90vw;
+    margin: 1rem auto;
+}
+.recipe-container {
+    background-color: white;
+    // margin: 50px;
+    // display: flex;
+   
+}
+.recipe-table {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 2px solid $NaturalYellow;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    width: 90vw;
+    margin: auto;
+    justify-content: space-between;
+
+    th {
+        background-color: $NaturalYellow;
+        padding: 5px 0;
+    }
+
+    .recipe-table-img, img {
+        margin-top: 5px;
+        height: 140px;
+        width: 200px;
+    }
+
+    .recipe-table-name {
+        padding-left: 20px;
+        font-size: 1.2rem;
+    }
+
+    .recipe-table-row {
+        margin-top: 10px;
+    }
+   
+}
+.index-header {
+    text-align: center;
+    background: $DarkGreen;
+    width: 100vw;
+    padding: 20px 0;
+    color: $White;
+    text-shadow: 2px 2px black;
+    -webkit-box-shadow: 0 10px 5px #888888;
+    -moz-box-shadow: 0 10px 5px #888888;
+    box-shadow: 0 10px 5px #888888;
+    margin-bottom: 20px;
+}
+.edit-btn {
+    border-radius: 5px;
+        margin: 0 auto;
+        width: 140px;
+        height: 40px;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        font-weight: 500;
+        color: #000;
+        background-color: #fff;
+        border: 2px solid black;
+        border-radius: 45px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        outline: none;
+        display: block;
+        padding: 5px;
+
+        &:hover {
+            background-color: $main_green;
+            box-shadow: 0px 15px 20px rgba($main_green, 0.4);
+            color: #fff;
+            transform: translateY(-7px);
+        }
+    }
+    @media only screen and (max-width: 700px) {
+        .edit-btn {
+              width: 90px;
+              height: 40px;
+            }
+    }
+  

@@ -153,7 +153,17 @@ function Search() {
                     </span>
                 </form>
 
+<<<<<<< HEAD
                 <SearchResults recipes={recipes} />
+=======
+                    <SearchResults recipes={recipes}/>
+                    
+                    {
+                // moved outside of div, if doesn't work, move above last line
+                        hasMore === true ? 
+                        <button className="add-more" onClick={() => setPage(page + 1)}>Find more</button> : ''
+                    }
+>>>>>>> c298f25da2c2fde0b3ea727124b7085e8337da4a
 
                 {hasMore === true ? (
                     <button
@@ -171,6 +181,7 @@ function Search() {
                     ""
                 )}
             </div>
+           
         </div>
     );
 }
