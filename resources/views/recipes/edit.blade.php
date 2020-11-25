@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@include('layouts.navigation')
+
 @section('content')
 <div class="edit-form">
   <form method="post" class="edit-form-group" 
@@ -12,7 +14,7 @@
       <div class="edit-form-group__item">
 
           <label for="name" class="edit-form-group__label">
-            <span>Edit name</span>
+            <span><h4>Edit name</h4></span>
           </label>
 
           <input type="text" name="name" class="edit-form-group__input" 
@@ -24,7 +26,7 @@
       <div class="edit-form-group__item">
 
           <label for="cuisine_id" class="edit-form-group__label">
-            <span>Change cuisine</span>
+            <span><h4>Change cuisine</h4></span>
           </label>
 
           <select name="cuisine_id" id="" class="edit-form-group__select">
@@ -40,7 +42,7 @@
   
       <div class="edit-form-group__item">
           <label for="diet_id" class="edit-form-group__label">
-            <span>Change diet</span>
+            <span><h4>Change diet</h4></span>
           </label>
 
           <select name="diet_id" id="" class="edit-form-group__select">
@@ -56,7 +58,7 @@
   
       <div class="edit-form-group__item"> 
           <label for="total_time_id" class="edit-form-group__label">
-            <span>Change cooking time</span>
+            <span><h4>Change cooking time</h4></span>
           </label>
 
           <select name="total_time_id" id="" class="edit-form-group__select">
@@ -71,17 +73,17 @@
       
       <div class="edit-form-group__item">
           <label for="description" class="edit-form-group__label">
-            Current description
-            <p></p>
+            <h4>Edit description</h4>
           </label>
 
-          <textarea name="description" class="edit-form-group__textarea" placeholder="Insert a new description">{{ $recipe->description }}</textarea>
+          <textarea name="description" class="edit-form-group__textarea" placeholder="Insert a new description" rows="8">{{ $recipe->description }}</textarea>
 
       </div>
   
   
      <div class="edit-form-group__item media">
         <div class="edit-form-group__media">
+            <h4>Edit image</h4>
             <label for="image" class="edit-form-group__label">
               <img src="{{ $recipe->image_url }}" alt="{{ $recipe->name }}">
             </label>
@@ -93,6 +95,7 @@
     
     
         <div class="edit-form-group__media">
+            <h4>Edit video</h4>
             <label for="video" class="edit-form-group__label">
               <iframe id="ytplayer" type="text/html" width="320" height="240"
               src="{{ $recipe->video_url }}?mute=1"
@@ -109,7 +112,7 @@
   
       <div class="edit-form-group__item">
           <label for="source_url" class="edit-form-group__label">
-              Current source of the recipe: <a href="{{ $recipe->source_url }}">{{ $recipe->source_url }}</a>
+              <h4>Edit source of the recipe</h4>
           </label>
 
           <input type="text" id="source_url" name="source_url"    value="{{ $recipe->source_url }}"
@@ -118,7 +121,8 @@
   
   
  
-        <div>
+        <div class="edit-ingredient-list-wrapper">
+          <h4 class="heading-center">Edit/Add ingredients</h4>
           <ol class="edit-ingredient-list">
              @foreach($recipe->ingredientMeasurementPreparationQuantities as $combo)
            
@@ -142,6 +146,7 @@
                           <span>Quantity</span>
                         </label>
                         <select class="js-example-basic-multiple edit-form-group__select" name="quantities[]">
+                          <option value="" class="edit-form-group__option">no quantity</option>
                           @foreach($quantities as $q)
                             <option value="{{ $q->id }}" {{ $q->id == $combo->quantity_id ? 'selected' : ''}}>{{ $q->amount }}</option>
                           @endforeach
@@ -171,7 +176,7 @@
                         </label>
       
                         <select class="js-example-basic-multiple edit-form-group__select" name="preparations[]">
-                            <option value="" class="edit-form-group__option">no specific preparation</option>
+                            <option value="" class="edit-form-group__option">no preparation</option>
                             @foreach($preparations as $p)
                             <option value="{{ $p->id }}" {{ $p->id == $combo->preparation_id ? 'selected' : ''}}>{{ $p->name }}</option>
                             @endforeach
@@ -179,19 +184,21 @@
                     
                       </div>
 
-                      <button type="button" class="remove-combo">Remove</button>
+                      <div><button type="button" class="remove-combo">Remove</button></div>
               </li>
   
               @endforeach
             </ol>
+
+            <div class="ingredient-list-btn__container"><button type="button" class="ingredient-list-btn">+</button></div>
          </div>
   
-         <div class="ingredient-list-btn__container"><button type="button" class="ingredient-list-btn">+</button></div>
+      
 
-  
+
       <div class="edit-form-group__steps">
           <label for="step" class="edit-form-group__label">
-            <p>Steps</p>
+            <h4 class="heading-center">Edit/Add steps</h4>
           </label>
 
           <ol class="steps-list">
@@ -199,7 +206,7 @@
                  <li class="steps-list-item">
                     <textarea name="step[]" class="edit-form-group__textarea step-item">{{ $recipe->id == $step->recipe_id ? $step->step : '' }}</textarea>
 
-                  <button type="button" class="remove-step">Remove</button>
+                  <div><button type="button" class="remove-step">Remove</button></div>
                 </li>
               @endforeach
             </ol>
@@ -228,7 +235,7 @@
       input.className = "steps-list-item";
       input.innerHTML = ` 
         <textarea name="step[]" class="edit-form-group__textarea step-item"></textarea>
-        <button type="button" class="remove-step">Remove</button>
+        <div><button type="button" class="remove-step">Remove</button></div>
       `;
 
       steps.appendChild(input);
@@ -278,6 +285,7 @@
             <span>Quantity</span>
           </label>
               <select class="js-example-basic-multiple edit-form-group__select" name="quantities[]">
+                <option value="" class="edit-form-group__option">no quantity</option>
                   @foreach ($quantities as $q)        
                       <option value="{{ $q->id }}">{{ $q->amount }}</option>
                   @endforeach
@@ -301,13 +309,13 @@
             <span>Preparation</span>
           </label>
               <select class="js-example-basic-multiple edit-form-group__select" name="preparations[]">
-                      <option value="" class="edit-form-group__option">no specific preparation</option>
+                      <option value="" class="edit-form-group__option">no preparation</option>
                   @foreach ($preparations as $p)        
                       <option value="{{ $p->id }}">{{ $p->name }}</option>
                   @endforeach
               </select>  
        </div>  
-       <button type="button" class="remove-combo">Remove</button>
+       <div><button type="button" class="remove-combo">Remove</button></div>
 
       `
       ingredient.appendChild(input);
