@@ -8,45 +8,94 @@
             <li><a href="/register" class="nav__link">Register</a></li>
         </ul>
     </div>
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-        </x-slot>
+    <div class="container-login">
+    <x-guest-layout>
+        <x-jet-authentication-card>
+            <x-slot name="logo">
+            </x-slot>
 
-        <x-jet-validation-errors class="mb-4" />
+            <x-jet-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+            <form method="POST" action="{{ route('register') }}">
+                @csrf
 
-            <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            </div>
+                <div class="login-form">
+                    <x-jet-label for="name" value="{{ __('Name') }}" class="label-login"/>
+                    <x-jet-input id="name" class="" type="text" name="name" :value="old('name')" required autofocus autocomplete="name"
+                    style="
+                    height: 2.5rem;
+                    width: 20rem;
+                    margin-left: 15rem;
+                    "
+                    />
+                </div>
 
-            <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
+                <div class="mt-4 login-form">
+                    <x-jet-label for="email" value="{{ __('Email') }}" class="label-login"/>
+                    <x-jet-input id="email" class="" type="email" name="email" :value="old('email')" required 
+                    style="
+                    height: 2.5rem;
+                    width: 20rem;
+                    margin-left: 15.4rem;
+                    "
+                    />
+                </div>
 
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
+                <div class="mt-4 login-form">
+                    <x-jet-label for="password" value="{{ __('Password') }}" class="label-login"/>
+                    <x-jet-input id="password" class="" type="password" name="password" required autocomplete="new-password" 
+                    style="
+                    height: 2.5rem;
+                    width: 20rem;
+                    margin-left: 11.6rem;
+                    "
+                    />
+                </div>
 
-            <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
+                <div class="mt-4 login-form">
+                    <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" class="label-login"/>
+                    <x-jet-input id="password_confirmation" class="" type="password" name="password_confirmation" required autocomplete="new-password" 
+                    style="
+                    height: 2.5rem;
+                    width: 20rem;
+                    margin-left: 4.2rem;
+                    "
+                    />
+                </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
+                <div class="flex items-center justify-end mt-4 login-form">
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}" style="color:white;">
+                        {{ __('Already registered?') }}
+                    </a>
+                    <div style="
+                    padding-top: 2rem;
+                    ">
+                        <x-jet-button class="ml-4 ownb"
+                        style="
+                        margin-left: 47%;
+                        margin-bottom: 20px;
+                        width: 100px;
+                        height: 50px;
+                        font-size: 11px;
+                        text-transform: uppercase;
+                        letter-spacing: 2.5px;
+                        font-weight: 500;
+                        color: #000;
+                        background-color: #fff;
+                        border: 2px solid black;
+                        border-radius: 45px;
+                        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+                        transition: all 0.3s ease 0s;
+                        cursor: pointer;
+                        outline: none;
+                        "
+                        >
+                            {{ __('Register') }}
+                        </x-jet-button>
+                        </div>
 
-                <x-jet-button class="ml-4">
-                    {{ __('Register') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+                </div>
+            </form>
+        </x-jet-authentication-card>
+    </x-guest-layout>
+</div>

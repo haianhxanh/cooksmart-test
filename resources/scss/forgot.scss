@@ -1,0 +1,29 @@
+// COLORS
+$main_green: #cae265;
+$DarkGreen: #164a41;
+$MediumGreen: #4d774e;
+$LightGreen: #9dc88d;
+$NaturalYellow: #f1b24a;
+$White: #ffffff;
+$canary: #fffd98ff;
+
+.forgot-form {
+    text-align: center;
+    color: $NaturalYellow;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+.own {
+    margin: 2rem;
+    color: $White;
+}
+
+.inputb {
+    height: 2.5rem;
+    width: 20rem;
+}
+
+.my-own-btn {
+    margin-left: 3rem;
+}
