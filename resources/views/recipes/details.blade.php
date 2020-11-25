@@ -7,6 +7,12 @@
 <div class="single-recipe-wrapper">
   <div class="single-recipe">
     <h2>{{ $recipe->name }}</h2>
+    
+    <form action="" method="post">
+      @csrf
+      <button type=submit>Add to favourite</button>
+    </form> 
+
     <div class="single-recipe__description"><q>{{ $recipe->description }}</q></div>
   
     <div class="single-recipe__intro">
@@ -31,27 +37,32 @@
   
       <div class="single-recipe__ingredients">
         <h4>Ingredients you need</h4>
-        <ul>
-           @for($i = 0; $i < count($combo); $i++)
-             <li><p>{{ $quantity[$i] }} {{ $measurement[$i] }} {{ $ingredient[$i] }}
-            @if (isset($preparation[$i])), {{ $preparation[$i] }} 
-             
-            @endif
-            </p></li>
-           @endfor
-        </ul>
+        <div class="single-recipe__ingredients-container">
+          <ul>
+             @for($i = 0; $i < count($combo); $i++)
+               <li><p>{{ $quantity[$i] }} {{ $measurement[$i] }} {{ $ingredient[$i] }}
+              @if (isset($preparation[$i])), {{ $preparation[$i] }} 
+               
+              @endif
+              </p></li>
+             @endfor
+          </ul>
+        </div>
       </div>
     
       <div class="single-recipe__steps">
         <h4>Let's cook!</h4>
         <ol>
           @foreach ($steps as $step)
-              <li><p>{{ $step->step }}</p></li>
+              <div><li><p>{{ $step->step }}</p></li></div>
+              <br>
           @endforeach
         </ol>
       </div>
   
     </div>
+
+    <hr>
   
     <div class="single-recipe__media">
         
