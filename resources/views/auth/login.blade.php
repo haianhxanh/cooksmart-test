@@ -1,3 +1,6 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
 <div class="nav">
         <img src="https://www.dropbox.com/s/1znnm2hkyaw6w7d/logo-large.png?raw=1" class="nav__logo"/>
         <ul class="nav__container">
@@ -45,7 +48,7 @@
 
             <div class="flex items-center justify-end mt-4 login-form">
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}" style="color:white;">
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}" style="color:#164a41;">
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif

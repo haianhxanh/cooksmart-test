@@ -7,7 +7,7 @@
         </div>
 
         <div class="slogan">
-            <h2><span class="slogan-hover">Recipe generator which is actually smarter than you</span></h2>
+            <h2><span class="slogan-hover">Be smart. Save time. Cook with us!</span></h2>
         </div>
         <div class="btn">
             <a href="/search"><button>Enter the awesomeness</button></a>

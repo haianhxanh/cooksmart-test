@@ -7,6 +7,11 @@ $NaturalYellow: #f1b24a;
 $White: #ffffff;
 $canary: #fffd98ff;
 
+* {
+    font-family: "Quicksand", sans-serif !important;
+    margin: 0;
+}
+
 .container-login {
     display: flex;
     background-color: $DarkGreen;

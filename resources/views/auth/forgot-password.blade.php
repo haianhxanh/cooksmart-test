@@ -1,3 +1,6 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
 <div class="nav">
         <img src="https://www.dropbox.com/s/1znnm2hkyaw6w7d/logo-large.png?raw=1" class="nav__logo"/>
         <ul class="nav__container">
@@ -34,11 +37,11 @@
                     <x-jet-input id="email" class="block mt-1 w-full inputb" type="email" name="email" :value="old('email')" required autofocus />
                 </div>
 
-                <div class="flex items-center justify-end mt-4 my-own-btn">
-                    <x-jet-button>
+                <button class="my-own-btn">
+                
                         {{ __('Email Password Reset Link') }}
-                    </x-jet-button>
-                </div>
+                
+                </button>
             </form>
         </x-jet-authentication-card>
     </x-guest-layout>
