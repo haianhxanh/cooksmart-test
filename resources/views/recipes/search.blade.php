@@ -7,6 +7,14 @@
     <script src="{{ asset('js/search.js') }}" >
     </script>
 
+    <script>
+      const searchBtn = document.querySelector('.recipe-btn');
+      searchBtn.addEventListener('click', () => {
+        const message = document.querySelector('.check-out');
+        message.style.display = "none";
+      })
+    </script>
+
   </div>
 
 @endsection

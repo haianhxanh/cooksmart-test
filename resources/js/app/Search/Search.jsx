@@ -153,6 +153,8 @@ function Search() {
                     </span>
                 </form>
 
+                <h2 className="check-out">Check out the latest recipes</h2>
+
                 <SearchResults recipes={recipes} />
 
                 {// moved outside of div, if doesn't work, move above last line
@@ -183,7 +185,9 @@ function Search() {
                     ""
                 )}
             </div>
+
         </div>
+        
     );
 }
 
