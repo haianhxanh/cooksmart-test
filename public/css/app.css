@@ -395,6 +395,137 @@
   color: #f1b24a;
 }
 
+@media only screen and (max-width: 730px) {
+  .person {
+    display: flex;
+    flex-direction: column;
+  }
+  .person .hide {
+    display: none;
+  }
+}
+.about-container h1 {
+  text-align: center;
+  background: #164A41;
+  width: 100vw;
+  padding: 20px 0;
+  color: #FFFFFF;
+  text-shadow: 2px 2px black;
+  box-shadow: 0 10px 5px #888888;
+  margin-bottom: 20px;
+}
+
+.about-us {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  justify-content: center;
+}
+.about-us .person {
+  margin: 2rem;
+  width: 280px;
+}
+.about-us .person-name {
+  text-align: center;
+  font-weight: bold;
+  padding: 0.3rem 0;
+}
+.about-us .person-img {
+  text-align: center;
+}
+.about-us .person-img img {
+  height: 280px;
+  border-radius: 1em;
+}
+.about-us p {
+  margin: 0.3rem 0;
+}
+
+#success-message {
+  background-color: #66e066;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  width: 90vw;
+  margin: 1rem auto;
+}
+
+.recipe-container {
+  background-color: white;
+}
+
+.recipe-table {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 2px solid #F1B24A;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  width: 90vw;
+  margin: auto;
+  justify-content: space-between;
+}
+.recipe-table th {
+  background-color: #F1B24A;
+  padding: 5px 0;
+}
+.recipe-table .recipe-table-img, .recipe-table img {
+  margin-top: 5px;
+  height: 140px;
+  width: 200px;
+}
+.recipe-table .recipe-table-name {
+  padding-left: 20px;
+  font-size: 1.2rem;
+}
+.recipe-table .recipe-table-row {
+  margin-top: 10px;
+}
+
+.index-header {
+  text-align: center;
+  background: #164A41;
+  width: 100vw;
+  padding: 20px 0;
+  color: #FFFFFF;
+  text-shadow: 2px 2px black;
+  box-shadow: 0 10px 5px #888888;
+  margin-bottom: 20px;
+}
+
+.edit-btn {
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 140px;
+  height: 40px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid black;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  display: block;
+  padding: 5px;
+}
+.edit-btn:hover {
+  background-color: #cae265;
+  box-shadow: 0px 15px 20px rgba(202, 226, 101, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+@media only screen and (max-width: 700px) {
+  .edit-btn {
+    width: 90px;
+    height: 40px;
+  }
+}
 * {
   font-family: "Quicksand", sans-serif;
   margin: 0;
@@ -485,24 +616,5 @@
   box-shadow: 0px 15px 20px rgba(202, 226, 101, 0.4);
   color: #fff;
   transform: translateY(-7px);
-}
-
-.about-us {
-  background-color: lightblue;
-  display: flex;
-}
-.about-us .person {
-  justify-content: space-around;
-  margin: 20px;
-  width: 7em;
-  height: 10em;
-  border: 0.05rem solid #979393;
-  box-shadow: 0.2em 0.25em 0.25em rgba(65, 64, 64, 0.5);
-  background-color: whitesmoke;
-  color: #4d774e;
-  text-shadow: 1px 1px black;
-  opacity: 0.8;
-  border-radius: 1em;
-  justify-content: center;
 }
 /*# sourceMappingURL=app.css.map*/
