@@ -1,12 +1,22 @@
-.single-recipe {
+.single-recipe-wrapper {
   padding: 5% 10%;
+  box-sizing: border-box;
+  background-image: url("https://www.dropbox.com/s/s9g9ls9s1htrytv/details-bg.svg?raw=1");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.single-recipe {
+  margin: 5% 0%;
+  background-color: white;
+  border: 3px solid #4D774E;
 }
 .single-recipe h2 {
   text-align: center;
 }
 
 .single-recipe__intro {
-  margin: 5%;
+  margin: 3% 0;
   display: flex;
   justify-content: space-evenly;
   font-size: 1.2rem;
@@ -50,6 +60,8 @@
 
 .single-recipe__description {
   text-align: center;
+  padding: 2%;
+  line-height: 1.3;
 }
 .single-recipe__description q {
   font-size: 1.2rem;
@@ -57,6 +69,7 @@
 
 .single-recipe__image {
   width: 45%;
+  transition: all 0.45s;
 }
 .single-recipe__image img {
   width: 100%;
@@ -65,8 +78,7 @@
   transition: all 0.45s;
 }
 .single-recipe__image img:hover {
-  transform: scale(2);
-  margin-right: 40%;
+  cursor: zoom-in;
 }
 
 .single-recipe-body {
@@ -79,22 +91,32 @@
 .single-recipe-body .single-recipe__ingredients {
   width: 40%;
   padding: 3% 5%;
+}
+.single-recipe-body .single-recipe__ingredients-container {
   background-image: url("https://www.dropbox.com/s/cdvh00sjvu731rk/note.svg?raw=1");
-  background-size: contain;
+  background-size: 100%;
   background-repeat: no-repeat;
+  padding: 10%;
+  min-height: 100%;
 }
 .single-recipe-body .single-recipe__steps {
   width: 55%;
-  padding: 3%;
+  padding: 3% 5%;
+  line-height: 1.6;
 }
 
 .single-recipe__media {
-  margin-top: 5%;
+  margin: 5% 0%;
 }
 
 .single-recipe__video iframe {
   display: block;
   margin: 0 auto;
+}
+
+.zoom-in {
+  transform: scale(1.7);
+  margin-right: 25%;
 }
 
 .form__container {
@@ -293,6 +315,9 @@
   display: block;
   margin: 0 auto;
 }
+.edit-form .heading-center {
+  text-align: center;
+}
 
 .edit-form-group__item {
   display: flex;
@@ -317,6 +342,10 @@
 .edit-form-group__media .edit-form-group__input {
   margin-top: 5%;
   width: 100%;
+}
+
+.edit-ingredient-list-wrapper {
+  margin: 5% 0;
 }
 
 .edit-form-group__item .edit-ingredient-list {
@@ -349,9 +378,6 @@
 
 .edit-form-group__steps {
   margin: 5% 10%;
-}
-.edit-form-group__steps p {
-  text-align: center;
 }
 .edit-form-group__steps textarea {
   width: 100%;
@@ -393,6 +419,192 @@
 .nav .nav__link:hover {
   font-weight: 900;
   color: #f1b24a;
+}
+
+.landing-page {
+  height: 100vh;
+  background-image: url("../img/banner-large.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.logo {
+  height: 200px;
+}
+.logo-img {
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+.logo img {
+  width: 200px;
+  display: block;
+}
+
+.logo img:hover {
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.slogan {
+  padding-top: 4.5rem;
+  color: whitesmoke;
+  text-align: center;
+}
+
+.slogan-hover:hover {
+  color: #cae265;
+  box-shadow: 0px 10px 15px rgba(202, 226, 101, 0.4);
+  transform: translateY(-7px);
+}
+
+.btn {
+  padding-top: 4rem;
+}
+
+.btn button {
+  margin: 0 auto;
+  width: 140px;
+  height: 45px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid black;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  display: block;
+}
+
+.btn a {
+  text-decoration: none;
+}
+
+.btn button:hover {
+  background-color: #cae265;
+  box-shadow: 0px 15px 20px rgba(202, 226, 101, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+* {
+  font-family: "Quicksand", sans-serif !important;
+  margin: 0;
+}
+
+.container-login {
+  display: flex;
+  background-image: url("https://www.dropbox.com/s/0irdlitcl0k26bu/background-login.png?raw=1");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  font-size: 2rem;
+}
+
+.login-form {
+  margin-top: 3rem;
+  margin-left: 3rem;
+}
+.login-form .label-login {
+  color: #164a41;
+}
+.login-form .jordan-input1 {
+  height: 2.5rem;
+  width: 20rem;
+  margin-left: 10.4rem;
+}
+.login-form .jordan-input2 {
+  height: 2.5rem;
+  width: 20rem;
+  margin-left: 6.6rem;
+}
+.login-form .jordan-input3 {
+  height: 2rem;
+  width: 20rem;
+  margin-left: -6.9rem;
+}
+.login-form .login-butt {
+  margin-left: -19rem;
+  padding-top: 2rem;
+}
+.login-form .button {
+  margin-left: 47%;
+  margin-bottom: 20px;
+  width: 100px;
+  height: 50px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: 2px solid black;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+.login-form .button:hover {
+  background-color: #cae265;
+  box-shadow: 0px 15px 20px rgba(202, 226, 101, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+* {
+  font-family: "Quicksand", sans-serif !important;
+  margin: 0;
+}
+
+.forgot-form {
+  text-align: center;
+  color: #f1b24a;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.own {
+  margin: 2rem;
+  color: #ffffff;
+}
+
+.inputb {
+  height: 2.5rem;
+  width: 20rem;
+}
+
+.my-own-btn {
+  margin-left: 1.5rem !important;
+  margin-bottom: 20px !important;
+  width: 100px !important;
+  height: 50px !important;
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2.5px !important;
+  font-weight: 500 !important;
+  color: #000 !important;
+  background-color: #fff !important;
+  border: 2px solid black !important;
+  border-radius: 45px !important;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease 0s !important;
+  cursor: pointer !important;
+  outline: none !important;
+  font-size: 0.6rem !important;
+}
+
+.my-own-btn:hover {
+  background-color: #cae265 !important;
+  box-shadow: 0px 15px 20px rgba(202, 226, 101, 0.4) !important;
+  color: #fff !important;
+  transform: translateY(-7px) !important;
 }
 
 @media only screen and (max-width: 730px) {
@@ -527,12 +739,8 @@
   }
 }
 * {
-  font-family: "Quicksand", sans-serif;
+  font-family: "Quicksand", sans-serif !important;
   margin: 0;
-}
-
-.own {
-  background-color: orange;
 }
 
 .button {
@@ -555,63 +763,6 @@
 }
 
 .button:hover {
-  background-color: #cae265;
-  box-shadow: 0px 15px 20px rgba(202, 226, 101, 0.4);
-  color: #fff;
-  transform: translateY(-7px);
-}
-
-.landing-page {
-  height: 100vh;
-  background-image: url("../img/banner-large.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.logo {
-  height: 200px;
-}
-
-.logo img {
-  width: 200px;
-  margin: 0 auto;
-  display: block;
-}
-
-.logo img:hover {
-  color: #fff;
-  transform: translateY(-7px);
-}
-
-.slogan {
-  color: whitesmoke;
-  text-align: center;
-}
-
-.btn button {
-  margin: 0 auto;
-  width: 140px;
-  height: 45px;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  font-weight: 500;
-  color: #000;
-  background-color: #fff;
-  border: 2px solid black;
-  border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-  outline: none;
-  display: block;
-}
-
-.btn a {
-  text-decoration: none;
-}
-
-.btn button:hover {
   background-color: #cae265;
   box-shadow: 0px 15px 20px rgba(202, 226, 101, 0.4);
   color: #fff;

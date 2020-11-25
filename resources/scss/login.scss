@@ -1,0 +1,84 @@
+// COLORS
+$main_green: #cae265;
+$DarkGreen: #164a41;
+$MediumGreen: #4d774e;
+$LightGreen: #9dc88d;
+$NaturalYellow: #f1b24a;
+$White: #ffffff;
+$canary: #fffd98ff;
+
+* {
+    font-family: "Quicksand", sans-serif !important;
+    margin: 0;
+}
+
+.container-login {
+    display: flex;
+    background-image: url("https://www.dropbox.com/s/0irdlitcl0k26bu/background-login.png?raw=1");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    font-size: 2rem;
+}
+
+.login-form {
+    margin-top: 3rem;
+    margin-left: 3rem;
+
+    //FORM
+
+    .label-login {
+        color: $DarkGreen;
+    }
+
+    .jordan-input1 {
+        height: 2.5rem;
+        width: 20rem;
+        margin-left: 10.4rem;
+    }
+
+    .jordan-input2 {
+        height: 2.5rem;
+        width: 20rem;
+        margin-left: 6.6rem;
+    }
+
+    .jordan-input3 {
+        height: 2rem;
+        width: 20rem;
+        margin-left: -6.9rem;
+    }
+
+    // BUTON
+    .login-butt {
+        margin-left: -19rem;
+        padding-top: 2rem;
+    }
+
+    .button {
+        margin-left: 47%;
+        margin-bottom: 20px;
+        width: 100px;
+        height: 50px;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        font-weight: 500;
+        color: #000;
+        background-color: #fff;
+        border: 2px solid black;
+        border-radius: 45px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        outline: none;
+    }
+
+    .button:hover {
+        background-color: $main_green;
+        box-shadow: 0px 15px 20px rgba($main_green, 0.4);
+        color: #fff;
+        transform: translateY(-7px);
+    }
+}
