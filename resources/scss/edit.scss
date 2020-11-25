@@ -23,6 +23,10 @@ $canary: #fffd98ff;
     margin: 0 auto;
   }
 
+  .heading-center {
+    text-align: center;
+  }
+
 }
 
 .edit-form-group__item {
@@ -51,11 +55,9 @@ $canary: #fffd98ff;
   }
 }
 
-// @media (max-height: 749px) {
-//   .edit-form-group__item.media {
-//     flex-direction: column;
-//   }
-// }
+.edit-ingredient-list-wrapper {
+  margin: 5% 0;
+}
 
 .edit-form-group__item .edit-ingredient-list {
   display: flex;
@@ -92,9 +94,6 @@ $canary: #fffd98ff;
 
 .edit-form-group__steps {
   margin: 5% 10%;
-  p {
-    text-align: center;
-  }
 
   textarea {
     width: 100%;

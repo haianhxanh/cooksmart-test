@@ -33,11 +33,11 @@ Route::get('/recipes', 'RecipeController@index');
 Route::get('api/recipes', 'ApiController@recipes');
 
 Route::view('/search', 'recipes/search');
-// Route::view('/about', 'about/about');
 
 
 // recipe details
 Route::get('/recipes/{id}', 'RecipeController@show');
+
 
 // Edit
 Route::get('/recipes/{id}/edit', 'RecipeController@edit');
