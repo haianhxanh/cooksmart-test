@@ -45,3 +45,4 @@ Route::put('/recipes/{id}', 'RecipeController@update');
 
 // Route::view('/{path?}', 'app/App')->where('path', '.*');
 
+Route::get('/user/profile', 'UserController@favourite')->middleware('auth');
