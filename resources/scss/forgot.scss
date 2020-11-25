@@ -1,0 +1,57 @@
+// COLORS
+$main_green: #cae265;
+$DarkGreen: #164a41;
+$MediumGreen: #4d774e;
+$LightGreen: #9dc88d;
+$NaturalYellow: #f1b24a;
+$White: #ffffff;
+$canary: #fffd98ff;
+
+* {
+    font-family: "Quicksand", sans-serif !important;
+    margin: 0;
+}
+
+.forgot-form {
+    text-align: center;
+    color: $NaturalYellow;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+.own {
+    margin: 2rem;
+    color: $White;
+}
+
+.inputb {
+    height: 2.5rem;
+    width: 20rem;
+}
+
+.my-own-btn {
+    margin-left: 1.5rem !important;
+    margin-bottom: 20px !important;
+    width: 100px !important;
+    height: 50px !important;
+    font-size: 11px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2.5px !important;
+    font-weight: 500 !important;
+    color: #000 !important;
+    background-color: #fff !important;
+    border: 2px solid black !important;
+    border-radius: 45px !important;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease 0s !important;
+    cursor: pointer !important;
+    outline: none !important;
+    font-size: 0.6rem !important;
+}
+
+.my-own-btn:hover {
+    background-color: $main_green !important;
+    box-shadow: 0px 15px 20px rgba($main_green, 0.4) !important;
+    color: #fff !important;
+    transform: translateY(-7px) !important;
+}
