@@ -20,6 +20,7 @@
                 </form>
               </li>
             @else
+            
             <li><a href="/login" class="nav__link">Login</a></li>
             <li><a href="/register" class="nav__link">Register</a></li>
             @endif
