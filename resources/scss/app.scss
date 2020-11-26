@@ -1,12 +1,13 @@
 @import "details.scss";
 @import "./form.scss";
-@import "edit.scss";
+@import "./edit.scss";
 @import "./navbar.scss";
 @import "./banner.scss";
 @import "./login.scss";
 @import "./forgot.scss";
 @import "./about.scss";
 @import "./index.scss";
+@import "./profileRecipes.scss";
 @import "profile.scss";
 @import "admin.scss";
 
@@ -97,4 +98,13 @@ $main_green: #cae265;
     box-shadow: 0px 15px 20px rgba($main_green, 0.4);
     color: #fff;
     transform: translateY(-7px);
+}
+
+// FORGOT PASSWORD TEXT
+.paragraph {
+    text-align: center;
+    width: 50%;
+    font-weight: bold;
+    color: #164a41;
+    margin-left: 2rem;
 }

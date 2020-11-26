@@ -1,10 +1,11 @@
+@extends('layouts.main')
+@include('layouts.navigation')
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
-@include('layouts.navigation')
 
-<div class="profile">
+<div class="profile-results container-login-profile">
 
     <div class="profile-management--off"
             id="profile-mng">
@@ -70,18 +71,24 @@
             <h3>You currently have no favorite recipes. Explore more <a href="/search">here</a>!</h3>
         @else 
     
-        @foreach ($recipes as $r)
-            <div class="results-card">
-                <h4 class="results-name">{{ $r->name }}</h4>
-                <img style="width:200px" src="{{ $r->image_url }}" alt={{ $r->name }}/>
-                <button class="results-btn">
-                    <a href="{{ action('RecipeController@show', $r->id) }}">View details</a>
-                </button>
-                <button>
-                    <a href="{{ action('UserController@deleteFavorite', $r->id) }}">Remove</a>
-                </button>
+        <div class="container-wrap-card">
+             @foreach ($recipes as $r)
+            <div class="profile-cards-results">
+                <div class="results-card-profile">
+                    <h4 class="results-name-profile">{{ $r->name }}</h4>
+                    <div class="profile-img"><img src="{{ $r->image_url }}" alt={{ $r->name }}/></div>
+                    <div class="button-wrap">
+                        <button class="results-btn-profile">
+                            <a href="{{ action('RecipeController@show', $r->id) }}">View details</a>
+                        </button>
+                        <button class="results-btn-profile">
+                            <a href="{{ action('UserController@deleteFavorite', $r->id) }}">Remove</a>
+                        </button>
+                    </div>
+                </div>
+                </div>
+                @endforeach
             </div>
-        @endforeach
     
         @endif
     </div>
