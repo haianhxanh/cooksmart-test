@@ -25,6 +25,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
+// User
+Route::get('/user/profile', 'UserController@favourite')->middleware('auth');
+Route::get('/user/profile/recipes/{id}/delete', 'UserController@deleteFavorite')->middleware('auth');
+
+
 Route::get('/recipes/create', 'RecipeController@create')->middleware('auth');
 Route::post('/recipes', 'RecipeController@store');
 Route::get('/recipes', 'RecipeController@index');
@@ -38,11 +43,9 @@ Route::view('/search', 'recipes/search');
 // recipe details
 Route::get('/recipes/{id}', 'RecipeController@show');
 
-
 // Edit
 Route::get('/recipes/{id}/edit', 'RecipeController@edit');
+
+Route::put('/recipes/add/{id}', 'UserController@addToFavorite')->middleware('auth');
+
 Route::put('/recipes/{id}', 'RecipeController@update');
-
-// Route::view('/{path?}', 'app/App')->where('path', '.*');
-
-Route::get('/user/profile', 'UserController@favourite')->middleware('auth');

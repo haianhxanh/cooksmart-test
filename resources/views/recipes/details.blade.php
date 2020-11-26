@@ -7,11 +7,24 @@
 <div class="single-recipe-wrapper">
   <div class="single-recipe">
     <h2>{{ $recipe->name }}</h2>
+
+    @if (Session::has('added_success_message'))
+    <div id="success-message" class=“alert alert--success”>{{ Session::get('added_success_message') }} <a href="/user/profile">Profile</a></div>
+    @endif
     
-    <form action="" method="post">
+    @if(Auth::check())
+    <form 
+    action="{{ action('UserController@addToFavorite', $recipe->id) }}" 
+    method="post">
+    <input style="display:none" type="text" name="user_id" value="{{ $user->id }}" >
+    <input style="display:none" type="text" name="recipe_id" value="{{ $recipe->id }}" >
+      @method('put')
       @csrf
       <button type=submit>Add to favourite</button>
     </form> 
+    @else 
+    <a href="\register">Register</a> or <a href="\login">Login</a> to save the recipe
+    @endif
 
     <div class="single-recipe__description"><q>{{ $recipe->description }}</q></div>
   
