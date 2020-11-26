@@ -41,3 +41,59 @@ $main_green: #cae265;
     color: #fff;
     transform: translateY(-7px);
 }
+
+//LOGOUT BUTTON
+
+.button-logout {
+    margin-left: 10%;
+    width: 80px;
+    height: 30px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: 2px solid black;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.button-logout:hover {
+    background-color: $main_green;
+    box-shadow: 0px 15px 20px rgba($main_green, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
+
+//BUTTON REGISTER
+
+.button-register {
+    margin-left: 1rem;
+    margin-bottom: 20px;
+    margin-top: 2rem;
+    width: 100px;
+    height: 50px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: 2px solid black;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.button-register:hover {
+    background-color: $main_green;
+    box-shadow: 0px 15px 20px rgba($main_green, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+}
