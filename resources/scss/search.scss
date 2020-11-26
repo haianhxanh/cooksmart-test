@@ -16,20 +16,20 @@ body {
     z-index: 0;
     position: relative;
 
-    &::before {
-        content: "";
-        // background: url("../img/banner-large.jpg");
-        background: url("../img/food.jpg");
-        height: 100vh;
-        opacity: 0.5;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        position: absolute;
-        background-size: cover;
-        z-index: -1;
-    }
+    // &::before {
+    //     content: "";
+    //     // background: url("../img/banner-large.jpg");
+    //     background: url("../img/food.jpg");
+    //     height: 100vh;
+    //     opacity: 0.5;
+    //     top: 0;
+    //     left: 0;
+    //     bottom: 0;
+    //     right: 0;
+    //     position: absolute;
+    //     background-size: cover;
+    //     z-index: -1;
+    // }
 }
 
 .search-bar {
