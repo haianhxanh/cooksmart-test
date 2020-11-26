@@ -18,7 +18,8 @@
                   @csrf
                     <button type="submit"><a style="color: black" class="nav__link">Logout</a></button>
                 </form>
-              </li>
+            </li>
+
             @else
             
             <li><a href="/login" class="nav__link">Login</a></li>

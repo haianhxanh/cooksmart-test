@@ -21,7 +21,7 @@ class User extends Authenticatable
     use TwoFactorAuthenticatable;
 
     public function recipes() {
-        return $this->belongsToMany(Recipe::class);
+        return $this->belongsToMany(Recipe::class, 'recipe_users');
     }
 
     /**
