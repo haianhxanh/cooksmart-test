@@ -8,6 +8,7 @@ $canary: rgba(255, 253, 152, 1);
 
 body {
     margin: 0;
+    padding-bottom: 0;
     box-sizing: border-box;
 }
 
@@ -112,11 +113,22 @@ body {
         margin-bottom: 15px;
     }
 }
+.results__container {
+    padding: 0 4em;
+    background: url('../img/searchbackground.jpg');
+    background-size: cover;
+    background-repeat: repeat;
+    min-height: 65vh;
+}
+.check-out{
+        color: black;
+        padding-top: 1em;
+        margin-left: 1.3em;
+}
 .results {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    // height: 70vh;
 }
 
 .results-card {
@@ -130,14 +142,13 @@ body {
     width: 250px;
     border: 0.05rem solid #979393;
     box-shadow: 0.2em 0.25em 0.25em rgba(65, 64, 64, 0.5);
-    margin: 7.5rem 1em 0 1em;
+    margin: 6rem 1em 0 1em;
     overflow: hidden;
 
     .results-img {
         height: 180px;
         width: 200px;
-        margin-right: auto;
-        margin-left: auto;
+        margin: auto;
         overflow: hidden;
     }
 
@@ -180,7 +191,7 @@ body {
 }
 .add-more {
     border-radius: 5px;
-    margin: 2rem auto;
+    margin: 2rem auto 0 auto;
     width: 140px;
     height: 40px;
     font-size: 11px;

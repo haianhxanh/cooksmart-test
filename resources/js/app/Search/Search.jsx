@@ -152,22 +152,23 @@ function Search() {
                         </button>
                     </span>
                 </form>
+                <div className="results__container">
+                    <h2 className="check-out">Check out the latest recipes. . .</h2>
 
-                <h2 className="check-out">Check out the latest recipes</h2>
+                    <SearchResults recipes={recipes} />
 
-                <SearchResults recipes={recipes} />
-
-                {// moved outside of div, if doesn't work, move above last line
-                hasMore === true ? (
-                    <button
-                        className="add-more"
-                        onClick={() => setPage(page + 1)}
-                    >
-                        Find more
-                    </button>
-                ) : (
-                    ""
-                )}
+                    {// moved outside of div, if doesn't work, move above last line
+                    hasMore === true ? (
+                        <button
+                            className="add-more"
+                            onClick={() => setPage(page + 1)}
+                        >
+                            Find more
+                        </button>
+                    ) : (
+                        ""
+                    )}
+                </div>
 
             </div>
 
