@@ -26,7 +26,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::define('admin', function($user){
-            if($user->id <= 3) {
+            if($user->id <= 1) {
                 return true;
             } else {
                 return false;
