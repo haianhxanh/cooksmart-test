@@ -49,3 +49,5 @@ Route::get('/recipes/{id}/edit', 'RecipeController@edit');
 Route::put('/recipes/add/{id}', 'UserController@addToFavorite')->middleware('auth');
 
 Route::put('/recipes/{id}', 'RecipeController@update');
+
+Route::delete('/recipes/{id}', 'RecipeController@destroy');

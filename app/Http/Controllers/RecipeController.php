@@ -377,6 +377,15 @@ class RecipeController extends Controller
         return redirect(action('RecipeController@show', [$recipe->id]));
     }
 
+    public function destroy($id) {
+  
+        $recipe = Recipe::findOrFail($id);
+        $recipe->delete();
+
+        session()->flash('delete_message', 'Your recipe has been successfully deleted');
+        return redirect(action('RecipeController@index'));
+    }  
+
 }
 
 
