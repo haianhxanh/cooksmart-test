@@ -55,6 +55,13 @@ $canary: #fffd98ff;
   }
 }
 
+@media (max-height: 530px) {
+  .edit-form-group__item.media {
+    display: flex;
+    flex-direction: column !important;
+  }
+}
+
 .edit-ingredient-list-wrapper {
   margin: 5% 0;
 }

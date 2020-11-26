@@ -111,11 +111,11 @@
      </div>
   
       <div class="edit-form-group__item">
-          <label for="source_url" class="edit-form-group__label">
+          <label for="source" class="edit-form-group__label">
               <h4>Edit source of the recipe</h4>
           </label>
 
-          <input type="text" id="source_url" name="source_url"    value="{{ $recipe->source_url }}"
+          <input type="text" id="source" name="source"    value="{{ $recipe->source_url }}"
           class="edit-form-group__input"/>
       </div>
   
