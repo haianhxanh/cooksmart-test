@@ -14,7 +14,7 @@ function Search() {
     const [page, setPage] = useState(0);
     const [hasMore, setHasMore] = useState(true);
 
-    const url = "http://www.cooksmart.test/api/recipes";
+    const url = "/api/recipes";
 
     const searchRecipes = async () => {
         let url_with_params = url + "?";
@@ -153,6 +153,8 @@ function Search() {
                     </span>
                 </form>
 
+                <h2 className="check-out">Check out the latest recipes</h2>
+
                 <SearchResults recipes={recipes} />
 
                 {// moved outside of div, if doesn't work, move above last line
@@ -167,23 +169,10 @@ function Search() {
                     ""
                 )}
 
-                {hasMore === true ? (
-                    <button
-                        className="search--button"
-                        style={{
-                            marginBottom: 0,
-                            display: "block",
-                            textAlign: "center"
-                        }}
-                        onClick={() => setPage(page + 1)}
-                    >
-                        Find more
-                    </button>
-                ) : (
-                    ""
-                )}
             </div>
+
         </div>
+        
     );
 }
 

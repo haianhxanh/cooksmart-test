@@ -18,9 +18,9 @@
             <th>Recipe Name</th>
             <th>Image</th>
             <th>Recipe Details</th>
-            @if(Auth::check())
+            @can('admin')
             <th>Edit Recipe</th>
-            @endif
+            @endcan
         </tr>
         </thead>
         <tbody>
@@ -29,9 +29,9 @@
             <td class="recipe-table-name">{{ $r->name }}</td>
             <td class="recipe-table-img"><img src="{{ $r->image_url }}" alt="{{$r->name}}"></td>
             <td><button class="edit-btn"><a href="{{action('RecipeController@show', $r->id)}}">Details</a></button></td>
-            @if(Auth::check())
+            @can('admin')
             <td><button class="edit-btn"><a href="{{action('RecipeController@edit', $r->id)}}">Edit Recipe</a></button></td>
-            @endif
+            @endcan
         </tr>
         @endforeach
     </tbody>
