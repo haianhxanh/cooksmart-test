@@ -17,8 +17,8 @@
             <x-slot name="logo">
             </x-slot>
 
-            <div class="mb-4 text-sm text-gray-600 forgot-form">
-                {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+            <div class="mb-4 text-sm text-gray-600 forgot-form paragraph">
+                {{ __('Forgot your password? Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
             </div>
 
             @if (session('status'))
@@ -33,7 +33,10 @@
                 @csrf
 
                 <div class="block own">
-                    <x-jet-label for="email" value="{{ __('Email') }}" />
+                    <x-jet-label for="email" value="{{ __('Email') }}" style="
+                    color:#f1b24a;
+                    font-weight: bold;
+                    "/>
                     <x-jet-input id="email" class="block mt-1 w-full inputb" type="email" name="email" :value="old('email')" required autofocus />
                 </div>
 
