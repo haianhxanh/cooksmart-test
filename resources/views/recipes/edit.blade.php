@@ -218,6 +218,15 @@
       <div class="steps-btn"><button type="submit" class="btn-submit">Save changes</button></div>
   </form>
 
+      <div class="delete-recipe">
+        <p>If you would like to delete this recipe from Cook Smart, press delete.</p>
+        <form method="post" action="{{action('RecipeController@destroy', [$recipe->id])}}">
+          @csrf
+          @method('DELETE')
+          <input class="delete-recipe-btn" type="submit" value="Delete">
+      </form>
+      </div>
+
 </div>
 
 <script>
