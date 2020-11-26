@@ -8,6 +8,7 @@ $canary: rgba(255, 253, 152, 1);
 
 body {
     margin: 0;
+    padding-bottom: 0;
     box-sizing: border-box;
 }
 
@@ -112,11 +113,22 @@ body {
         margin-bottom: 15px;
     }
 }
+.results__container {
+    padding: 0 4em;
+    background: url('../img/searchbackground.jpg');
+    background-size: cover;
+    background-repeat: repeat;
+    min-height: 65vh;
+}
+.check-out{
+        color: black;
+        padding-top: 1em;
+        margin-left: 1.3em;
+}
 .results {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    // height: 70vh;
 }
 
 .results-card {
@@ -130,17 +142,19 @@ body {
     width: 250px;
     border: 0.05rem solid #979393;
     box-shadow: 0.2em 0.25em 0.25em rgba(65, 64, 64, 0.5);
-    margin-top: 120px;
+    margin: 6rem 1em 0 1em;
+    overflow: hidden;
+
+    .results-img {
+        height: 180px;
+        width: 200px;
+        margin: auto;
+        overflow: hidden;
+    }
 
     img {
-        display: flex;
-        align-items: center;
-        margin-left: auto;
-        margin-right: auto;
-        max-height: 180px;
-        max-width: 200px;
-        padding-bottom: 20px;
-        height: 60%;
+        margin: 0 auto;
+        width: 100%;
     }
 
     .results-name {
@@ -148,6 +162,7 @@ body {
         padding-bottom: 10px;
         text-align: center;
         height: 40px;
+        margin: 0 5px;
     }
 
     .results-btn {
@@ -159,6 +174,7 @@ body {
         width: 100px;
         background-color: $MediumGreen;
         padding-bottom: 5px;
+        margin-top: 15px;
 
         &:hover {
             background-color: $main_green;
@@ -175,7 +191,7 @@ body {
 }
 .add-more {
     border-radius: 5px;
-    margin: 0 auto;
+    margin: 2rem auto 0 auto;
     width: 140px;
     height: 40px;
     font-size: 11px;
