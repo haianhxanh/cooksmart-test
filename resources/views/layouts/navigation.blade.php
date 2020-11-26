@@ -7,11 +7,18 @@
         <ul class="nav__container">
             <li><a href="/" class="nav__link">Home</a></li>
             <li><a href="/search" class="nav__link">Search</a></li>
+            <li><a href="/recipes" class="nav__link">All recipes</a></li>
             <li><a href="/about" class="nav__link">About</a></li>
             @if(Auth::check())
             <li>
                 <a href="/user/profile" class="nav__link">Profile</a>
             </li>
+
+            @can('admin')
+            <li>
+                <a href="/admin" class="nav__link">Admin</a>
+            </li>
+            @endcan
 
             <li>
                 <form action="/logout" method="post">

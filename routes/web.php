@@ -16,6 +16,9 @@ Route::get('/', function () {
     return view('banner/banner');
 });
 
+// Admin
+Route::get('/admin', 'AdminController@info');
+
 Route::get('/about', function () {
     return view('about/about');
 });
@@ -44,7 +47,7 @@ Route::view('/search', 'recipes/search');
 Route::get('/recipes/{id}', 'RecipeController@show');
 
 // Edit
-Route::get('/recipes/{id}/edit', 'RecipeController@edit');
+Route::get('/recipes/{id}/edit', 'RecipeController@edit')->middleware('auth','can:admin');
 
 Route::put('/recipes/add/{id}', 'UserController@addToFavorite')->middleware('auth');
 
