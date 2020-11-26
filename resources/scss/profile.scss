@@ -1,68 +1,87 @@
-$DarkGreen: #164A41;
-$MediumGreen: #4D774E;
-$LightGreen: #9DC88D;
-$NaturalYellow: #F1B24A;
-$White: #FFFFFF;
-$canary: #fffd98ff; 
+$DarkGreen: #164a41;
+$MediumGreen: #4d774e;
+$LightGreen: #9dc88d;
+$NaturalYellow: #f1b24a;
+$White: #ffffff;
+$canary: #fffd98ff;
 $granny-smith-apple: #bde4a7ff;
 $platinum: #ebebebff;
 $white: #ffffffff;
 $glaucous: #628abcff;
 
 .profile {
-  display: flex;
+    display: flex;
 }
 
 .profile-management {
-  min-height: 100vh;
-  min-width: 300px;
-  transition: 0.45s;
-  display: flex;
+    min-height: 100vh;
+    min-width: 300px;
+    transition: 0.45s;
+    display: flex;
 }
 
 #profile-header {
-  background-color: #bde4a7ff;
+    background-color: #bde4a7ff;
 }
 
 #profile-mng {
-  background-color: #bde4a7ff;
+    background-color: #bde4a7ff;
 }
 
 #profile-update {
-  padding: 5%;
+    padding: 5%;
 }
 
 .profile-management--off {
-  min-height: 100vh;
-  width: 60px;
-  display: flex;
-  transition: 0.7s;
+    min-height: 100vh;
+    width: 60px;
+    display: flex;
+    transition: 0.7s;
 }
 
 .profile-management__header {
-  width: 25%;
-  transition: linear 0.45s;
+    width: 25%;
+    transition: linear 0.45s;
 }
 
 .profile-management__header--off {
-  width: 100%;
+    width: 100%;
 }
 
 .profile-management__update {
-  width: 70%;
-  visibility: visible;
-  padding: 0% 5%;
+    width: 70%;
+    visibility: visible;
+    padding: 0% 5%;
 }
 
 .profile-management__update--off {
-  width: 0%;
-  display: none;
-  transition: linear 0.45s;
+    width: 0%;
+    display: none;
+    transition: linear 0.45s;
 }
 
 .profile-fave {
-  min-height: 100vh;
-  width: 90vw;
-  padding: 0 10%;
-  text-align: justify;
+    min-height: 100vh;
+    width: 90vw;
+    padding: 0 10%;
+    text-align: justify;
+    font-size: 1.5rem;
+}
+
+.button-profile {
+    width: 65px;
+    height: 30px;
+    font-size: 9px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: 2px solid black;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
 }

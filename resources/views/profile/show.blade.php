@@ -1,6 +1,10 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
 @include('layouts.navigation')
 
-<div class="profile">
+<div class="profile container-login">
 
     <div class="profile-management--off"
             id="profile-mng">
