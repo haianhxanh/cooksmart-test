@@ -8,6 +8,7 @@
 @import "./about.scss";
 @import "./index.scss";
 @import "profile.scss";
+@import "admin.scss";
 
 $main_green: #cae265;
 
@@ -17,8 +18,8 @@ $main_green: #cae265;
 }
 
 .button {
-    margin-left: 47%;
-    margin-bottom: 20px;
+    // margin-left: 47%;
+    margin: 0.5rem auto;
     width: 100px;
     height: 50px;
     font-size: 11px;

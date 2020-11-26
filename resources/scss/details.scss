@@ -1,13 +1,15 @@
-$DarkGreen: #164A41;
-$MediumGreen: #4D774E;
-$LightGreen: #9DC88D;
-$NaturalYellow: #F1B24A;
-$White: #FFFFFF;
+$main_green: #cae265;
+$DarkGreen: #164a41;
+$MediumGreen: #4d774e;
+$LightGreen: #9dc88d;
+$NaturalYellow: #f1b24a;
+$White: #ffffff;
+$canary: #fffd98ff;
 
 .single-recipe-wrapper {
   padding: 5% 10%;
   box-sizing: border-box;
-  background-image: url('https://www.dropbox.com/s/s9g9ls9s1htrytv/details-bg.svg?raw=1');
+  background-image: url('../img/details-bg.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -16,9 +18,21 @@ $White: #FFFFFF;
   margin: 5% 0%;
   h2 {
     text-align: center;
+    margin: 3%;
   }
   background-color: white;
   border: 3px solid $MediumGreen;
+
+  .button {
+    display: block;
+    margin: 0 auto;
+    height: 2.5rem !important;
+    border: none !important;
+    background-image: url('../img/heart.png');
+    background-size: 2.5rem;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 .single-recipe__intro {
@@ -31,14 +45,11 @@ $White: #FFFFFF;
   display: flex;
   justify-content: space-evenly;
   font-size: 1.2rem;
-
-
-  
 }
 
 .info__time {
   height: 50px;
-  background-image: url('https://www.dropbox.com/s/9ik07gru886kb1y/time.svg?raw=1');
+  background-image: url('../img/time.svg');
   background-size: 50px;
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -50,7 +61,7 @@ $White: #FFFFFF;
 
 .info__cuisine {
   height: 50px;
-  background-image: url('https://www.dropbox.com/s/ixzcamugskofpzs/cuisine.svg?raw=1');
+  background-image: url('../img/cuisine.svg');
   background-size: 50px;
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -62,7 +73,7 @@ $White: #FFFFFF;
 
 .info__diet {
   height: 50px;
-  background-image: url('https://www.dropbox.com/s/f2rdg4lyp8n2wa2/diet.svg?raw=1');
+  background-image: url('../img/diet.svg');
   background-size: 50px;
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -118,7 +129,7 @@ $White: #FFFFFF;
   }
 
   .single-recipe__ingredients-container {
-    background-image: url('https://www.dropbox.com/s/cdvh00sjvu731rk/note.svg?raw=1');
+    background-image: url('../img/note.svg');
     background-size: 100%;
     background-repeat: no-repeat;
     padding: 10%;
@@ -126,12 +137,19 @@ $White: #FFFFFF;
   }
 
   .single-recipe__steps {
-    width: 55%;
+    width: 58%;
     padding: 3% 5%;
     // border: 4px solid #4D774E;
     line-height: 1.6;
   }
 }
+
+// @media (max-height: 749px) {
+//   .single-recipe-body {
+//     display: flex;
+//     flex-direction: column;
+//   }
+// }
 
 .single-recipe__media {
   margin: 5% 0%;
@@ -145,4 +163,8 @@ $White: #FFFFFF;
 .zoom-in {
   transform: scale(1.7);
   margin-right: 25%;
+}
+
+.info-message {
+  text-align: center;
 }

@@ -20,10 +20,10 @@
     <input style="display:none" type="text" name="recipe_id" value="{{ $recipe->id }}" >
       @method('put')
       @csrf
-      <button type=submit>Add to favourite</button>
+      <div><button type="submit" class="button favorite-btn"></button></div>
     </form> 
     @else 
-    <a href="\register">Register</a> or <a href="\login">Login</a> to save the recipe
+    <div class="info-message" ><a href="\register">Register</a> or <a href="\login">Login</a> to save the recipe</div>
     @endif
 
     <div class="single-recipe__description"><q>{{ $recipe->description }}</q></div>
@@ -102,6 +102,11 @@
       if (click%2===0) {
         zoomOnClick.style.cursor = "zoom-in";
     }
+  })
+
+  const favoriteBtn = document.querySelector('.favorite-btn');
+  favoriteBtn.addEventListener('click', () => {
+    favoriteBtn.style.display = "none";
   })
 </script>
 
