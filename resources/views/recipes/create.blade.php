@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@include('layouts.navigation')
+
 @section('content')
 @if(Auth::check())
 <div class="form-create">

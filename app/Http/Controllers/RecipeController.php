@@ -97,7 +97,7 @@ class RecipeController extends Controller
         $description = $request->input('description');
         $image = $request->input('image');
         $video = $request->input('video');
-        $source_url = $request->input('source_url');
+        $source = $request->input('source');
 
         $input_cuisine_id = $request->input('cuisine_id');
         $cuisine_id = Cuisine::where('id',[$input_cuisine_id])->value('id');
@@ -120,7 +120,7 @@ class RecipeController extends Controller
         $recipe->total_time_id = $time_id;
         $recipe->image_url = $image;
         $recipe->video_url = $video;
-        $recipe->source_url = $source_url;
+        $recipe->source_url = $source;
         $recipe->save();
 
         // save steps 
@@ -231,13 +231,23 @@ class RecipeController extends Controller
     public function update(Request $request, $id) 
     {   
         $recipe = Recipe::findOrFail($id);
+        $name_input = $request->input('name');
         $cuisine_input = $request->input('cuisine_id');
         $diet_input = $request->input('diet_id');
         $time_input = $request->input('total_time_id');
+        $description_input = $request->input('description');
+        $image_input = $request->input('image');
+        $video_input = $request->input('video');
+        $source_input = $request->input('source');
 
+        $recipe->name = $name_input;
         $recipe->cuisine_id = $cuisine_input;
         $recipe->diet_id = $diet_input;
         $recipe->total_time_id = $time_input;
+        $recipe->description = $description_input;
+        $recipe->image_url = $image_input;
+        $recipe->video_url = $video_input;
+        $recipe->source_url = $source_input;
         $recipe->save();
 
         $steps = Step::where('recipe_id', $id)->get();
