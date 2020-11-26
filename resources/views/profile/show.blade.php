@@ -4,7 +4,7 @@
 
 @include('layouts.navigation')
 
-<div class="profile">
+<div class="profile container-login">
 
     <div class="profile-management--off"
             id="profile-mng">
