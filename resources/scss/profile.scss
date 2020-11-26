@@ -1,0 +1,68 @@
+$DarkGreen: #164A41;
+$MediumGreen: #4D774E;
+$LightGreen: #9DC88D;
+$NaturalYellow: #F1B24A;
+$White: #FFFFFF;
+$canary: #fffd98ff; 
+$granny-smith-apple: #bde4a7ff;
+$platinum: #ebebebff;
+$white: #ffffffff;
+$glaucous: #628abcff;
+
+.profile {
+  display: flex;
+}
+
+.profile-management {
+  min-height: 100vh;
+  min-width: 300px;
+  transition: 0.45s;
+  display: flex;
+}
+
+#profile-header {
+  background-color: #bde4a7ff;
+}
+
+#profile-mng {
+  background-color: #bde4a7ff;
+}
+
+#profile-update {
+  padding: 5%;
+}
+
+.profile-management--off {
+  min-height: 100vh;
+  width: 60px;
+  display: flex;
+  transition: 0.7s;
+}
+
+.profile-management__header {
+  width: 25%;
+  transition: linear 0.45s;
+}
+
+.profile-management__header--off {
+  width: 100%;
+}
+
+.profile-management__update {
+  width: 70%;
+  visibility: visible;
+  padding: 0% 5%;
+}
+
+.profile-management__update--off {
+  width: 0%;
+  display: none;
+  transition: linear 0.45s;
+}
+
+.profile-fave {
+  min-height: 100vh;
+  width: 90vw;
+  padding: 0 10%;
+  text-align: justify;
+}

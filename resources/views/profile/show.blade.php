@@ -1,52 +1,114 @@
 @include('layouts.navigation')
 
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Profile') }}
-        </h2>
-    </x-slot>
+<div class="profile">
 
-    <div>
-        <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-            @if (Laravel\Fortify\Features::canUpdateProfileInformation())
-                @livewire('profile.update-profile-information-form')
+    <div class="profile-management--off"
+            id="profile-mng">
+    
+        {{-- <x-slot name="header">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                {{ __('Profile') }}
+            </h2>
+        </x-slot> --}}
 
-                <x-jet-section-border />
-            @endif
-
-            @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
-                <div class="mt-10 sm:mt-0">
-                    @livewire('profile.update-password-form')
-                </div>
-
-                <x-jet-section-border />
-            @endif
-
-            {{-- @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
-                <div class="mt-10 sm:mt-0">
-                    @livewire('profile.two-factor-authentication-form')
-                </div>
-
-                <x-jet-section-border />
-            @endif --}}
-
-            {{-- <div class="mt-10 sm:mt-0">
-                @livewire('profile.logout-other-browser-sessions-form')
-            </div>
-
-            <x-jet-section-border />
-
-            <div class="mt-10 sm:mt-0">
-                @livewire('profile.delete-user-form')
-            </div> --}}
+        <div class="profile-management__header--off" 
+        id="profile-header">
+            <button class="button-profile">Profile</button>
         </div>
-
-        <hr>
-        <h2>YOUR FAVORITE RECIPES</h2>
-        @foreach ($recipes as $r)
-            <p>{{ $r->name }}</p>
-        @endforeach
         
+        <div class="profile-management__update--off"
+                id="profile-update">
+            <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+                @if (Laravel\Fortify\Features::canUpdateProfileInformation())
+                    @livewire('profile.update-profile-information-form')
+    
+                    <x-jet-section-border />
+                @endif
+    
+                @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
+                    <div class="mt-10 sm:mt-0">
+                        @livewire('profile.update-password-form')
+                    </div>
+    
+                    <x-jet-section-border />
+                @endif
+    
+                {{-- @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
+                    <div class="mt-10 sm:mt-0">
+                        @livewire('profile.two-factor-authentication-form')
+                    </div>
+    
+                    <x-jet-section-border />
+                @endif --}}
+    
+                {{-- <div class="mt-10 sm:mt-0">
+                    @livewire('profile.logout-other-browser-sessions-form')
+                </div>
+    
+                <x-jet-section-border />
+    
+                <div class="mt-10 sm:mt-0">
+                    @livewire('profile.delete-user-form')
+                </div> --}}
+            </div>
+    
+        </div>
     </div>
-</x-app-layout>
+
+    <div class="profile-fave">
+        @if (Auth::check())
+        <h5>Welcome back, {{ $user->name }}!</h5>
+        @endif
+    
+        <h2>YOUR SMART RECIPES</h2>
+    
+        @if(empty($recipes))
+            <h3>You currently have no favorite recipes. Explore more <a href="/search">here</a>!</h3>
+        @else 
+    
+        @foreach ($recipes as $r)
+            <div class="results-card">
+                <h4 class="results-name">{{ $r->name }}</h4>
+                <img style="width:200px" src="{{ $r->image_url }}" alt={{ $r->name }}/>
+                <button class="results-btn">
+                    <a href="{{ action('RecipeController@show', $r->id) }}">View details</a>
+                </button>
+                <button>
+                    <a href="{{ action('UserController@deleteFavorite', $r->id) }}">Remove</a>
+                </button>
+            </div>
+        @endforeach
+    
+        @endif
+    </div>
+</div> 
+
+<script>
+    const content = document.querySelector('.profile-fave');
+    const management = document.getElementById('profile-mng');
+    const header = document.querySelector('#profile-header');
+    const update = document.querySelector('#profile-update');
+    const profileBtn = document.querySelector('.button-profile');
+
+    profileBtn.addEventListener('click', () => {
+
+        management.classList.toggle('profile-management--off');
+        header.classList.toggle('profile-management__header--off');
+        update.classList.toggle('profile-management__update--off');
+        // let click = 0;
+        // click += 1;
+        // if (click%2===1) {
+        //     management.className = ('profile-management');
+        //     header.className = ('profile-management__header');
+        //     update.className = ('profile-management__update');
+        // } else if (click%2===0){
+    
+        //     management.className = ('profile-management--off');
+        //     header.className = ('profile-management__header--off');
+        //     update.className = ('profile-management__update--off');
+        // }
+    });
+
+
+
+</script>

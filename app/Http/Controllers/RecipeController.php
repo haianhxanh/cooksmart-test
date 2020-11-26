@@ -30,6 +30,8 @@ class RecipeController extends Controller
 
     public function show($id)
     {
+        $user = \Auth::user();
+
         $recipe = Recipe::findOrFail($id);
 
         $recipe_id = Recipe::where('id', $id)->value('id');
@@ -63,7 +65,7 @@ class RecipeController extends Controller
         // $preparations = $preparation;
         // dd($ingredients);
         
-        return view('recipes/details', compact('recipe', 'steps', 'ingredient', 'quantity', 'measurement', 'preparation', 'combo', 'time', 'cuisine', 'diet'));
+        return view('recipes/details', compact('recipe', 'steps', 'ingredient', 'quantity', 'measurement', 'preparation', 'combo', 'time', 'cuisine', 'diet', 'user'));
     }
 
     public function create()
