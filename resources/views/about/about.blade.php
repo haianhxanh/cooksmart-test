@@ -23,7 +23,7 @@
     </div>
 
     <div class="person">
-        <div class="person-img" ><img src={{asset('img/Melissa.jpg')}}/></div>
+        <div class="person-img" ><img src={{asset('img/Melissa2.jpg')}}/></div>
         <p class="person-name">Melissa Anne Genger</p>
         <p class="hide"><strong>Favorite Food:</strong> Sushi, Mac & Cheese, Pad Thai</p>
         <p class="hide"><strong>Interests:</strong> traveling, wine, hiking, programming</p>
