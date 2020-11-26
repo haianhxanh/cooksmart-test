@@ -30,7 +30,7 @@ Route::get('/user/profile', 'UserController@favourite')->middleware('auth');
 Route::get('/user/profile/recipes/{id}/delete', 'UserController@deleteFavorite')->middleware('auth');
 
 
-Route::get('/recipes/create', 'RecipeController@create')->middleware('auth');
+Route::get('/recipes/create', 'RecipeController@create')->middleware('auth','can:admin');
 Route::post('/recipes', 'RecipeController@store');
 Route::get('/recipes', 'RecipeController@index');
 
