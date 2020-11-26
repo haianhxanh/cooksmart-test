@@ -23,10 +23,10 @@ class Recipe extends Model
     }
 
     public function ingredients() {
-        return $this->belongsToMany(Ingredient::class, 'ingredient_preparation_quantity_recipes');
+        return $this->belongsToMany(Ingredient::class, 'ingredient_measurement_preparation_quantity_recipes');
     }
 
     public function users() {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class, 'recipe_users');
     }
 }
