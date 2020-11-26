@@ -184,7 +184,7 @@
                     
                       </div>
 
-                      <div><button type="button" class="remove-combo">Remove</button></div>
+                      <div><button type="button" class="remove-combo ingredient-list-btn">Remove</button></div>
               </li>
   
               @endforeach
