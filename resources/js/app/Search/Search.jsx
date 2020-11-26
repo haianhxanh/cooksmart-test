@@ -169,21 +169,6 @@ function Search() {
                     ""
                 )}
 
-                {hasMore === true ? (
-                    <button
-                        className="search--button"
-                        style={{
-                            marginBottom: 0,
-                            display: "block",
-                            textAlign: "center"
-                        }}
-                        onClick={() => setPage(page + 1)}
-                    >
-                        Find more
-                    </button>
-                ) : (
-                    ""
-                )}
             </div>
 
         </div>
