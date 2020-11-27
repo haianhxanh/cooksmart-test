@@ -3,7 +3,7 @@
 </head>
 
     <div class="nav">
-        <img src="https://www.dropbox.com/s/1znnm2hkyaw6w7d/logo-large.png?raw=1" class="nav__logo"/>
+        <img src="{{ asset('img/logo/logo-large.svg') }}" class="nav__logo"/>
         <ul class="nav__container">
             <li><a href="/" class="nav__link">Home</a></li>
             <li><a href="/search" class="nav__link">Search</a></li>

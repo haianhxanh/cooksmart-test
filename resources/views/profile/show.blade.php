@@ -60,38 +60,44 @@
         </div>
     </div>
 
-    <div class="profile-fave">
-        @if (Auth::check())
-        <h5>Welcome back, {{ $user->name }}!</h5>
-        @endif
+   <div>
+        <div class="profile-header">
+            @if (Auth::check())
+            <div class="profile-welcome"><h5 style="text-align: center">Welcome back, {{ $user->name }}!</h5></div>
+            @endif
+        
+            <div class="profile-icon"><img src="{{ asset('img/fave-recipes.png') }}" alt="Favorite recipes"></div>
+            <hr>
+        </div>
     
-        <h2>YOUR SMART RECIPES</h2>
-    
-        @if(empty($recipes))
-            <h3>You currently have no favorite recipes. Explore more <a href="/search">here</a>!</h3>
-        @else 
-    
-        <div class="container-wrap-card">
-             @foreach ($recipes as $r)
-            <div class="profile-cards-results">
-                <div class="results-card-profile">
-                    <h4 class="results-name-profile">{{ $r->name }}</h4>
-                    <div class="profile-img"><img src="{{ $r->image_url }}" alt={{ $r->name }}/></div>
-                    <div class="button-wrap">
-                        <button class="results-btn-profile">
-                            <a href="{{ action('RecipeController@show', $r->id) }}">View details</a>
-                        </button>
-                        <button class="results-btn-profile">
-                            <a href="{{ action('UserController@deleteFavorite', $r->id) }}">Remove</a>
-                        </button>
+        <div class="profile-fave">
+        
+            @if(empty($recipes))
+                <h4 style="text-align: center">You currently have no favorite recipes. Explore more <a href="/search">here</a>!</h4>
+            @else 
+        
+            <div class="container-wrap-card">
+                 @foreach ($recipes as $r)
+                <div class="profile-cards-results">
+                    <div class="results-card-profile">
+                        <h4 class="results-name-profile">{{ $r->name }}</h4>
+                        <div class="profile-img"><img src="{{ $r->image_url }}" alt={{ $r->name }}/></div>
+                        <div class="button-wrap">
+                            <button class="results-btn-profile">
+                                <a href="{{ action('RecipeController@show', $r->id) }}">View details</a>
+                            </button>
+                            <button class="results-btn-profile">
+                                <a href="{{ action('UserController@deleteFavorite', $r->id) }}">Remove</a>
+                            </button>
+                        </div>
                     </div>
+                    </div>
+                    @endforeach
                 </div>
-                </div>
-                @endforeach
-            </div>
-    
-        @endif
-    </div>
+        
+            @endif
+        </div>
+   </div>
 </div> 
 
 <script>
@@ -106,19 +112,15 @@
         management.classList.toggle('profile-management--off');
         header.classList.toggle('profile-management__header--off');
         update.classList.toggle('profile-management__update--off');
-        // let click = 0;
-        // click += 1;
-        // if (click%2===1) {
-        //     management.className = ('profile-management');
-        //     header.className = ('profile-management__header');
-        //     update.className = ('profile-management__update');
-        // } else if (click%2===0){
-    
-        //     management.className = ('profile-management--off');
-        //     header.className = ('profile-management__header--off');
-        //     update.className = ('profile-management__update--off');
-        // }
+
     });
+
+    const saveBtn = document.querySelectorAll('.inline-flex');
+
+    for(i=0; i<saveBtn.length; i++) {
+        saveBtn[i].classList.add('remove-step');
+    }
+
 
 
 

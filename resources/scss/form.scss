@@ -6,6 +6,13 @@ $NaturalYellow: #f1b24a;
 $White: #ffffff;
 $canary: #fffd98ff;
 
+.page-create {
+    padding: 5% 10% !important;
+    background-image: url('../img/details-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .form__container {
     display: flex;
     flex-direction: column;

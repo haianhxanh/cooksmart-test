@@ -5,9 +5,16 @@ $LightGreen: #9dc88d;
 $NaturalYellow: #f1b24a;
 $White: #ffffff;
 $canary: #fffd98ff;
-
+.edit-page {
+  padding: 5% 10%;
+  background-image: url('../img/details-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .edit-form {
-  margin: 5% 10%;
+  padding: 5%;
+  border: 3px solid $MediumGreen;
+  background-color: white;
 
   h1 {
     text-align: center;
@@ -52,6 +59,13 @@ $canary: #fffd98ff;
   .edit-form-group__input {
     margin-top: 5%;
     width: 100%;
+  }
+}
+
+@media (max-height: 530px) {
+  .edit-form-group__item.media {
+    display: flex;
+    flex-direction: column !important;
   }
 }
 

@@ -6,7 +6,7 @@
 
 <div class="admin-page">
 
-  <h2>Admin Board</h2>
+  <div class="index-header"><h2>Admin Board</h2></div>
 
   <div class="admin-body">
 
