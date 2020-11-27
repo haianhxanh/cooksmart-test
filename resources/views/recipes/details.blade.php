@@ -96,6 +96,12 @@
           frameborder="0">
         </iframe>
       </div>
+
+      <div style="text-align: center">
+        <small style="font-style: italic;">
+          Source: {{ $recipe->source_url }}
+        </small>
+      </div>
   
     </div>
   
