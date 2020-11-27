@@ -195,7 +195,7 @@
                 @endforeach
               </ol>
   
-              <div class="ingredient-list-btn__container"><button type="button" class="ingredient-list-btn">+</button></div>
+              <div class="ingredient-list-btn__container"><button type="button" class="ingredient-list-btn add-button">+</button></div>
            </div>
     
         
@@ -276,12 +276,12 @@
     })
   }
 
-  const ingredientListBtn = document.querySelector('.ingredient-list-btn');
+  const ingredientListBtn = document.querySelector('.add-button');
   ingredientListBtn.addEventListener('click', () => {
       const ingredient = document.querySelector('.edit-ingredient-list');
       const input = document.createElement('li');
       input.className = 'combo-list-item';
-      input.innerHTML += `
+      input.innerHTML = `
 
        <div class="ingredient-list-item">
           <label for="ingredients" class="edit-form-group__label">
