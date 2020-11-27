@@ -173,12 +173,13 @@ $canary: #fffd98ff;
   .single-recipe__ingredients, .single-recipe__steps {
     width: 90% !important;
   }
-
-  iframe {
-    width: 320px;
-    height: 240px;
-  }
 }
+
+iframe {
+  width: 80%;
+  min-height: 150px;
+}
+
 
 .single-recipe__media {
   margin: 5% 0%;
