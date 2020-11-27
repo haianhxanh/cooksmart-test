@@ -21,9 +21,10 @@ $MediumGreen: #4d774e;
     }
     &__container {
         display: flex;
-        margin: 0;
+        flex-wrap: wrap;
+        margin: 0 5%;
         padding: 0;
-        margin-right: 10%;
+        // margin-right: 10%;
         list-style-type: none;
     }
     &__link {
@@ -43,6 +44,7 @@ $MediumGreen: #4d774e;
     .nav {
         flex-wrap: wrap;
     }
+
 
     .nav__logo {
         margin: 0 auto !important;
