@@ -30,7 +30,7 @@
             <div id="success-message" style="background-color:orange" class=“alert alert--success”>{{ Session::get('delete_message') }}</div>
         @endif
 
-        <input type="text" placeholder="Search" id="myInput" style="width: 90%; font-weight: bold; font-size: 1.5rem; margin: 1rem 5%; height: 3rem">
+        <input type="text" placeholder="Search" id="myInput" style="width: 90%; font-weight: bold; font-size: 1.5rem; margin: 1rem 5%; height: 3rem; border: 4px solid #c9e265">
     
         <div class="recipe-table">
     

@@ -22,19 +22,19 @@
             @csrf
 
             <div class="login-form">
-                <x-jet-label for="email" value="{{ __('Email') }}" class="label-login"/>
-                <x-jet-input id="email" class="block mt-1 w-full jordan-input1" type="email" name="email" :value="old('email')" required autofocus />
+                <div><x-jet-label for="email" value="{{ __('Email') }}" class="label-login"/></div>
+                <div><x-jet-input id="email" class="block mt-1 w-full jordan-input1" type="email" name="email" :value="old('email')" required autofocus /></div>
             </div>
 
             <div class="mt-4 login-form">
-                <x-jet-label for="password" value="{{ __('Password') }}" class="label-login"/>
-                <x-jet-input id="password" class="block mt-1 w-full jordan-input2" type="password" name="password" required autocomplete="current-password" style="margin-left:1rem;"/>
+                <div><x-jet-label for="password" value="{{ __('Password') }}" class="label-login"/></div>
+                <div><x-jet-input id="password" class="block mt-1 w-full jordan-input2" type="password" name="password" required autocomplete="current-password"/></div>
             </div>
 
             <div class="block mt-4 login-form">
                 <label for="remember_me" class="flex items-center label-login">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                    <input id="remember_me" type="checkbox" class="form-checkbox jordan-input3" name="remember">
+                 <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</
+                   </span> <input id="remember_me" type="checkbox" class="form-checkbox jordan-input3" name="remember">
                 </label>
             </div>
 

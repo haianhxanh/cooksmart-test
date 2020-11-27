@@ -17,9 +17,9 @@ $canary: #fffd98ff;
     background-image: url("../img/background-login-reduced.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .login-form {
@@ -35,43 +35,43 @@ $canary: #fffd98ff;
     .jordan-input1 {
         height: 2.5rem;
         width: 20rem;
-        margin-left: 10.4rem;
+        // margin-left: 10.4rem;
     }
 
     .jordan-input11 {
         height: 2.5rem;
         width: 20rem;
-        margin-left: 11.5rem;
+        // margin-left: 11.5rem;
     }
 
     .jordan-input2 {
         height: 2.5rem;
         width: 20rem;
-        margin-left: 6.6rem;
+        // margin-left: 6.6rem;
     }
 
     .jordan-input22 {
         height: 2.5rem;
         width: 20rem;
-        margin-left: 11.1rem;
+        // margin-left: 11.1rem;
     }
 
     .jordan-input3 {
-        height: 2rem;
+        height: 2.5rem;
         width: 20rem;
-        margin-left: -6.9rem;
+        // margin-left: -6.9rem;
     }
 
     .jordan-input33 {
-        height: 2rem;
+        height: 2.5rem;
         width: 20rem;
-        margin-left: 0.5rem;
+        // margin-left: 0.5rem;
     }
 
     .jordan-input4 {
-        height: 2rem;
+        height: 2.5rem;
         width: 20rem;
-        margin-left: 7.9rem;
+        // margin-left: 7.9rem;
     }
 
     // BUTON
