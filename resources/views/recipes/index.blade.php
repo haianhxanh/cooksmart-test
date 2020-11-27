@@ -17,7 +17,6 @@
 
 </head>
 
-<<<<<<< HEAD
 <div class="page-index">
     <div class="recipe-container">
         <div class="index-header">
@@ -29,40 +28,6 @@
         @elseif(Session::has('delete_message'))
             <div id="success-message" style="background-color:orange" class=“alert alert--success”>{{ Session::get('delete_message') }}</div>
         @endif
-=======
-<div class="recipe-container">
-    <div class="index-header">
-        <h1>List of Recipes</h1>
-    </div>
-
-     @if (Session::has('recipe_success_message'))
-        <div id="success-message" class=“alert alert--success”>{{ Session::get('recipe_success_message') }}</div>
-    @endif
-
-    @if (Session::has('delete_message'))
-    <div id="delete-message" class=“alert alert--success”>{{ Session::get('delete_message') }}</div>
-@endif
-
-    <input type="text" placeholder="Search" id="myInput" style="width: 90%; font-weight: bold; font-size: 1.5rem; margin: 1rem 5%; height: 3rem">
-
-    <div class="recipe-table">
-
-    <table>
-        <thead>
-        <tr>
-            <th>Recipe Name</th>
-            <th>Image</th>
-            <th>Recipe Details</th>
-            @can('admin')
-            <th>Edit Recipe</th>
-            @endcan
-        </tr>
-        </thead>
-
-        <tbody id="myTable">
-    @foreach ($recipes as $r)
-        <tr class="recipe-table-row">
->>>>>>> melissa
 
         <input type="text" placeholder="Search" id="myInput" style="width: 90%; font-weight: bold; font-size: 1.5rem; margin: 1rem 5%; height: 3rem">
     
