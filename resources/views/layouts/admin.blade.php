@@ -1,3 +1,7 @@
+<head>
+  <title>Cook Smart - Admin</title>
+</head>
+
 @extends('layouts.main')
 
 @include('layouts.navigation')

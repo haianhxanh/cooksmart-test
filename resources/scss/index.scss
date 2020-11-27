@@ -68,6 +68,21 @@ $White: #FFFFFF;
         margin-top: 10px;
     }
 }
+
+@media (max-width: 530px) {
+    .recipe-table .recipe-table-img {
+        width: 100px !important;
+        img {
+            width: 100px !important;
+            height: auto;
+        }
+    }
+
+    .table-image {
+        width: 100px !important;
+    }
+}
+
 .index-header {
     text-align: center;
     background: $DarkGreen;

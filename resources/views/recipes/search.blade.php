@@ -1,3 +1,7 @@
+<head>
+  <title>Cook Smart - Search</title>
+</head>
+
 @extends('layouts.main')
 @include('layouts.navigation')
 @section('content')

@@ -224,3 +224,15 @@ $canary: #fffd98ff;
 
 }
 
+.form__container__top-section {
+    display: flex;
+    justify-content: space-around;
+} 
+
+.form__container__top-section__img {
+    width: 30%;
+    img {
+        width: 100%;
+        margin-top: 8rem;
+    }
+}

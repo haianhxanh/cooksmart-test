@@ -1,3 +1,6 @@
+<head>
+    <title>Cook Smart - All recipes</title>
+  </head>
 
 @extends('layouts.main')
 @include('layouts.navigation')
@@ -38,7 +41,7 @@
                 <thead>
                 <tr>
                     <th>Recipe Name</th>
-                    <th>Image</th>
+                    <th class="table-image">Image</th>
                     <th>Recipe Details</th>
                     @can('admin')
                     <th>Edit Recipe</th>
