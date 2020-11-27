@@ -22,13 +22,13 @@
             @csrf
 
             <div class="login-form">
-                <x-jet-label for="email" value="{{ __('Email') }}" class="label-login" />
+                <x-jet-label for="email" value="{{ __('Email') }}" class="label-login"/>
                 <x-jet-input id="email" class="block mt-1 w-full jordan-input1" type="email" name="email" :value="old('email')" required autofocus />
             </div>
 
             <div class="mt-4 login-form">
                 <x-jet-label for="password" value="{{ __('Password') }}" class="label-login"/>
-                <x-jet-input id="password" class="block mt-1 w-full jordan-input2" type="password" name="password" required autocomplete="current-password" />
+                <x-jet-input id="password" class="block mt-1 w-full jordan-input2" type="password" name="password" required autocomplete="current-password" style="margin-left:1rem;"/>
             </div>
 
             <div class="block mt-4 login-form">

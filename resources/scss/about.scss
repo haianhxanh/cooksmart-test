@@ -1,54 +1,68 @@
-$DarkGreen: #164A41;
-$MediumGreen: #4D774E;
-$LightGreen: #9DC88D;
-$NaturalYellow: #F1B24A;
-$White: #FFFFFF;
+$DarkGreen: #164a41;
+$MediumGreen: #4d774e;
+$LightGreen: #9dc88d;
+$NaturalYellow: #f1b24a;
+$White: #ffffff;
 
-@media only screen and (max-width: 730px) {
-    .person {
-        display: flex;
-        flex-direction: column;
-
-        .hide {
-            display: none;
-          }
+@media only screen and (max-width: 920px) {
+    .hide {
+        display: none;
     }
-    
+    #about-us {
+        flex-wrap: wrap;
+        margin: 0 5%;
+    }
+    .person {
+        margin: auto;
+    }
+}
+
+.about-container h1 {
+    text-align: center;
+    background: $DarkGreen;
+    width: 100vw;
+    padding: 20px 0;
+    color: $White;
+    text-shadow: 2px 2px black;
 }
 
 .about-container {
-    h1 {
-        text-align: center;
-        background: $DarkGreen;
-        width: 100vw;
-        padding: 20px 0;
-        color: $White;
-        text-shadow: 2px 2px black;
-        -webkit-box-shadow: 0 10px 5px #888888;
-        -moz-box-shadow: 0 10px 5px #888888;
-        box-shadow: 0 10px 5px #888888;
-        margin-bottom: 20px;
-    }
+    background-image: url("../img/details-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.about-us {
-    // height: 100%;
+#about-us {
+    // margin: 5% 0%;
     display: flex;
-    flex-direction: row;
-    margin-left: 10vw;
-    margin-right: 10vw;
-    justify-content: center;
-    
-.person {
-    margin: 2rem;
-    width: 280px;
-    // height: 450px;
-
+    justify-content: space-around;
+    border: 2px solid $DarkGreen;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    opacity: 0.9;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 }
+
+.about-us__container {
+    padding: 5% 10%;
+    box-sizing: border-box;
+
+    .person {
+        margin: 2rem;
+        width: 280px;
+    }
+    flex-direction: row;
+    justify-content: center;
+
+    .person {
+        margin: 2rem;
+        width: 280px;
+        // height: 450px;
+    }
     .person-name {
         text-align: center;
         font-weight: bold;
-        padding: .3rem 0;
+        padding: 0.3rem 0;
     }
 
     .person-img {
@@ -57,17 +71,77 @@ $White: #FFFFFF;
         img {
             height: 280px;
             border-radius: 1em;
-            
         }
     }
 
     p {
-        margin: .3rem 0;
-        // width: 280px;
+        margin: 0.3rem 0;
     }
 }
-    // display: flex;
-    // background-image: url("../img/background-login-reduced.jpg");
-    // background-size: cover;
-    // background-repeat: no-repeat;
-    // height: 100vh;
+
+// CONTACT US FORM
+.form {
+    padding: 3% 7%;
+
+    &-data {
+        overflow: auto;
+        padding: 2%;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &-value {
+            border-bottom: 1px solid gray;
+            width: 40%;
+        }
+    }
+
+    &-text {
+        padding: 2%;
+        overflow: auto;
+
+        p {
+            margin: 0;
+        }
+    }
+}
+
+.contact-container {
+    margin: 0 10%;
+}
+
+.heading {
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+    color: $DarkGreen;
+}
+
+textarea {
+    width: 98%;
+    padding: 1%;
+}
+
+input {
+    margin: 1%;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    color: $DarkGreen;
+}
+
+.form-button {
+    margin: 1% 0;
+}
+
+.submit-button {
+    width: 96%;
+    margin: 2% 2%;
+    background-color: $DarkGreen;
+    border: none;
+    border-radius: 0.3em;
+    color: white;
+    padding: 2%;
+    font-family: "Advent Pro", sans-serif;
+}
