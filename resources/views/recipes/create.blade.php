@@ -101,6 +101,7 @@
                                 <label for="ingredients" class="form-group__label"><span class="hover">Quantity</span>
                                 </label>
                                     <select class="js-example-basic-multiple" name="quantities[]">
+                                        <option value="" class="form-group__option">no quantity</option>
                                         @foreach ($quantities as $q)        
                                             <option class="form-group__option" value="{{ $q->id }}">{{ $q->amount }}</option>
                                         @endforeach
@@ -110,7 +111,7 @@
                                 <label for="ingredients" class="form-group__label"><span class="hover">Measurement</span>
                                 </label>
                                     <select class="js-example-basic-multiple" name="measurements[]">
-                                        <option value="{{ null }}" class="form-group__option">no measurement</option>
+                                        <option value="" class="form-group__option">no measurement</option>
                                         @foreach ($measurements as $m)        
                                             <option value="{{ $m->id }}">{{ $m->name }}</option>
                                         @endforeach
@@ -120,7 +121,7 @@
                                 <label for="preparations" class="form-group__label"><span class="hover">Preparation</span>
                                 </label>
                                     <select class="js-example-basic-multiple" name="preparations[]">
-                                        <option value="{{ null }}" class="form-group__option">no specific preparation</option>
+                                        <option value="" class="form-group__option">no preparation</option>
                                         @foreach ($preparations as $p)        
                                             <option value="{{ $p->id }}">{{ $p->name }}</option>
                                         @endforeach
@@ -226,6 +227,7 @@
                         <label for="ingredients" class="form-group__label"><span class="hover">Quantity</span>
                         </label>
                             <select class="js-example-basic-multiple" name="quantities[]">
+                                <option value="" class="form-group__option">no quantity</option>
                                 @foreach ($quantities as $q)        
                                     <option class="form-group__option" value="{{ $q->id }}">{{ $q->amount }}</option>
                                 @endforeach
@@ -235,7 +237,7 @@
                         <label for="ingredients" class="form-group__label"><span class="hover">Measurement</span>
                         </label>
                             <select class="js-example-basic-multiple" name="measurements[]">
-                                <option value="{{ null }}" class="form-group__option">no measurement</option>
+                                <option value="" class="form-group__option">no measurement</option>
                                 @foreach ($measurements as $m)        
                                     <option value="{{ $m->id }}">{{ $m->name }}</option>
                                 @endforeach
@@ -245,7 +247,7 @@
                         <label for="preparations" class="form-group__label"><span class="hover">Preparation</span>
                         </label>
                             <select class="js-example-basic-multiple" name="preparations[]">
-                                <option value="{{ null }}" class="form-group__option">no specific preparation</option>
+                                <option value="" class="form-group__option">no specific preparation</option>
                                 @foreach ($preparations as $p)        
                                     <option value="{{ $p->id }}">{{ $p->name }}</option>
                                 @endforeach

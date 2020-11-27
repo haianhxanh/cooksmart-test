@@ -194,7 +194,7 @@ class RecipeController extends Controller
             $combo->save();
         }
         // flash the success message
-        session()->flash('recipe_success_message', 'Your recipe has been successfully added');
+        session()->flash('recipe_success_message', 'Recipe has been successfully added');
         return redirect(action('RecipeController@index'));
     }
 
@@ -383,7 +383,7 @@ class RecipeController extends Controller
         }
 
         // flash the success message
-        session()->flash('update_success_message', 'Your recipe has been successfully updated');
+        session()->flash('update_success_message', 'Recipe has been successfully updated');
         return redirect(action('RecipeController@show', [$recipe->id]));
     }
 
@@ -392,7 +392,7 @@ class RecipeController extends Controller
         $recipe = Recipe::findOrFail($id);
         $recipe->delete();
 
-        session()->flash('delete_message', 'Your recipe has been successfully deleted');
+        session()->flash('delete_message', 'Recipe has been successfully deleted');
         return redirect(action('RecipeController@index'));
     }  
 

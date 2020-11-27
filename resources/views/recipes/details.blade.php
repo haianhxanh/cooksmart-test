@@ -10,6 +10,8 @@
 
     @if (Session::has('added_success_message'))
     <div id="success-message" class=“alert alert--success”>{{ Session::get('added_success_message') }} <a href="/user/profile">Profile</a></div>
+    @elseif (Session::has('update_success_message'))
+    <div id="success-message" class=“alert alert--success”>{{ Session::get('update_success_message') }}</div>
     @endif
     
     @if(Auth::check())
