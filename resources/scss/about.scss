@@ -26,6 +26,12 @@ $White: #ffffff;
     text-shadow: 2px 2px black;
 }
 
+.about-container {
+    background-image: url("../img/details-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 #about-us {
     // margin: 5% 0%;
     display: flex;
@@ -40,17 +46,12 @@ $White: #ffffff;
 .about-us__container {
     padding: 5% 10%;
     box-sizing: border-box;
-    background-image: url("../img/details-bg.png");
-    background-size: cover;
-    background-repeat: no-repeat;
 
     .person {
         margin: 2rem;
         width: 280px;
     }
     flex-direction: row;
-    margin-left: 10vw;
-    margin-right: 10vw;
     justify-content: center;
 
     .person {
@@ -80,9 +81,7 @@ $White: #ffffff;
 
 // CONTACT US FORM
 .form {
-    background-color: white;
     padding: 3% 7%;
-    overflow: auto;
 
     &-data {
         overflow: auto;
@@ -106,6 +105,10 @@ $White: #ffffff;
             margin: 0;
         }
     }
+}
+
+.contact-container {
+    margin: 0 10%;
 }
 
 .heading {

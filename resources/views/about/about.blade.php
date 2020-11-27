@@ -32,7 +32,7 @@
         </div>
     </div>
 
-</div>
+
 
 <div class="contact-container">
     <h2 class="heading">Contact us</h2>
@@ -75,5 +75,11 @@
     </form>
 
 </div>
+
+
+
+</div>
+
+
 @endsection
 
