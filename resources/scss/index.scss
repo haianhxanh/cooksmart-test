@@ -16,6 +16,16 @@ $White: #FFFFFF;
     margin: 1rem auto;
 }
 
+#delete-message {
+    background-color: rgb(234, 72, 23);
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    max-width: 80vw;
+    margin: 1rem auto;
+    color: white;
+}
+
 .recipe-container {
     background-color: white;  
 }
@@ -35,10 +45,18 @@ $White: #FFFFFF;
         padding: 5px 0;
     }
 
-    .recipe-table-img, img {
+    .recipe-table-img {
         margin-top: 5px;
         height: 160px;
         width: 200px;
+        
+        
+
+        img {
+            height: 160px;
+            width: 200px;
+            overflow: hidden;
+        }
     }
 
     .recipe-table-name {

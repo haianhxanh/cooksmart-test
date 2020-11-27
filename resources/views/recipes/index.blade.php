@@ -26,6 +26,10 @@
         <div id="success-message" class=“alert alert--success”>{{ Session::get('recipe_success_message') }}</div>
     @endif
 
+    @if (Session::has('delete_message'))
+    <div id="delete-message" class=“alert alert--success”>{{ Session::get('delete_message') }}</div>
+@endif
+
     <input type="text" placeholder="Search" id="myInput" style="width: 90%; font-weight: bold; font-size: 1.5rem; margin: 1rem 5%; height: 3rem">
 
     <div class="recipe-table">
