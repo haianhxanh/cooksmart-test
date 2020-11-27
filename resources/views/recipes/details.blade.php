@@ -6,7 +6,13 @@
 
 <div class="single-recipe-wrapper">
   <div class="single-recipe">
-    <h2>{{ $recipe->name }}</h2>
+   <h2>{{ $recipe->name }}</h2>
+
+   <div style="margin: 1rem">
+      @can('admin')
+      <button class="edit-btn"><a href="{{action('RecipeController@edit', $recipe->id)}}">Edit Recipe</a></button>
+      @endcan
+   </div>
 
     @if (Session::has('added_success_message'))
     <div id="success-message" class=“alert alert--success”>{{ Session::get('added_success_message') }} <a href="/user/profile">Profile</a></div>
