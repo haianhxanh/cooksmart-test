@@ -175,11 +175,6 @@ $canary: #fffd98ff;
   }
 }
 
-iframe {
-  width: 80%;
-  min-height: 150px;
-}
-
 
 .single-recipe__media {
   margin: 5% 0%;
@@ -188,6 +183,8 @@ iframe {
 .single-recipe__video iframe {
   display: block;
   margin: 0 auto;
+  width: 80%;
+  min-height: 150px;
 }
 
 .zoom-in {
