@@ -51,7 +51,10 @@
     <div class="single-recipe-body">
   
       <div class="single-recipe__ingredients">
-        <h4>Ingredients you need</h4>
+        <div class="note-container">
+          <div class="note"><img src="{{ asset('/img/note.png') }}" alt=""></div>
+          <h4>Ingredients you need</h4>
+        </div class="note-container">
         <div class="single-recipe__ingredients-container">
           <ul>
              @for($i = 0; $i < count($combo); $i++)

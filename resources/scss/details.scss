@@ -129,11 +129,31 @@ $canary: #fffd98ff;
   }
 
   .single-recipe__ingredients-container {
-    background-image: url('../img/note.svg');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    padding: 10%;
-    min-height: 100%;
+    // background-image: url('../img/note.svg');
+    // background-size: 100%;
+    // background-repeat: no-repeat;
+    // padding: 10%;
+    // min-height: 100%;
+
+    margin: 2rem 0;
+
+  }
+
+  .note-container {
+    display: flex;
+    justify-content: space-around;
+
+    h4 {
+      align-self: center;
+    }
+  }
+
+  .note {
+    img {
+      width: 100px;
+    }
+
+
   }
 
   .single-recipe__steps {
