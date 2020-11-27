@@ -87,7 +87,7 @@ $canary: #fffd98ff;
 
   text-align: center;
   padding: 2%;
-  line-height: 1.3;
+  // line-height: 1.3;
   
   q {
     font-size: 1.2rem;
@@ -159,17 +159,26 @@ $canary: #fffd98ff;
   .single-recipe__steps {
     width: 58%;
     padding: 3% 5%;
-    // border: 4px solid #4D774E;
-    line-height: 1.6;
+    ol {
+      margin-top: 2rem;
+    }
   }
 }
 
-// @media (max-height: 749px) {
-//   .single-recipe-body {
-//     display: flex;
-//     flex-direction: column;
-//   }
-// }
+@media (max-width: 640px) {
+  .single-recipe-body {
+    flex-direction: column;
+  }
+
+  .single-recipe__ingredients, .single-recipe__steps {
+    width: 90% !important;
+  }
+
+  iframe {
+    width: 320px;
+    height: 240px;
+  }
+}
 
 .single-recipe__media {
   margin: 5% 0%;

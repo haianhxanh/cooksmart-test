@@ -75,29 +75,33 @@ $canary: #fffd98ff;
 
 .form-input {
     border: 3px solid $NaturalYellow;
-    height: 20px;
+    height: 25px;
     width: 203px;
     margin-left: 2.95rem;
+    background-color: white;
 
     &-photo {
         border: 3px solid $NaturalYellow;
-        height: 20px;
+        height: 25px;
         width: 200px;
         margin-left: 6.05rem;
+        background-color: white;
     }
 
     &-video {
         border: 3px solid $NaturalYellow;
-        height: 20px;
+        height: 25px;
         width: 200px;
         margin-left: 6.15rem;
+        background-color: white;
     }
 
     &-url {
         border: 3px solid $NaturalYellow;
-        height: 20px;
+        height: 25px;
         width: 200px;
         margin-left: 3.59rem;
+        background-color: white;
     }
 }
 
